@@ -1,0 +1,16 @@
+{
+  "forceAtlas2Based": {
+    "theta": 0.5,
+
+    "gravitationalConstant": -50,
+    "centralGravity": 0.01,
+    "springLength": 100,
+    "springConstant": 0.08,
+    "damping": 0.5,
+    "avoidOverlap": 0.46
+  },
+  "maxVelocity": 50,
+  "minVelocity": 0.75,
+  "solver": "forceAtlas2Based",
+  "timestep": 0.5
+}

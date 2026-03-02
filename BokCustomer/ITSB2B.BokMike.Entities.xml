@@ -1,0 +1,3537 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ITSB2B.BokMike.Entities</name>
+    </assembly>
+    <members>
+        <member name="T:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem">
+            <summary>
+            Classe filtro per le query sulla tabella MediaFiles
+            </summary>
+            <summary>
+            Classe Entity per il codice manuale aggiuntivo per il record della tabella MediaFiles
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mDDMediaFileFilter">
+            <summary>
+            Descrizione del file
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mDocNameFilter">
+            <summary>
+            Doc Name su BOK (sarà anche nel parbok ma è opportuno averlo anche esposto)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mDurationFilter">
+            <summary>
+            Durata espressa in millisecondi
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mEndRowNum">
+            <summary>
+            Property filtro finale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mIDLanguageOriginFilter">
+            <summary>
+            ID della lingua di origine dello speech
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mIDLanguageTranslationFilter">
+            <summary>
+            ID della lingua in cui lo speech viene tradotto
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mIDMediaFileListFilter">
+            <summary>
+            ID del File media elaborato
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mKemMethodFilter">
+            <summary>
+            KEM Method (sarà sempre Mike ma va bene per la generazione)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mKemReleaseFilter">
+            <summary>
+            Kem release (sarà 1.0 o un valore inserito nei setting)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mMediaFilePlayerLinkFilter">
+            <summary>
+            Link verso il media file sul server media ove sarà memorizzato
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mNotesFilter">
+            <summary>
+            Annotazioni
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mOriginFileHashFilter">
+            <summary>
+            Hash del media file di origine per verificare se esiste già nel db
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mOriginFileNameFilter">
+            <summary>
+            Nome del file di origine
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mPdfFileNameFilter">
+            <summary>
+            Nome del file PDF generato per l'export in BOK
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mPdfOriginPathFilter">
+            <summary>
+            Path di origine del file PDF che verrà riportata su ParBok
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mStartRowNum">
+            <summary>
+            Property filtro iniziale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.mWavFileHashFilter">
+            <summary>
+            Hash del file Wav usato dal servizio, per verificare se esiste già nel db
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.#ctor">
+            <summary>
+            Crea una nuova istanza della classe Entity MediaFileFilterItem
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.DDMediaFileFilter">
+            <summary>
+            Descrizione del file
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.DocNameFilter">
+            <summary>
+            Doc Name su BOK (sarà anche nel parbok ma è opportuno averlo anche esposto)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.DurationFilter">
+            <summary>
+            Durata espressa in millisecondi
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.EndRowNum">
+            <summary>
+            Property filtro finale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.IDLanguageOriginFilter">
+            <summary>
+            ID della lingua di origine dello speech
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.IDLanguageTranslationFilter">
+            <summary>
+            ID della lingua in cui lo speech viene tradotto
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.IDMediaFileListFilter">
+            <summary>
+            ID del File media elaborato
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.IsValid">
+            <summary>
+            Property usata per la validazione dei dati JSON ricevuti da una chiamata API
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.KemMethodFilter">
+            <summary>
+            KEM Method (sarà sempre Mike ma va bene per la generazione)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.KemReleaseFilter">
+            <summary>
+            Kem release (sarà 1.0 o un valore inserito nei setting)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.MediaFilePlayerLinkFilter">
+            <summary>
+            Link verso il media file sul server media ove sarà memorizzato
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.NotesFilter">
+            <summary>
+            Annotazioni
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.OriginFileHashFilter">
+            <summary>
+            Hash del media file di origine per verificare se esiste già nel db
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.OriginFileNameFilter">
+            <summary>
+            Nome del file di origine
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.PdfFileNameFilter">
+            <summary>
+            Nome del file PDF generato per l'export in BOK
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.PdfOriginPathFilter">
+            <summary>
+            Path di origine del file PDF che verrà riportata su ParBok
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.StartRowNum">
+            <summary>
+            Property filtro iniziale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.WavFileHashFilter">
+            <summary>
+            Hash del file Wav usato dal servizio, per verificare se esiste già nel db
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.CheckHasFilters">
+            <summary>
+            Controlla se vi è almeno un filtro attivo nell'istanza corrente MediaFileFilterItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.Clone">
+            <summary>
+            Genera un clone dell'istanza corrente per l'entity MediaFileFilterItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.CopyTo(ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem)">
+            <summary>
+            Genera un clone dell'istanza corrente per il filtro MediaFileFilterItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.FromJson(System.String)">
+            <summary>
+            Deserializza l'entity MediaFileFilterItem dal formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.ToDynamic">
+            <summary>
+            Converte l'entity {0} in Dynamics usando la funzione generic predisposta, questo serve principalmente per il LOG
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.ToJson">
+            <summary>
+            Serializza l'entity MediaFileFilterItem in formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.ToString">
+            <summary>
+            Genera una stringa con il contenuto dell'istanza corrente per l'entity MediaFileFilterItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.CheckManualFilters">
+            <summary>
+            Metodo per aggiungere il controllo di esistenza dei filtri manuali
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.CopyToManual(ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem)">
+            <summary>
+            Metodo per aggiungere variabili manuali al copyto
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.Init">
+            <summary>
+            Metodo per aggiungere statement da eseguire nel costruttore
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileFilterItem.ToStringManual(System.Text.StringBuilder)">
+            <summary>
+            Metodo per aggiungere variabili manuali al tostring
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem">
+            <summary>
+            Classe Entity autogenerata per il record della tabella MediaFiles
+            </summary>
+            <summary>
+            Classe Entity per il codice manuale aggiuntivo per il record della tabella MediaFiles
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.DbTableName">
+            <summary>
+            Nome della tabella
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mCreateDate">
+            <summary>
+            Data Creazione
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mCreateUser">
+            <summary>
+            Descrizione User
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mDDMediaFile">
+            <summary>
+            Descrizione del file
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mDocName">
+            <summary>
+            Doc Name su BOK (sarà anche nel parbok ma è opportuno averlo anche esposto)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mDuration">
+            <summary>
+            Durata espressa in millisecondi
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mIDLanguageOrigin">
+            <summary>
+            ID della lingua di origine dello speech
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mIDLanguageTranslation">
+            <summary>
+            ID della lingua in cui lo speech viene tradotto
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mIDMediaFile">
+            <summary>
+            ID del File media elaborato
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mKemMethod">
+            <summary>
+            KEM Method (sarà sempre Mike ma va bene per la generazione)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mKemRelease">
+            <summary>
+            Kem release (sarà 1.0 o un valore inserito nei setting)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mLastUpdateDate">
+            <summary>
+            Data ultimo aggiornamento
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mLastUpdateUser">
+            <summary>
+            Descrizione User ultimo Aggiornamento
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mMediaFilePlayerLink">
+            <summary>
+            Link verso il media file sul server media ove sarà memorizzato
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mNotes">
+            <summary>
+            Annotazioni
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mOriginFileHash">
+            <summary>
+            Hash del media file di origine per verificare se esiste già nel db
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mOriginFileName">
+            <summary>
+            Nome del file di origine
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mParBokInfo">
+            <summary>
+            Lista Json Name+Value di dati da consegnare al client 
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mPdfFileName">
+            <summary>
+            Nome del file PDF generato per l'export in BOK
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mPdfOriginPath">
+            <summary>
+            Path di origine del file PDF che verrà riportata su ParBok
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mRowNum">
+            <summary>
+            Ordinale della riga corrente nella query per poter paginare la query
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.mWavFileHash">
+            <summary>
+            Hash del file Wav usato dal servizio, per verificare se esiste già nel db
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.#ctor">
+            <summary>
+            Crea una nuova istanza della classe Entity MediaFileItem
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.CreateDate">
+            <summary>
+            Data Creazione
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.CreateUser">
+            <summary>
+            Descrizione User
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.DDMediaFile">
+            <summary>
+            Descrizione del file
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.DocName">
+            <summary>
+            Doc Name su BOK (sarà anche nel parbok ma è opportuno averlo anche esposto)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.Duration">
+            <summary>
+            Durata espressa in millisecondi
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.IDLanguageOrigin">
+            <summary>
+            ID della lingua di origine dello speech
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.IDLanguageTranslation">
+            <summary>
+            ID della lingua in cui lo speech viene tradotto
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.IDMediaFile">
+            <summary>
+            ID del File media elaborato
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.IsValid">
+            <summary>
+            Property usata per la validazione dei dati JSON ricevuti da una chiamata API
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.KemMethod">
+            <summary>
+            KEM Method (sarà sempre Mike ma va bene per la generazione)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.KemRelease">
+            <summary>
+            Kem release (sarà 1.0 o un valore inserito nei setting)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.LastUpdateDate">
+            <summary>
+            Data ultimo aggiornamento
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.LastUpdateUser">
+            <summary>
+            Descrizione User ultimo Aggiornamento
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.MediaFilePlayerLink">
+            <summary>
+            Link verso il media file sul server media ove sarà memorizzato
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.Notes">
+            <summary>
+            Annotazioni
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.OriginFileHash">
+            <summary>
+            Hash del media file di origine per verificare se esiste già nel db
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.OriginFileName">
+            <summary>
+            Nome del file di origine
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.ParBokInfo">
+            <summary>
+            Lista Json Name+Value di dati da consegnare al client 
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.PdfFileName">
+            <summary>
+            Nome del file PDF generato per l'export in BOK
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.PdfOriginPath">
+            <summary>
+            Path di origine del file PDF che verrà riportata su ParBok
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.RowNum">
+            <summary>
+            Ordinale della riga corrente nella query per poter paginare la query
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.WavFileHash">
+            <summary>
+            Hash del file Wav usato dal servizio, per verificare se esiste già nel db
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.Clone">
+            <summary>
+            Genera un clone dell'istanza corrente per l'entity MediaFileItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.CopyTo(ITSB2B.Speech.Entities.MediaMgr.MediaFileItem)">
+            <summary>
+            Copia tutte le property dell'istanza corrente per l'entity MediaFileItem in una istanza passata come parametro.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.FromJson(System.String)">
+            <summary>
+            Deserializza l'entity MediaFileItem dal formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.ToDynamic">
+            <summary>
+            Converte l'entity {0} in Dynamics usando la funzione generic predisposta, questo serve principalmente per il LOG
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.ToJson">
+            <summary>
+            Serializza l'entity MediaFileItem in formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.ToString">
+            <summary>
+            Genera una stringa con il contenuto dell'istanza corrente per l'entity MediaFileItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.CopyToManual(ITSB2B.Speech.Entities.MediaMgr.MediaFileItem)">
+            <summary>
+            Metodo per aggiungere variabili manuali al copyto
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.Init">
+            <summary>
+            Metodo per aggiungere statement da eseguire nel costruttore
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFileItem.ToStringManual(System.Text.StringBuilder)">
+            <summary>
+            Metodo per aggiungere variabili manuali al tostring
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.MediaMgr.MediaFilesCollection">
+            <summary>
+            Classe Collection autogenerata per il record della tabella MediaFiles
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFilesCollection.Clone">
+            <summary>
+            Genera un clone dell'istanza corrente per la collection MediaFilesCollection
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFilesCollection.CopyTo(ITSB2B.Speech.Entities.MediaMgr.MediaFilesCollection)">
+            <summary>
+            Genera una deep copy dell'istanza corrente per la collection MediaFilesCollection
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFilesCollection.FromJson(System.String)">
+            <summary>
+            Deserializza la collection MediaFilesCollection dal formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFilesCollection.GetItemByID(System.Int32)">
+            <summary>
+            Restituisce un elemento della collection dato il suo ID
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFilesCollection.ToJson">
+            <summary>
+            Serializza la collection MediaFilesCollection in formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.MediaFilesCollection.ToString">
+            <summary>
+            Genera una stringa con il contenuto dell'istanza corrente per l'entity MediaFileItem
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem">
+            <summary>
+            Classe filtro per le query sulla tabella RecognizedTextsDetails
+            </summary>
+            <summary>
+            Classe Entity per il codice manuale aggiuntivo per il record della tabella RecognizedTextsDetails
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.mEndConfidenceFilter">
+            <summary>
+            Valore della confidence sulla frase
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.mEndRowNum">
+            <summary>
+            Property filtro finale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.mIDMediaFileListFilter">
+            <summary>
+            ID Del Media file da cui il testo è stato riconosciuto
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.mIDRecognizedTextDetailListFilter">
+            <summary>
+            ID Del dettaglio di riconoscimento testo
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.mIDRecognizedTextListFilter">
+            <summary>
+            ID del testo riconosciuto a cui il dettaglio appartiene
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.mIsSelectedTextFilter">
+            <summary>
+            True se il dettaglio è quello selezionato come testo riconoscuto (sempre il primo nei dettagli)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.mRecognizedTextFilter">
+            <summary>
+            Testo riconosciuto (frase)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.mStartConfidenceFilter">
+            <summary>
+            Valore della confidence sulla frase
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.mStartRowNum">
+            <summary>
+            Property filtro iniziale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.mWordsDataFilter">
+            <summary>
+            Testo riconosciuto (frase)
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.#ctor">
+            <summary>
+            Crea una nuova istanza della classe Entity RecognizedTextDetailFilterItem
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.EndConfidenceFilter">
+            <summary>
+            Valore della confidence sulla frase
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.EndRowNum">
+            <summary>
+            Property filtro finale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.IDMediaFileListFilter">
+            <summary>
+            ID Del Media file da cui il testo è stato riconosciuto
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.IDRecognizedTextDetailListFilter">
+            <summary>
+            ID Del dettaglio di riconoscimento testo
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.IDRecognizedTextListFilter">
+            <summary>
+            ID del testo riconosciuto a cui il dettaglio appartiene
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.IsSelectedTextFilter">
+            <summary>
+            True se il dettaglio è quello selezionato come testo riconoscuto (sempre il primo nei dettagli)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.IsValid">
+            <summary>
+            Property usata per la validazione dei dati JSON ricevuti da una chiamata API
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.RecognizedTextFilter">
+            <summary>
+            Testo riconosciuto (frase)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.StartConfidenceFilter">
+            <summary>
+            Valore della confidence sulla frase
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.StartRowNum">
+            <summary>
+            Property filtro iniziale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.WordsDataFilter">
+            <summary>
+            Testo riconosciuto (frase)
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.CheckHasFilters">
+            <summary>
+            Controlla se vi è almeno un filtro attivo nell'istanza corrente RecognizedTextDetailFilterItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.Clone">
+            <summary>
+            Genera un clone dell'istanza corrente per l'entity RecognizedTextDetailFilterItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.CopyTo(ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem)">
+            <summary>
+            Genera un clone dell'istanza corrente per il filtro RecognizedTextDetailFilterItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.FromJson(System.String)">
+            <summary>
+            Deserializza l'entity RecognizedTextDetailFilterItem dal formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.ToDynamic">
+            <summary>
+            Converte l'entity {0} in Dynamics usando la funzione generic predisposta, questo serve principalmente per il LOG
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.ToJson">
+            <summary>
+            Serializza l'entity RecognizedTextDetailFilterItem in formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.ToString">
+            <summary>
+            Genera una stringa con il contenuto dell'istanza corrente per l'entity RecognizedTextDetailFilterItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.CheckManualFilters">
+            <summary>
+            Metodo per aggiungere il controllo di esistenza dei filtri manuali
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.CopyToManual(ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem)">
+            <summary>
+            Metodo per aggiungere variabili manuali al copyto
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.Init">
+            <summary>
+            Metodo per aggiungere statement da eseguire nel costruttore
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailFilterItem.ToStringManual(System.Text.StringBuilder)">
+            <summary>
+            Metodo per aggiungere variabili manuali al tostring
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem">
+            <summary>
+            Classe Entity autogenerata per il record della tabella RecognizedTextsDetails
+            </summary>
+            <summary>
+            Classe Entity per il codice manuale aggiuntivo per il record della tabella RecognizedTextsDetails
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.DbTableName">
+            <summary>
+            Nome della tabella
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.mConfidence">
+            <summary>
+            Valore della confidence sulla frase
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.mCreateDate">
+            <summary>
+            Data Creazione
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.mCreateUser">
+            <summary>
+            Descrizione User
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.mDuration">
+            <summary>
+            Durata espressa in millisecondi
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.mIDMediaFile">
+            <summary>
+            ID Del Media file da cui il testo è stato riconosciuto
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.mIDRecognizedText">
+            <summary>
+            ID del testo riconosciuto a cui il dettaglio appartiene
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.mIDRecognizedTextDetail">
+            <summary>
+            ID Del dettaglio di riconoscimento testo
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.mIsSelectedText">
+            <summary>
+            True se il dettaglio è quello selezionato come testo riconoscuto (sempre il primo nei dettagli)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.mLastUpdateDate">
+            <summary>
+            Data ultimo aggiornamento
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.mLastUpdateUser">
+            <summary>
+            Descrizione User ultimo Aggiornamento
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.mOffset">
+            <summary>
+            Offset in millisecondi della frase a partire dall'inizio della registrazione
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.mRecognizedText">
+            <summary>
+            Testo riconosciuto (frase)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.mRowNum">
+            <summary>
+            Ordinale della riga corrente nella query per poter paginare la query
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.mWordsData">
+            <summary>
+            Testo riconosciuto (frase)
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.#ctor">
+            <summary>
+            Crea una nuova istanza della classe Entity RecognizedTextDetailItem
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.Confidence">
+            <summary>
+            Valore della confidence sulla frase
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.CreateDate">
+            <summary>
+            Data Creazione
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.CreateUser">
+            <summary>
+            Descrizione User
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.Duration">
+            <summary>
+            Durata espressa in millisecondi
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.IDMediaFile">
+            <summary>
+            ID Del Media file da cui il testo è stato riconosciuto
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.IDRecognizedText">
+            <summary>
+            ID del testo riconosciuto a cui il dettaglio appartiene
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.IDRecognizedTextDetail">
+            <summary>
+            ID Del dettaglio di riconoscimento testo
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.IsSelectedText">
+            <summary>
+            True se il dettaglio è quello selezionato come testo riconoscuto (sempre il primo nei dettagli)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.IsValid">
+            <summary>
+            Property usata per la validazione dei dati JSON ricevuti da una chiamata API
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.LastUpdateDate">
+            <summary>
+            Data ultimo aggiornamento
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.LastUpdateUser">
+            <summary>
+            Descrizione User ultimo Aggiornamento
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.Offset">
+            <summary>
+            Offset in millisecondi della frase a partire dall'inizio della registrazione
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.RecognizedText">
+            <summary>
+            Testo riconosciuto (frase)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.RowNum">
+            <summary>
+            Ordinale della riga corrente nella query per poter paginare la query
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.WordsData">
+            <summary>
+            Testo riconosciuto (frase)
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.Clone">
+            <summary>
+            Genera un clone dell'istanza corrente per l'entity RecognizedTextDetailItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.CopyTo(ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem)">
+            <summary>
+            Copia tutte le property dell'istanza corrente per l'entity RecognizedTextDetailItem in una istanza passata come parametro.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.FromJson(System.String)">
+            <summary>
+            Deserializza l'entity RecognizedTextDetailItem dal formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.ToDynamic">
+            <summary>
+            Converte l'entity {0} in Dynamics usando la funzione generic predisposta, questo serve principalmente per il LOG
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.ToJson">
+            <summary>
+            Serializza l'entity RecognizedTextDetailItem in formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.ToString">
+            <summary>
+            Genera una stringa con il contenuto dell'istanza corrente per l'entity RecognizedTextDetailItem
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.DurationString">
+            <summary>
+            Restituisce il valore della durata della frase come ore, minuti, secondi e millisecondi
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.OffsetString">
+            <summary>
+            Restituisce la stringa con il valore dell'offset della frase in ore minuti secondi e millisecondi
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.CopyToManual(ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem)">
+            <summary>
+            Metodo per aggiungere variabili manuali al copyto
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.Init">
+            <summary>
+            Metodo per aggiungere statement da eseguire nel costruttore
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailItem.ToStringManual(System.Text.StringBuilder)">
+            <summary>
+            Metodo per aggiungere variabili manuali al tostring
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailsCollection">
+            <summary>
+            Classe Collection autogenerata per il record della tabella RecognizedTextsDetails
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailsCollection.Clone">
+            <summary>
+            Genera un clone dell'istanza corrente per la collection RecognizedTextDetailsCollection
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailsCollection.CopyTo(ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailsCollection)">
+            <summary>
+            Genera una deep copy dell'istanza corrente per la collection RecognizedTextDetailsCollection
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailsCollection.FromJson(System.String)">
+            <summary>
+            Deserializza la collection RecognizedTextDetailsCollection dal formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailsCollection.GetItemByID(System.Int32)">
+            <summary>
+            Restituisce un elemento della collection dato il suo ID
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailsCollection.ToJson">
+            <summary>
+            Serializza la collection RecognizedTextDetailsCollection in formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextDetailsCollection.ToString">
+            <summary>
+            Genera una stringa con il contenuto dell'istanza corrente per l'entity RecognizedTextDetailItem
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem">
+            <summary>
+            Classe filtro per le query sulla tabella RecognizedTexts
+            </summary>
+            <summary>
+            Classe Entity per il codice manuale aggiuntivo per il record della tabella RecognizedTexts
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mBlockIDCodeOnDocListFilter">
+            <summary>
+            Codice univoco del Block all'interno del documento identifica il suo rectangle
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mDoNotDeleteFilter">
+            <summary>
+            Flag non cancellare da riportare sul Block sarà sempre True
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mEndConfidenceFilter">
+            <summary>
+            Valore della confidence sulla frase
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mEndRowNum">
+            <summary>
+            Property filtro finale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mHierarchyFilter">
+            <summary>
+            Codice di gerarchia per l'ordinamento dei testi riconosciuti e relative Internal Knowledge
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mIDMediaFileListFilter">
+            <summary>
+            ID Del Media file da cui il testo è stato riconosciuto
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mIDRecognizedTextListFilter">
+            <summary>
+            ID Del testo riconosciuto
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mIDRecognizedTextParentListFilter">
+            <summary>
+            ID del testo riconosciuto parent (per l'internal knowledge)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mKemMethodFilter">
+            <summary>
+            KEM Method (sarà sempre Mike ma va bene per la generazione)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mKemReleaseFilter">
+            <summary>
+            Kem release (sarà 1.0 o un valore inserito nei setting)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mPageNumberListFilter">
+            <summary>
+            Numero di pagina dove il testo si trova all'interno del PDF generato per BOK
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mRecognizedTextFilter">
+            <summary>
+            Testo riconosciuto (frase)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mRecognizedTextFormattedFilter">
+            <summary>
+            Testo riconosciuto JSON formattato per visualizzarlo in grid WPF
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mRecognizedTextHtmlFilter">
+            <summary>
+            Testo riconosciuto Formattato in HTML con i colori x le parole
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mRecognizedTextOriginalFilter">
+            <summary>
+            Testo riconosciuto (frase) Originale mentre il recognized può essere editato
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mRecognizedTextTranslatedFilter">
+            <summary>
+            Testo riconosciuto Tradotto se necessario con il traduttore
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mServiceResultIDFilter">
+            <summary>
+            ID Originale della stringa riconosciuta (da servizio)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mStartConfidenceFilter">
+            <summary>
+            Valore della confidence sulla frase
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mStartRowNum">
+            <summary>
+            Property filtro iniziale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.mTextElementTypeListFilter">
+            <summary>
+            Tipo di testo (Content o internal knowledge)
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.#ctor">
+            <summary>
+            Crea una nuova istanza della classe Entity RecognizedTextFilterItem
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.BlockIDCodeOnDocListFilter">
+            <summary>
+            Codice univoco del Block all'interno del documento identifica il suo rectangle
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.DoNotDeleteFilter">
+            <summary>
+            Flag non cancellare da riportare sul Block sarà sempre True
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.EndConfidenceFilter">
+            <summary>
+            Valore della confidence sulla frase
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.EndRowNum">
+            <summary>
+            Property filtro finale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.HierarchyFilter">
+            <summary>
+            Codice di gerarchia per l'ordinamento dei testi riconosciuti e relative Internal Knowledge
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.IDMediaFileListFilter">
+            <summary>
+            ID Del Media file da cui il testo è stato riconosciuto
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.IDRecognizedTextListFilter">
+            <summary>
+            ID Del testo riconosciuto
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.IDRecognizedTextParentListFilter">
+            <summary>
+            ID del testo riconosciuto parent (per l'internal knowledge)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.IsValid">
+            <summary>
+            Property usata per la validazione dei dati JSON ricevuti da una chiamata API
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.KemMethodFilter">
+            <summary>
+            KEM Method (sarà sempre Mike ma va bene per la generazione)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.KemReleaseFilter">
+            <summary>
+            Kem release (sarà 1.0 o un valore inserito nei setting)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.PageNumberListFilter">
+            <summary>
+            Numero di pagina dove il testo si trova all'interno del PDF generato per BOK
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.RecognizedTextFilter">
+            <summary>
+            Testo riconosciuto (frase)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.RecognizedTextFormattedFilter">
+            <summary>
+            Testo riconosciuto JSON formattato per visualizzarlo in grid WPF
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.RecognizedTextHtmlFilter">
+            <summary>
+            Testo riconosciuto Formattato in HTML con i colori x le parole
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.RecognizedTextOriginalFilter">
+            <summary>
+            Testo riconosciuto (frase) Originale mentre il recognized può essere editato
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.RecognizedTextTranslatedFilter">
+            <summary>
+            Testo riconosciuto Tradotto se necessario con il traduttore
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.ServiceResultIDFilter">
+            <summary>
+            ID Originale della stringa riconosciuta (da servizio)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.StartConfidenceFilter">
+            <summary>
+            Valore della confidence sulla frase
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.StartRowNum">
+            <summary>
+            Property filtro iniziale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.TextElementTypeListFilter">
+            <summary>
+            Tipo di testo (Content o internal knowledge)
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.CheckHasFilters">
+            <summary>
+            Controlla se vi è almeno un filtro attivo nell'istanza corrente RecognizedTextFilterItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.Clone">
+            <summary>
+            Genera un clone dell'istanza corrente per l'entity RecognizedTextFilterItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.CopyTo(ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem)">
+            <summary>
+            Genera un clone dell'istanza corrente per il filtro RecognizedTextFilterItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.FromJson(System.String)">
+            <summary>
+            Deserializza l'entity RecognizedTextFilterItem dal formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.ToDynamic">
+            <summary>
+            Converte l'entity {0} in Dynamics usando la funzione generic predisposta, questo serve principalmente per il LOG
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.ToJson">
+            <summary>
+            Serializza l'entity RecognizedTextFilterItem in formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.ToString">
+            <summary>
+            Genera una stringa con il contenuto dell'istanza corrente per l'entity RecognizedTextFilterItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.CheckManualFilters">
+            <summary>
+            Metodo per aggiungere il controllo di esistenza dei filtri manuali
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.CopyToManual(ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem)">
+            <summary>
+            Metodo per aggiungere variabili manuali al copyto
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.Init">
+            <summary>
+            Metodo per aggiungere statement da eseguire nel costruttore
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextFilterItem.ToStringManual(System.Text.StringBuilder)">
+            <summary>
+            Metodo per aggiungere variabili manuali al tostring
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem">
+            <summary>
+            Classe Entity autogenerata per il record della tabella RecognizedTexts
+            </summary>
+            <summary>
+            Classe Entity per il codice manuale aggiuntivo per il record della tabella RecognizedTexts
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.DbTableName">
+            <summary>
+            Nome della tabella
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mBlockIDCodeOnDoc">
+            <summary>
+            Codice univoco del Block all'interno del documento identifica il suo rectangle
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mBlockOrder">
+            <summary>
+            Ordine di comparsa del block nella pagina (il campo precedente lo da in modo similare ma ci sono +tipi di block quindi non è preciso)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mConfidence">
+            <summary>
+            Valore della confidence sulla frase
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mCreateDate">
+            <summary>
+            Data Creazione
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mCreateUser">
+            <summary>
+            Descrizione User
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mDoNotDelete">
+            <summary>
+            Flag non cancellare da riportare sul Block sarà sempre True
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mDuration">
+            <summary>
+            Durata espressa in millisecondi
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mHeight">
+            <summary>
+            Altezza del rettangolo sulla pagina
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mHierarchy">
+            <summary>
+            Codice di gerarchia per l'ordinamento dei testi riconosciuti e relative Internal Knowledge
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mIDMediaFile">
+            <summary>
+            ID Del Media file da cui il testo è stato riconosciuto
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mIDRecognizedText">
+            <summary>
+            ID Del testo riconosciuto
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mIDRecognizedTextParent">
+            <summary>
+            ID del testo riconosciuto parent (per l'internal knowledge)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mKemMethod">
+            <summary>
+            KEM Method (sarà sempre Mike ma va bene per la generazione)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mKemRelease">
+            <summary>
+            Kem release (sarà 1.0 o un valore inserito nei setting)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mLastUpdateDate">
+            <summary>
+            Data ultimo aggiornamento
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mLastUpdateUser">
+            <summary>
+            Descrizione User ultimo Aggiornamento
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mOffset">
+            <summary>
+            Offset in millisecondi della frase a partire dall'inizio della registrazione
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mPageNumber">
+            <summary>
+            Numero di pagina dove il testo si trova all'interno del PDF generato per BOK
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mRecognizedText">
+            <summary>
+            Testo riconosciuto (frase)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mRecognizedTextFormatted">
+            <summary>
+            Testo riconosciuto JSON formattato per visualizzarlo in grid WPF
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mRecognizedTextHtml">
+            <summary>
+            Testo riconosciuto Formattato in HTML con i colori x le parole
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mRecognizedTextOriginal">
+            <summary>
+            Testo riconosciuto (frase) Originale mentre il recognized può essere editato
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mRecognizedTextTranslated">
+            <summary>
+            Testo riconosciuto Tradotto se necessario con il traduttore
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mRowNum">
+            <summary>
+            Ordinale della riga corrente nella query per poter paginare la query
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mServiceResultID">
+            <summary>
+            ID Originale della stringa riconosciuta (da servizio)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mStartPosX">
+            <summary>
+            Posizione X iniziale del rettangolo sulla pagina
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mStartPosY">
+            <summary>
+            Posizione Y iniziale del rettangolo sulla pagina
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mTextElementType">
+            <summary>
+            Tipo di testo (Content o internal knowledge)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mWidth">
+            <summary>
+            Larghezza del rettangolo sulla pagina
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.#ctor">
+            <summary>
+            Crea una nuova istanza della classe Entity RecognizedTextItem
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.BlockIDCodeOnDoc">
+            <summary>
+            Codice univoco del Block all'interno del documento identifica il suo rectangle
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.BlockOrder">
+            <summary>
+            Ordine di comparsa del block nella pagina (il campo precedente lo da in modo similare ma ci sono +tipi di block quindi non è preciso)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.Confidence">
+            <summary>
+            Valore della confidence sulla frase
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.CreateDate">
+            <summary>
+            Data Creazione
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.CreateUser">
+            <summary>
+            Descrizione User
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.DoNotDelete">
+            <summary>
+            Flag non cancellare da riportare sul Block sarà sempre True
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.Duration">
+            <summary>
+            Durata espressa in millisecondi
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.Height">
+            <summary>
+            Altezza del rettangolo sulla pagina
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.Hierarchy">
+            <summary>
+            Codice di gerarchia per l'ordinamento dei testi riconosciuti e relative Internal Knowledge
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.IDMediaFile">
+            <summary>
+            ID Del Media file da cui il testo è stato riconosciuto
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.IDRecognizedText">
+            <summary>
+            ID Del testo riconosciuto
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.IDRecognizedTextParent">
+            <summary>
+            ID del testo riconosciuto parent (per l'internal knowledge)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.IsValid">
+            <summary>
+            Property usata per la validazione dei dati JSON ricevuti da una chiamata API
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.KemMethod">
+            <summary>
+            KEM Method (sarà sempre Mike ma va bene per la generazione)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.KemRelease">
+            <summary>
+            Kem release (sarà 1.0 o un valore inserito nei setting)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.LastUpdateDate">
+            <summary>
+            Data ultimo aggiornamento
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.LastUpdateUser">
+            <summary>
+            Descrizione User ultimo Aggiornamento
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.Offset">
+            <summary>
+            Offset in millisecondi della frase a partire dall'inizio della registrazione
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.PageNumber">
+            <summary>
+            Numero di pagina dove il testo si trova all'interno del PDF generato per BOK
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.RecognizedText">
+            <summary>
+            Testo riconosciuto (frase)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.RecognizedTextFormatted">
+            <summary>
+            Testo riconosciuto JSON formattato per visualizzarlo in grid WPF
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.RecognizedTextHtml">
+            <summary>
+            Testo riconosciuto Formattato in HTML con i colori x le parole
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.RecognizedTextOriginal">
+            <summary>
+            Testo riconosciuto (frase) Originale mentre il recognized può essere editato
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.RecognizedTextTranslated">
+            <summary>
+            Testo riconosciuto Tradotto se necessario con il traduttore
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.RowNum">
+            <summary>
+            Ordinale della riga corrente nella query per poter paginare la query
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.ServiceResultID">
+            <summary>
+            ID Originale della stringa riconosciuta (da servizio)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.StartPosX">
+            <summary>
+            Posizione X iniziale del rettangolo sulla pagina
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.StartPosY">
+            <summary>
+            Posizione Y iniziale del rettangolo sulla pagina
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.TextElementType">
+            <summary>
+            Tipo di testo (Content o internal knowledge)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.Width">
+            <summary>
+            Larghezza del rettangolo sulla pagina
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.Clone">
+            <summary>
+            Genera un clone dell'istanza corrente per l'entity RecognizedTextItem
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.CopyTo(ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem)">
+            <summary>
+            Copia tutte le property dell'istanza corrente per l'entity RecognizedTextItem in una istanza passata come parametro.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.FromJson(System.String)">
+            <summary>
+            Deserializza l'entity RecognizedTextItem dal formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.ToDynamic">
+            <summary>
+            Converte l'entity {0} in Dynamics usando la funzione generic predisposta, questo serve principalmente per il LOG
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.ToJson">
+            <summary>
+            Serializza l'entity RecognizedTextItem in formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.ToString">
+            <summary>
+            Genera una stringa con il contenuto dell'istanza corrente per l'entity RecognizedTextItem
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.mIsSelected">
+            <summary>
+            Flag di selezione
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.IsSelected">
+            <summary>
+            Flag di selezione
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.DurationString">
+            <summary>
+            Restituisce il valore della durata della frase come ore, minuti, secondi e millisecondi
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.OffsetString">
+            <summary>
+            Restituisce la stringa con il valore dell'offset della frase in ore minuti secondi e millisecondi
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.EndOffset">
+            <summary>
+            Fine della frase in millisecondi
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.WordsNumber">
+            <summary>
+            Numero di parole della frase
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.NumericHierarchy">
+            <summary>
+            NumericHierarchy
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.CopyToManual(ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem)">
+            <summary>
+            Metodo per aggiungere variabili manuali al copyto
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.Init">
+            <summary>
+            Metodo per aggiungere statement da eseguire nel costruttore
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextItem.ToStringManual(System.Text.StringBuilder)">
+            <summary>
+            Metodo per aggiungere variabili manuali al tostring
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextsCollection">
+            <summary>
+            Classe Collection autogenerata per il record della tabella RecognizedTexts
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextsCollection.Clone">
+            <summary>
+            Genera un clone dell'istanza corrente per la collection RecognizedTextsCollection
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextsCollection.CopyTo(ITSB2B.Speech.Entities.MediaMgr.RecognizedTextsCollection)">
+            <summary>
+            Genera una deep copy dell'istanza corrente per la collection RecognizedTextsCollection
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextsCollection.FromJson(System.String)">
+            <summary>
+            Deserializza la collection RecognizedTextsCollection dal formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextsCollection.GetItemByID(System.Int32)">
+            <summary>
+            Restituisce un elemento della collection dato il suo ID
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextsCollection.ToJson">
+            <summary>
+            Serializza la collection RecognizedTextsCollection in formato JSON
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedTextsCollection.ToString">
+            <summary>
+            Genera una stringa con il contenuto dell'istanza corrente per l'entity RecognizedTextItem
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem">
+            <summary>
+             Definisce un entità Word che contiene i dati di dettaglio di una parola riconosciuta dallo Specch To Text relativa ad una frase
+             Questa entity è manuale perché sul DB la memorizziamo in JSON in quanto non è un dato che serva consultare se non per controlli specifici durante l'elaborazione dei dati del file
+             una collection di questi dati per ogni frase dettaglio riconosciuta verrà generata automaticamente dopo la lettura dei dati dal db
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.mConfidence">
+            <summary>
+            Confidence con cui è stata riconosciuta la parola va da 0 a 1
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.Confidence">
+            <summary>
+            Confidence con cui è stata riconosciuta la parola va da 0 a 1
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.mDuration">
+            <summary>
+            Durata della pronuncia della parola in millisecondi
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.Duration">
+            <summary>
+            Durata della pronuncia della parola in millisecondi
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.mOffset">
+            <summary>
+            Offset della parola da inizio dell'intero file audio per il posizionamento della stessa
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.Offset">
+            <summary>
+            Offset della parola da inizio dell'intero file audio per il posizionamento della stessa
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.DurationString">
+            <summary>
+            Restituisce il valore della durata della frase come ore, minuti, secondi e millisecondi
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.OffsetString">
+            <summary>
+            Restituisce la stringa con il valore dell'offset della frase in ore minuti secondi e millisecondi
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.mWord">
+            <summary>
+            Parola riconosciuta
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.Word">
+            <summary>
+            Parola riconosciuta
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.mIDRecognizedTextDetail">
+            <summary>
+            ID Del dettaglio di riconoscimento testo
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.IDRecognizedTextDetail">
+            <summary>
+            ID Del dettaglio di riconoscimento testo
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.mIDRecognizedText">
+            <summary>
+            ID del testo riconosciuto a cui il dettaglio appartiene
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.IDRecognizedText">
+            <summary>
+            ID del testo riconosciuto a cui il dettaglio appartiene
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.Clone">
+            <summary>
+            crea una deep clone dell'istanza corrente
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.CopyTo(ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem)">
+            <summary>
+            Copia i valori della classe corrente in un'altra istanza della classe
+            </summary>
+            <param name="toItem"></param>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.ToJson">
+            <summary>
+            Serializes the current class instance using JSON Format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.FromJson(System.String)">
+            <summary>
+             Deserializes an instance of the RecognizedWordItem class from a JSON String
+            </summary>
+            <param name="jsonData">JSON Serialization of an instance of RecognizedWordItem object</param>
+            <returns></returns>
+        </member>
+        <member name="E:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.PropertyChanged">
+            <summary>
+            Evento generato alla modifica di una property.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordItem.OnPropertyChanged(System.String)">
+            <summary>
+             Evento che viene generato alla modifica di una property
+            </summary>
+             <param name="propertyName">nome della property</param>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordsCollection">
+            <summary>
+             Descrizione della classe: 
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordsCollection.ToJson">
+            <summary>
+            Serializes the current class instance using JSON Format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordsCollection.FromJson(System.String)">
+            <summary>
+             Deserializes an instance of the RecognizedWordsCollection class from a JSON String
+            </summary>
+            <param name="jsonData">JSON Serialization of an instance of RecognizedWordsCollection object</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordsCollection.GetTotalDuration">
+            <summary>
+            Restituisce la durata totale delle parole della frase in millisecondi
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.MediaMgr.RecognizedWordsCollection.GetMinimumOffset">
+            <summary>
+            Restituisce l'offset minimo tra tutte le parole della frase in millisecondi
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.IPrintableElement.NotPrintOnFirstPage">
+             <summary>
+             Indica se stampare solo sulla prima pagina se true non viene stampato da pagina 2 in poi.
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.IPrintableElement.NotPrintOnLastPage">
+             <summary>
+             Indica se stampare solo sull'ultima pagina
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.IPrintableElement.PrintOnlyOnFirstPage">
+             <summary>
+             Indica se stampare solo sulla prima pagina se true non viene stampato da pagina 2 in poi.
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.IPrintableElement.PrintOnlyOnLastPage">
+             <summary>
+             Indica se stampare solo sull'ultima pagina
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Reports.PrnBaseElement">
+            <summary>
+             Classe base per gli elementi di testo (label e fields)
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Reports.PrnBaseElement.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseElement.Alignment">
+             <summary>
+             Allineamento Left=Default, Right, Center
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseElement.Annotations">
+            <summary>
+             Note sul campo non usate in stampa ma per la descrizione di cosa sto guardando nell'XML
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseElement.Bold">
+             <summary>
+             Bold
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseElement.FontColor">
+             <summary>
+             Colore della font
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseElement.FontName">
+             <summary>
+             Font Name
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseElement.FontSize">
+             <summary>
+             Dimensione della font
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseElement.Italic">
+             <summary>
+             Italic
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseElement.NotPrintOnFirstPage">
+             <summary>
+             Indica se stampare solo sulla prima pagina se true non viene stampato da pagina 2 in poi.
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseElement.NotPrintOnLastPage">
+             <summary>
+             Indica se stampare solo sull'ultima pagina
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseElement.PrintOnlyOnFirstPage">
+             <summary>
+             Indica se stampare solo sulla prima pagina se true non viene stampato da pagina 2 in poi.
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseElement.PrintOnlyOnLastPage">
+             <summary>
+             Indica se stampare solo sull'ultima pagina
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseElement.X">
+             <summary>
+             Posizione angolo superiore sinistro (X)
+             Orizzontale
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseElement.XMax">
+             <summary>
+             Posizione angolo superiore Destro (X)
+             Orizzontale
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseElement.Y">
+             <summary>
+             Posizione angolo superiore sinistro
+             Verticale
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Reports.PrnBaseGraph">
+            <summary>
+             Classe base per gli elementi grafici (immagini e rettangoli)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseGraph.Alignment">
+             <summary>
+             Allineamento Left=Default, Right, Center
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseGraph.Annotations">
+            <summary>
+             Note sul campo non usate in stampa ma per la descrizione di cosa sto guardando nell'XML
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseGraph.Height">
+             <summary>
+             Altezza
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseGraph.NotPrintOnFirstPage">
+             <summary>
+             Indica se stampare solo sulla prima pagina se true non viene stampato da pagina 2 in poi.
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseGraph.NotPrintOnLastPage">
+             <summary>
+             Indica se stampare solo sull'ultima pagina
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseGraph.PrintOnlyOnFirstPage">
+             <summary>
+             Indica se stampare solo sulla prima pagina
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseGraph.PrintOnlyOnLastPage">
+            <summary>
+             Indica se stampare solo sull'ultima pagina
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseGraph.Width">
+             <summary>
+             Larghezza
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseGraph.X">
+             <summary>
+             Posizione angolo superiore sinistro (X)
+             Orizzontale
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseGraph.XMax">
+             <summary>
+             Posizione angolo superiore destro (X)
+             Orizzontale
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnBaseGraph.Y">
+             <summary>
+             Posizione angolo superiore sinistro
+             Verticale
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Reports.PrnField">
+            <summary>
+             Dati per stampare un campo (property) di un set di dati
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnField.mFieldName">
+            <summary>
+            Nome del campo
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnField.mStringFormat">
+            <summary>
+            Formato del tostring per numeri e date
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Reports.PrnField.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnField.mPrefix">
+            <summary>
+            Stringa prefisso
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnField.Prefix">
+             <summary>
+             Stringa prefisso
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnField.mSuffix">
+            <summary>
+            Stringa suffisso
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnField.Suffix">
+             <summary>
+             Stringa suffisso
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnField.FieldName">
+             <summary>
+             Nome del campo
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnField.StringFormat">
+             <summary>
+             Formato del tostring per numeri e date
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Reports.PrnFormat">
+            <summary>
+             Formato di stampa per un report (creato per i documenti ma credo sia riusabile)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mCoverFields">
+            <summary>
+            Campi della cover
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mCoverLabels">
+            <summary>
+            Etichette della cover
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mCoverRectangles">
+            <summary>
+            Rettangoli della Cover
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mMargins">
+            <summary>
+            Margini delle pagine, 4 valori separati da virgole con eventuale punto decimale oppure un solo valore per tutti
+            In ordine: Left,Top,Right,Bottom
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mMasterFields">
+            <summary>
+            Campi dello header
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mMasterLabels">
+            <summary>
+            Collezione degli elementi dello Header
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mMasterRectangles">
+            <summary>
+            Lista rettangoli del formato di stampa
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mOrientation">
+            <summary>
+            Orientamento della pagina
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mPageImages">
+            <summary>
+            Lista delle immagini della pagina
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mPageSize">
+            <summary>
+            Page size
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mRowIndex">
+            <summary>
+            Indice della riga corrente in stampa x scorrere le righe
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mRowSets">
+            <summary>
+            Lista dei formati dei vari rowset
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mSummaryFields">
+            <summary>
+            Campi della pagina summary
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mSummaryLabels">
+            <summary>
+            Etichette della pagina summary (fine report)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mSummaryRectangles">
+            <summary>
+            Rettangoli della pagina Summary (fine report)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnFormat.mTotalPages">
+            <summary>
+            Memorizza il numero di pagine da stampare calcolate prima di stampare il documento.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.Annotations">
+            <summary>
+             Note sul Formato non usate in stampa ma per la descrizione di cosa sto guardando nell'XML
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.CoverFields">
+             <summary>
+             Campi della cover
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.CoverLabels">
+            <summary>
+            Etichette della cover
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.CoverRectangles">
+             <summary>
+             Rettangoli della Cover
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.Margins">
+             <summary>
+             Margini delle pagine, 4 valori separati da virgole con eventuale punto decimale oppure un solo valore per tutti
+             In ordine: Left,Top,Right,Bottom
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.MasterFields">
+             <summary>
+             Campi dello header
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.MasterLabels">
+             <summary>
+             Collezione degli elementi dello Header
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.MasterRectangles">
+            <summary>
+            Lista rettangoli del formato di stampa
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.Orientation">
+             <summary>
+             Orientamento della pagina
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.PageImages">
+             <summary>
+             Lista delle immagini della pagina
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.PageSize">
+             <summary>
+             Page size
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.RowIndex">
+             <summary>
+             Indice della riga corrente in stampa x scorrere le righe
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.RowSets">
+             <summary>
+             Lista dei formati dei vari rowset
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.SummaryFields">
+             <summary>
+             Campi della pagina summary
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.SummaryLabels">
+            <summary>
+            Etichette della pagina summary (fine report)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.SummaryRectangles">
+             <summary>
+             Rettangoli della pagina Summary (fine report)
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnFormat.TotalPages">
+             <summary>
+             Memorizza il numero di pagine da stampare calcolate prima di stampare il documento.
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Reports.PrnFormat.ReadXml(System.String,System.Boolean)">
+            <summary>
+             Deserializza una classe PrnFormat da un file o da una stringa XML
+            </summary>
+            <param name="xmlPathData">Nome file xml o stringa classe serializzata</param>
+            <param name="isXmlData">se true xmlPathData contiene una classe altrimenti contiene un Path</param>
+            <returns>Ritorna: Un oggetto di tipo PrnFormat</returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Reports.PrnFormat.WriteXml(System.String,System.Boolean,System.String)">
+            <summary>
+             Serializza la classe PrnFormat su un file in formato XML
+            </summary>
+            <param name="xmlPathDataPath">Path del file da generare</param>
+             <param name="indentOutput">if set to <c>true</c> [p indent output].</param>
+             <param name="newlineCharsOutput">The p newline chars output.</param>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Reports.PrnFormat.WriteXml(System.Boolean,System.String)">
+            <summary>
+             Serializza la classe PrnFormat su una stringa
+            </summary>
+             <param name="indentOutput">if set to <c>true</c> [p indent output].</param>
+             <param name="newlineCharsOutput">The p newline chars output.</param>
+            <returns>Ritorna: l'oggetto PrnFormat serializzato in xml su una stringa</returns>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Reports.PrnImage">
+            <summary>
+             Classe per disegnare un immagine
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnImage.mImageFileName">
+            <summary>
+            Nome del file immagine
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnImage.ImageFileName">
+             <summary>
+             Nome del file immagine
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Reports.PrnLabel">
+            <summary>
+             Classe per una label di testo
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnLabel.mText">
+            <summary>
+            Text
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Reports.PrnLabel.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnLabel.Text">
+             <summary>
+             Text
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Reports.PrnRectangle">
+            <summary>
+             Classe base x gli elementi grafici
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnRectangle.mBorderColor">
+            <summary>
+            Border color
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnRectangle.mFillColor">
+            <summary>
+            Riempimento
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnRectangle.mThickness">
+            <summary>
+            Grossezza
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Reports.PrnRectangle.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRectangle.BorderColor">
+             <summary>
+             Border color
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRectangle.FillColor">
+             <summary>
+             Riempimento
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRectangle.Thickness">
+             <summary>
+             Grossezza
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Reports.PrnRowSet">
+            <summary>
+             Descrizione della classe:
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnRowSet.mIsPrimaryRowset">
+            <summary>
+            Indica che si tratta del Rowset Primario
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnRowSet.mPageRowsNumber">
+            <summary>
+            Numero di righe per pagina
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnRowSet.mRowsFields">
+            <summary>
+            Campi dello Rows
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnRowSet.mRowsLabels">
+            <summary>
+            Collezione degli elementi dello Rows
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnRowSet.mRowsSetName">
+            <summary>
+            Nome del recordset di questa serie di righe
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnRowSet.mYHeight">
+            <summary>
+            Valore dell'altezza riga
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.PrnRowSet.mYStart">
+            <summary>
+            Valore iniziale di Y della riga
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRowSet.Annotations">
+            <summary>
+             Note sul rowset non usate in stampa ma per la descrizione di cosa sto guardando nell'XML
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRowSet.IsPrimaryRowset">
+             <summary>
+             Indica che si tratta del Rowset Primario
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRowSet.NotPrintOnFirstPage">
+             <summary>
+             Indica se stampare solo sulla prima pagina se true non viene stampato da pagina 2 in poi.
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRowSet.NotPrintOnLastPage">
+             <summary>
+             Indica se stampare solo sull'ultima pagina
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRowSet.PageRowsNumber">
+             <summary>
+             Numero di righe per pagina
+             se = 0 stampa tutto il recordset nella pagina
+             Fregandosene se lo spazio non è sufficiente
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRowSet.PrintOnlyOnFirstPage">
+             <summary>
+             Indica se stampare solo sulla prima pagina
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRowSet.PrintOnlyOnLastPage">
+            <summary>
+             Indica se stampare solo sull'ultima pagina
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRowSet.RowsFields">
+             <summary>
+             Campi dello Rows
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRowSet.RowsLabels">
+             <summary>
+             Collezione degli elementi dello Rows
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRowSet.RowsSetName">
+             <summary>
+             Nome del recordset di questa serie di righe
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRowSet.YHeight">
+             <summary>
+             Valore dell'altezza riga
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.PrnRowSet.YStart">
+             <summary>
+             Valore iniziale di Y della riga
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Reports.ReportPrintItem">
+            <summary>
+             Rappresenta un documento letto nel formato necessario al sistema di stampa documenti
+             Dove tutti gli oggetti del documento divengono dei Dynamic ovvero expandoobjects
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.ReportPrintItem.mCover">
+            <summary>
+            Cover dati di copertina del report da stampare sulla prima pagina
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.ReportPrintItem.mIDReportObject">
+            <summary>
+            ID del documento contenuto in questo oggetto di stampa
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.ReportPrintItem.mMaster">
+            <summary>
+            Testata + Footer x la stampa documento
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.ReportPrintItem.mOutputFolder">
+            <summary>
+            Cartella di output delle stampe
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.ReportPrintItem.mOutputFilePrefix">
+            <summary>
+            Prefisso per il nome del file
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.ReportPrintItem.mRowsPrimary">
+            <summary>
+            Collezione delle righe del documento
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.ReportPrintItem.mRowsSecondary">
+            <summary>
+            Collection delle righe dei totali x aliquota iva del documento
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.ReportPrintItem.mRowsTertiary">
+            <summary>
+            Collection delle righe dei pagamenti fatture
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.ReportPrintItem.mSummary">
+            <summary>
+            Pagina finale del report
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Reports.ReportPrintItem.mTotalPages">
+            <summary>
+            Numero di pagine sarà calcolato in base al numero di righe documento e al numero di righe del formato di stampa
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Reports.ReportPrintItem.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.ReportPrintItem.IDReportObject">
+             <summary>
+             ID del documento contenuto in questo oggetto di stampa
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.ReportPrintItem.Master">
+             <summary>
+             Testata x la stampa documento
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.ReportPrintItem.OutputFileName">
+             <summary>
+             Nome del file di output
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.ReportPrintItem.OutputFolder">
+             <summary>
+             Cartella di output delle stampe
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.ReportPrintItem.OutputFilePrefix">
+             <summary>
+             Prefisso per il nome del file
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.ReportPrintItem.RowsPrimary">
+             <summary>
+             Collezione delle righe del documento
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.ReportPrintItem.RowsSecondary">
+             <summary>
+             Collection delle righe dei totali x aliquota iva del documento
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.ReportPrintItem.RowsTertiary">
+             <summary>
+             Collection delle righe dei pagamenti fatture
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Reports.ReportPrintItem.TotalPages">
+             <summary>
+             Numero di pagine sarà calcolato in base al numero di righe documento e al numero di righe del formato di stampa
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.AttributeDefinitionItem">
+            <summary>
+             Elemento della lista degli attributi che poi verranno compilati per l'emissione del documento per BOK
+             Al momento è semplice e mi serve al volo poi la mettiamo su una tabella e generiamo delle liste per
+             gli elementi codificati con ID e descrizione adesso mi serve per produrre automaticamente i dati dal programma
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.AttributeDefinitionItem.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.AttributeDefinitionItem.mAttributeFamily">
+            <summary>
+            Family dell'attributo (corrisponde a IDItemAttributeFamily)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.AttributeDefinitionItem.AttributeFamily">
+             <summary>
+             Family dell'attributo (corrisponde a IDItemAttributeFamily)
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.AttributeDefinitionItem.mAttributeName">
+            <summary>
+            Nome dell'attributo
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.AttributeDefinitionItem.AttributeName">
+             <summary>
+             Nome dell'attributo
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.AttributeDefinitionItem.mEditLabel">
+            <summary>
+            Label da visualizzare quando si inserisce il dato
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.AttributeDefinitionItem.EditLabel">
+             <summary>
+             Label da visualizzare quando si inserisce il dato
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.AttributeDefinitionItem.mEditNotes">
+            <summary>
+            Nota descrittiva dell'attributo
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.AttributeDefinitionItem.EditNotes">
+             <summary>
+             Nota descrittiva dell'attributo
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.AttributeDefinitionItem.ToJson">
+            <summary>
+            Serializes the current class instance using JSON Format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.AttributeDefinitionItem.FromJson(System.String)">
+            <summary>
+             Deserializes an instance of the AttributeDefinitionItem class from a JSON String
+            </summary>
+            <param name="jsonData">JSON Serialization of an instance of AttributeDefinitionItem object</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.AttributeDefinitionItem.ToString">
+            <summary>
+            genera una stringa contenente i dati della classe in formato JSON ai fini del debug
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.AttributeDefinitionsCollection">
+            <summary>
+             Descrizione della classe: 
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.AttributeDefinitionsCollection.Item(System.String)">
+            <summary>
+             
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.AttributeDefinitionsCollection.ToJson">
+            <summary>
+            Serializes the current class instance using JSON Format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.AttributeDefinitionsCollection.FromJson(System.String)">
+            <summary>
+             Deserializes an instance of the AttributeDefinitionsCollection class from a JSON String
+            </summary>
+            <param name="jsonData">JSON Serialization of an instance of AttributeDefinitionsCollection object</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.AttributeDefinitionsCollection.ToString">
+            <summary>
+            genera una stringa contenente i dati della classe in formato JSON ai fini del debug
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.FormattedTextItem">
+            <summary>
+             Descrizione della classe: 
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.FormattedTextItem.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.FormattedTextItem.mText">
+            <summary>
+            Testo
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.FormattedTextItem.Text">
+            <summary>
+            Testo
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.FormattedTextItem.mBackground">
+            <summary>
+            Background
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.FormattedTextItem.Background">
+            <summary>
+            Background
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.FormattedTextItem.mForeground">
+            <summary>
+            foreground
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.FormattedTextItem.Foreground">
+            <summary>
+            foreground
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.FormattedTextItem.mToolTip">
+            <summary>
+            Tooltip che conterrà la confidence
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.FormattedTextItem.ToolTip">
+            <summary>
+            Tooltip che conterrà la confidence
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.FormattedTextItem.ToJson">
+            <summary>
+            Serializes the current class instance using JSON Format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.FormattedTextItem.FromJson(System.String)">
+            <summary>
+             Deserializes an instance of the FormattedTextItem class from a JSON String
+            </summary>
+            <param name="jsonData">JSON Serialization of an instance of FormattedTextItem object</param>
+            <returns></returns>
+        </member>
+        <member name="E:ITSB2B.Speech.Entities.Support.FormattedTextItem.PropertyChanged">
+            <summary>
+            Evento generato alla modifica di una property.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.FormattedTextItem.OnPropertyChanged(System.String)">
+            <summary>
+             Evento che viene generato alla modifica di una property
+            </summary>
+             <param name="propertyName">nome della property</param>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.FormattedTextsCollection">
+            <summary>
+             Descrizione della classe: 
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.FormattedTextsCollection.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.FormattedTextsCollection.ToJson">
+            <summary>
+            Serializes the current class instance using JSON Format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.FormattedTextsCollection.FromJson(System.String)">
+            <summary>
+             Deserializes an instance of the FormattedTextsCollection class from a JSON String
+            </summary>
+            <param name="jsonData">JSON Serialization of an instance of FormattedTextsCollection object</param>
+            <returns></returns>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.HtmlGenHelper">
+            <summary>
+             Descrizione della classe: 
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.MediaFileDataItem">
+            <summary>
+             Descrizione della classe: 
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.MediaFileDataItem.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.MediaFileDataItem.mNumberRecognizedTexts">
+            <summary>
+            Indica quante righe di traduzione contiene già il media file
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.MediaFileDataItem.NumberRecognizedTexts">
+            <summary>
+            Indica quante righe di traduzione contiene già il media file
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.MediaFileDataItem.mMediaFile">
+            <summary>
+            Media File elaborato in questo contenitore di dati
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.MediaFileDataItem.MediaFile">
+            <summary>
+            Media File elaborato in questo contenitore di dati
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.MediaFileDataItem.mRecognizedTexts">
+            <summary>
+            Lista delle frasi riconosciute dallo speech to text per questo media file
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.MediaFileDataItem.RecognizedTexts">
+            <summary>
+            Lista delle frasi riconosciute dallo speech to text per questo media file
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.MediaFileDataItem.mRecognizedDetails">
+            <summary>
+            Lista delle righe di dettaglio di ognuna delle frasi riconosciute
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.MediaFileDataItem.RecognizedDetails">
+            <summary>
+            Lista delle righe di dettaglio di ognuna delle frasi riconosciute
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.MediaFileDataItem.mRecognizedWords">
+            <summary>
+            Lista delle parole di tutte le frasi, usando IDRecognizedTextDetail si filtra x frase.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.MediaFileDataItem.RecognizedWords">
+            <summary>
+            Lista delle parole di tutte le frasi, usando IDRecognizedTextDetail si filtra x frase.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.MediaFileDataItem.ToJson">
+            <summary>
+            Serializes the current class instance using JSON Format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.MediaFileDataItem.FromJson(System.String)">
+            <summary>
+             Deserializes an instance of the MediaFileDataItem class from a JSON String
+            </summary>
+            <param name="jsonData">JSON Serialization of an instance of MediaFileDataItem object</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.MediaFileDataItem.ToString">
+            <summary>
+            Genera una stringa con il contenuto dell'oggetto in formato JSON
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.MediaFileDataItem.Clone">
+            <summary>
+            Deep clone dell'oggetto
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.MediaFileDataItem.CopyTo(ITSB2B.Speech.Entities.Support.MediaFileDataItem)">
+            <summary>
+            Deep copy dell'oggetto
+            </summary>
+            <param name="toItem"></param>
+        </member>
+        <member name="E:ITSB2B.Speech.Entities.Support.MediaFileDataItem.PropertyChanged">
+            <summary>
+            Evento generato alla modifica di una property.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.MediaFileDataItem.OnPropertyChanged(System.String)">
+            <summary>
+             Evento che viene generato alla modifica di una property
+            </summary>
+             <param name="propertyName">nome della property</param>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.ParBokInfoDataItem">
+            <summary>
+             Classe contenente lo schema del file ParbokInfo generato da MIKE per fornire i dati necessari alla generazione del documento
+             Per ora questa classe è duplicata in BOK perchè non posso incrostare le librerie di MIKE in questa soluzione
+             Se modifichiamo qui dobbiamo riportare le modifiche in BOK!!!
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.ParBokInfoDataItem.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.ParBokInfoDataItem.mParBokInfos">
+            <summary>
+            Lista degli attributi ParBok per il documento da generare
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.ParBokInfoDataItem.ParBokInfos">
+             <summary>
+             Lista degli attributi ParBok per il documento da generare
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.ParBokInfoDataItem.mPdfFile">
+            <summary>
+            Nome del file PDF
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.ParBokInfoDataItem.PdfFile">
+            <summary>
+            Nome del file PDF
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.ParBokInfoDataItem.mDocumentBlocksDataFile">
+            <summary>
+            File contenente i dati dei blocks elaborati da mike
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.ParBokInfoDataItem.DocumentBlocksDataFile">
+             <summary>
+             File contenente i dati dei blocks elaborati da mike
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.ParBokInfoDataItem.ToJson">
+            <summary>
+            Serializes the current class instance using JSON Format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.ParBokInfoDataItem.FromJson(System.String)">
+            <summary>
+             Deserializes an instance of the ParBokInfoDataItem class from a JSON String
+            </summary>
+            <param name="jsonData">JSON Serialization of an instance of ParBokInfoDataItem object</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.ParBokInfoDataItem.ToString">
+            <summary>
+            genera una stringa contenente i dati della classe in formato JSON ai fini del debug
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.ParBokInfoItem">
+            <summary>
+             Contiene informazioni che poi vanno inserite nel ParBok ma usiamo una classe locale
+             per evitare di incrostarci con reference a cose che non è il caso siano incrostate
+             in modo che questa utility rimanga neutra e abbia semplicemente un modulo di interfaccia verso BOK
+             che emette le informazioni necessarie a generare un documento o un artifact dalla trascrizione di un testo
+             e volendo anche la sua traduzione.
+             Classe contenente lo schema del file ParbokInfo generato da MIKE per fornire i dati necessari alla generazione del documento
+             ATTENZIONE!!! La libreria entities è referenziata in BOK Services e quindi non può avere riferimenti a BOK
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.ParBokInfoItem.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.ParBokInfoItem.mAttributeName">
+            <summary>
+            Nome dell'Attributo (dovrà poi corrispondere ad un attributo di BOK)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.ParBokInfoItem.AttributeName">
+             <summary>
+             Nome dell'Attributo (dovrà poi corrispondere ad un attributo di BOK)
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.ParBokInfoItem.mAttributeFamily">
+            <summary>
+            ID della family dell'attributo (BasicData o ParBok o KemData) le ParBokActions per ora non le metto
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.ParBokInfoItem.AttributeFamily">
+            <summary>
+            ID della family dell'attributo (BasicData o ParBok o KemData) le ParBokActions per ora non le metto
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.ParBokInfoItem.mAttributeValue">
+            <summary>
+            Valore dell'attributo in formato stringa
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.ParBokInfoItem.AttributeValue">
+             <summary>
+             Valore dell'attributo in formato stringa
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.ParBokInfoItem.mAttributeNotes">
+            <summary>
+            Annotazioni
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.ParBokInfoItem.AttributeNotes">
+             <summary>
+             Annotazioni
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.ParBokInfoItem.ToJson">
+            <summary>
+            Serializes the current class instance using JSON Format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.ParBokInfoItem.FromJson(System.String)">
+            <summary>
+             Deserializes an instance of the ParBokInfoItem class from a JSON String
+            </summary>
+            <param name="jsonData">JSON Serialization of an instance of ParBokInfoItem object</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.ParBokInfoItem.ToString">
+            <summary>
+            genera una stringa contenente i dati della classe in formato JSON ai fini del debug
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.RecognizedTextDataItem">
+            <summary>
+             Descrizione della classe: 
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.RecognizedTextDataItem.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.RecognizedTextDataItem.mDetails">
+            <summary>
+            Lista dei dettagli della frase
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.RecognizedTextDataItem.Details">
+            <summary>
+            Lista dei dettagli della frase
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.RecognizedTextDataItem.mFormattedTexts">
+            <summary>
+            Collection formattata per visualizzare le parole colorate in base alla confidence
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.RecognizedTextDataItem.FormattedTexts">
+            <summary>
+            Collection formattata per visualizzare le parole colorate in base alla confidence
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.RecognizedTextDataItem.SetFormattedTexts">
+            <summary>
+            Aggiorna i testi formattati partendo dal JSON memorizzato su RecognizedTextFormatted nel DB
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.RecognizedTextDetailDataItem">
+            <summary>
+             Descrizione della classe: 
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.RecognizedTextDetailDataItem.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.RecognizedTextDetailDataItem.mWords">
+            <summary>
+            Lista delle parole di questo dettaglio frase
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.RecognizedTextDetailDataItem.Words">
+            <summary>
+            Lista delle parole di questo dettaglio frase
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.RecognizedTextDetailDataItem.ToJson">
+            <summary>
+            Serializes the current class instance using JSON Format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.RecognizedTextDetailDataItem.FromJson(System.String)">
+            <summary>
+             Deserializes an instance of the RecognizedTextDetailDataItem class from a JSON String
+            </summary>
+            <param name="jsonData">JSON Serialization of an instance of RecognizedTextDetailDataItem object</param>
+            <returns></returns>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.SpeechLanguageItem">
+            <summary>
+             Descrizione della classe: 
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechLanguageItem.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.SpeechLanguageItem.mCode">
+            <summary>
+            Language code
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechLanguageItem.Code">
+            <summary>
+            Language code
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.SpeechLanguageItem.mDescription">
+            <summary>
+            Language description
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechLanguageItem.Description">
+            <summary>
+            Language description
+            </summary>
+        </member>
+        <member name="E:ITSB2B.Speech.Entities.Support.SpeechLanguageItem.PropertyChanged">
+            <summary>
+            Evento generato alla modifica di una property.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechLanguageItem.OnPropertyChanged(System.String)">
+            <summary>
+             Evento che viene generato alla modifica di una property
+            </summary>
+             <param name="propertyName">nome della property</param>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.SpeechPhraseItem">
+            <summary>
+             Descrizione della classe: 
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.SpeechPhraseItem.mPhrase">
+            <summary>
+            La frase devo fare una classe per poter gestire la datagrid e il salvataggio
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechPhraseItem.Phrase">
+             <summary>
+             La frase devo fare una classe per poter gestire la datagrid e il salvataggio
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="E:ITSB2B.Speech.Entities.Support.SpeechPhraseItem.PropertyChanged">
+            <summary>
+            Evento generato alla modifica di una property.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechPhraseItem.OnPropertyChanged(System.String)">
+            <summary>
+             Evento che viene generato alla modifica di una property
+            </summary>
+             <param name="propertyName">nome della property</param>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.SpeechPhrasesCollection">
+            <summary>
+             Descrizione della classe: 
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechPhrasesCollection.Item(System.String)">
+            <summary>
+             Indexer per poter verificare se una KeyPhrase esiste
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechPhrasesCollection.ToString">
+            <summary>
+            Genera una stringa contenente tutti gli elementi di questa collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechPhrasesCollection.WriteXml(System.String,System.Boolean,System.String)">
+            <summary>
+             Serializza la classe SpeechSnippetsCollection su un file in formato XML
+             </summary>
+             <param name="xmlPath">Path del file da generare</param>
+             <param name="indentOutput">if set to <c>true</c> [p indent output].</param>
+             <param name="newlineCharsOutput">The p newline chars output.</param>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechPhrasesCollection.WriteXml(System.Boolean,System.String)">
+            <summary>
+             Serializza la classe SpeechSnippetsCollection su una stringa
+             </summary>
+             <param name="indentOutput">if set to <c>true</c> [p indent output].</param>
+             <param name="newlineCharsOutput">The p newline chars output.</param>
+            <returns>Ritorna: l'oggetto SpeechSnippetsCollection serializzato in xml su una stringa</returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechPhrasesCollection.ReadXml(System.String,System.Boolean)">
+            <summary>
+             Deserializza una classe SpeechSnippetsCollection da un file o da una stringa XML
+            </summary>
+            <param name="pXml">Nome file xml o stringa classe serializzata</param>
+            <param name="pIsXmlData">se true pXml contiene una classe altrimenti contiene un Path</param>
+            <returns>Ritorna: Un oggetto di tipo SpeechSnippetsCollection</returns>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechPhrasesCollection.ToSeparatedList(System.String)">
+            <summary>
+            Crea una stringa per copiare tutte le frasi in clipboard
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.SpeechSnippetItem">
+            <summary>
+             Descrizione della classe: 
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechSnippetItem.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.SpeechSnippetItem.mDescription">
+            <summary>
+            Descrizione dello snippet SSML
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechSnippetItem.Description">
+            <summary>
+            Descrizione dello snippet SSML
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.SpeechSnippetItem.mName">
+            <summary>
+            Nome dello snippet (breve)
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechSnippetItem.Name">
+            <summary>
+            Nome dello snippet (breve)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.SpeechSnippetItem.mSnippet">
+            <summary>
+            Snippet che verrà copiato sul testo
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechSnippetItem.Snippet">
+            <summary>
+            Snippet che verrà copiato sul testo
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.SpeechSnippetItem.mSamples">
+            <summary>
+            Esempi di uso dello snippet
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechSnippetItem.Samples">
+            <summary>
+            Esempi di uso dello snippet
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechSnippetItem.SnippetCData">
+            <summary>
+            Genera o legge la versione CData dello snippet.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechSnippetItem.SamplesCData">
+            <summary>
+            Genera o legge la versione CData dello snippet.
+            </summary>
+        </member>
+        <member name="E:ITSB2B.Speech.Entities.Support.SpeechSnippetItem.PropertyChanged">
+            <summary>
+            Evento generato alla modifica di una property.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechSnippetItem.OnPropertyChanged(System.String)">
+            <summary>
+             Evento che viene generato alla modifica di una property
+            </summary>
+             <param name="propertyName">nome della property</param>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.SpeechSnippetsCollection">
+            <summary>
+             Descrizione della classe: 
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechSnippetsCollection.Item(System.String)">
+            <summary>
+            Indexer per poter richiedere un elemento x nome
+            </summary>
+            <param name="name">Nome dell'elemento della collection</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechSnippetsCollection.ToString">
+            <summary>
+            Genera una stringa contenente tutti gli elementi di questa collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechSnippetsCollection.WriteXml(System.String,System.Boolean,System.String)">
+            <summary>
+             Serializza la classe SpeechSnippetsCollection su un file in formato XML
+             </summary>
+             <param name="xmlPath">Path del file da generare</param>
+             <param name="indentOutput">if set to <c>true</c> [p indent output].</param>
+             <param name="newlineCharsOutput">The p newline chars output.</param>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechSnippetsCollection.WriteXml(System.Boolean,System.String)">
+            <summary>
+             Serializza la classe SpeechSnippetsCollection su una stringa
+             </summary>
+             <param name="indentOutput">if set to <c>true</c> [p indent output].</param>
+             <param name="newlineCharsOutput">The p newline chars output.</param>
+            <returns>Ritorna: l'oggetto SpeechSnippetsCollection serializzato in xml su una stringa</returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechSnippetsCollection.ReadXml(System.String,System.Boolean)">
+            <summary>
+             Deserializza una classe SpeechSnippetsCollection da un file o da una stringa XML
+            </summary>
+            <param name="pXml">Nome file xml o stringa classe serializzata</param>
+            <param name="pIsXmlData">se true pXml contiene una classe altrimenti contiene un Path</param>
+            <returns>Ritorna: Un oggetto di tipo SpeechSnippetsCollection</returns>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.SpeechToTextStatusData.mRecognizingText">
+            <summary>
+            Recognizing Text testo della frase in corso di costruzione
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechToTextStatusData.RecognizingText">
+            <summary>
+            Recognizing Text testo della frase in corso di costruzione
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.SpeechToTextStatusData.mRecognizedText">
+            <summary>
+            Testo riconosciuto delle frasi intere
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechToTextStatusData.RecognizedText">
+            <summary>
+            Testo riconosciuto delle frasi intere
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.SpeechToTextStatusData.mRecognizedDataText">
+            <summary>
+            Testo delle frasi riconosciute
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechToTextStatusData.RecognizedDataText">
+            <summary>
+            Testo delle frasi riconosciute
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.SpeechToTextStatusData.mRecognizedDetailsText">
+            <summary>
+            Dettagli riconosciuti con dati delle frasi e delle parole
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechToTextStatusData.RecognizedDetailsText">
+            <summary>
+            Dettagli riconosciuti con dati delle frasi e delle parole
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.SpeechToTextStatusData.mResultText">
+            <summary>
+            Dati di log delle operazioni effettuate
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechToTextStatusData.ResultText">
+            <summary>
+            Dati di log delle operazioni effettuate
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechToTextStatusData.ToJson">
+            <summary>
+            Serializes the current class instance using JSON Format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechToTextStatusData.FromJson(System.String)">
+            <summary>
+             Deserializes an instance of the SpeechToTextStatusData class from a JSON String
+            </summary>
+            <param name="jsonData">JSON Serialization of an instance of SpeechToTextStatusData object</param>
+            <returns></returns>
+        </member>
+        <member name="E:ITSB2B.Speech.Entities.Support.SpeechToTextStatusData.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechToTextStatusData.OnPropertyChanged(System.String)">
+            <summary>
+            Called when [property changed].
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="T:ITSB2B.Speech.Entities.Support.SpeechVoiceItem">
+            <summary>
+             Descrizione della classe: 
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechVoiceItem.#ctor">
+            <summary>
+             Costruttore
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.SpeechVoiceItem.mName">
+            <summary>
+            Voice Code name
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechVoiceItem.Name">
+            <summary>
+            Voice Code name
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Speech.Entities.Support.SpeechVoiceItem.mDescription">
+            <summary>
+            Descrizione della voce
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Speech.Entities.Support.SpeechVoiceItem.Description">
+            <summary>
+            Descrizione della voce
+            </summary>
+        </member>
+        <member name="E:ITSB2B.Speech.Entities.Support.SpeechVoiceItem.PropertyChanged">
+            <summary>
+            Evento generato alla modifica di una property.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Speech.Entities.Support.SpeechVoiceItem.OnPropertyChanged(System.String)">
+            <summary>
+             Evento che viene generato alla modifica di una property
+            </summary>
+             <param name="propertyName">nome della property</param>
+        </member>
+    </members>
+</doc>

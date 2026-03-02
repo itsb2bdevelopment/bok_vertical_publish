@@ -1,0 +1,57 @@
+@import 'ITSB2B.BOK.BokWeb.Client.bundle.scp.css';
+@import '_content/ITSB2B.BOK.BokWeb/ITSB2B.BOK.BokWeb.bundle.scp.css';
+
+/* _content/ITSB2B.NEOS.BokWeb/Components/Layout/MainLayoutCustom.razor.rz.scp.css */
+.page[b-z2k9ho9j0m] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-z2k9ho9j0m] {
+    flex: 1;
+}
+
+#UserMenu[b-z2k9ho9j0m] {
+    position:fixed;
+    top: 19px;
+    right: 27px;
+    font-size: 20px;
+    color: #fff !important;
+}
+
+@media (min-width: 641px) {
+    .page[b-z2k9ho9j0m] {
+        flex-direction: row;
+    }
+
+    #navmenu[b-z2k9ho9j0m] {
+        width: 300px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+}
+/* _content/ITSB2B.NEOS.BokWeb/Components/Layout/NavMenuCustom.razor.rz.scp.css */
+/* _content/ITSB2B.NEOS.BokWeb/Components/Pages/Custom.razor.rz.scp.css */
+#gridContent[b-k2cyadkbda]{
+    margin-top: 130px;
+    padding: 12px;
+}
+/* _content/ITSB2B.NEOS.BokWeb/Components/Pages/Login.razor.rz.scp.css */
+.config[b-0hqvetqd8p] {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+/* _content/ITSB2B.NEOS.BokWeb/Components/Pages/SmallGridDocuments.razor.rz.scp.css */
+.power-search[b-1zt6s49qux] {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.skeletonRectangle[b-1zt6s49qux]{
+    border: 2px solid #fff;
+}

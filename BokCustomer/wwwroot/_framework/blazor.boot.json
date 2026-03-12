@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "ITSB2B.BOK.BokWeb.Client",
   "resources": {
-    "hash": "sha256-7QZPpTWsqk4a0jle+NV5AnvQvWiLqh7g7yDUyyrioso=",
+    "hash": "sha256-X0WKsEotZOcG7se3BLodHdoJwbk4W2lNnP28n92P04k=",
     "jsModuleNative": {
       "dotnet.native.8.0.24.ws7ii888fb.js": "sha256-4g0GzvOXSwZvTLca4PrWJkoeltz+V9IF/hEFDcnVros="
     },
@@ -17,10 +17,10 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "ITSB2B.Base.Core.wasm": "sha256-tCANhYGjSU+DPVRC46TkoS8vrbDao3HGcN3lhkksa+g=",
-      "ITSB2B.BOK.BokWeb.Client.wasm": "sha256-1L2uE+AyX9jH8V0H6yEyGB5zHcZBTaVWbqTI4MzR0Tc=",
-      "ITSB2B.Items.Attributes.Entities.wasm": "sha256-Lw0s8/yJlBp3rRMJUjijGJwZ/zPmLZApQaJQOWeKYvk=",
-      "ITSB2B.Syncfusion.Licensing.wasm": "sha256-YWexBTf+8cNxOG9c5CSzgTzv/g7V83YXsYxHwwJD778=",
+      "ITSB2B.Base.Core.wasm": "sha256-slyiFjiH1c4H/UDvQUBf0PreEDrOX23kxf/aULdspso=",
+      "ITSB2B.BOK.BokWeb.Client.wasm": "sha256-/IywP4LAkqMSVY5L5f3+om1eWPTtbTxN6oZa906Jdnc=",
+      "ITSB2B.Items.Attributes.Entities.wasm": "sha256-V2s/tBJImop2+68/20RVcVjpE8fMVEyLKtI2TTEl9QM=",
+      "ITSB2B.Syncfusion.Licensing.wasm": "sha256-NGGiFFhvuB9eT29UNFhLBTY5OPPygHZ3atKeIeXuJqY=",
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-zOo+1SCJbjggnxADQ1oY2k2DR8GNT0IWGKk7oSLRkWU=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-TdutN4Uhn8NTjXhl+ZjP9z0zPR/w7zRr8qLs8vU+Zqs=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-/JPC43Ejbp9VrzP8aNNyxk6KRf6w88bQpPMsL71i3t0=",
@@ -125,7 +125,7 @@
     },
     "satelliteResources": {
       "it": {
-        "ITSB2B.Base.Core.resources.wasm": "sha256-vpkQaBOZBTB9L+JKtYlNpUjiafEl1cy78/IAPs1xg6c="
+        "ITSB2B.Base.Core.resources.wasm": "sha256-JulbNVrcPx09Nv2yyViZfbSgHb/Y8aO5YPehqt6AXXw="
       }
     }
   },

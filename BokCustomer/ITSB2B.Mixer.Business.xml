@@ -871,6 +871,9 @@
             Classe Business base autogenerata per tutte le tabelle del gruppo collegato
             </summary>
             <summary>
+            Classe Business base autogenerata per tutte le tabelle del gruppo collegato
+            </summary>
+            <summary>
             Classe Business autogenerata per il record della tabella DocEditorAreas
             </summary>
             <summary>
@@ -903,6 +906,38 @@
             <summary>
             Data provider da utilizzare per le chiamate dati della Tabella DocEditorQueues
             </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Business.Agents.BzEditorsMgr.mDpSettings">
+            <summary>
+            Settaggio db e chiamate api esterne
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Business.Agents.BzEditorsMgr.DbSettings">
+             <summary>
+             Settaggio db e chiamate api esterne
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:ITSB2B.Mixer.Business.Agents.BzEditorsMgr.mApiContext">
+            <summary>
+            API Context
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Business.Agents.BzEditorsMgr.ApiContext">
+             <summary>
+             API Context
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:ITSB2B.Mixer.Business.Agents.BzEditorsMgr.#ctor(ITSB2B.Base.Entities.Dp.DpBaseParameters,ITSB2B.Mixer.Context.NsDbSettingsManager,ITSB2B.Mixer.Context.ApiContext)">
+            <summary>
+            Construttore completo di Dp e altri settings
+            </summary>
+            <param name="dpParams"></param>
+            <param name="dbSettings"></param>
+            <param name="apiContext"></param>
         </member>
         <member name="M:ITSB2B.Mixer.Business.Agents.BzEditorsMgr.DocEditorAreas_Delete(System.Int32)">
             <summary>
@@ -985,6 +1020,18 @@
             <summary>
             Restituisce una lista di id dei record della tabella DocEditorQueues che risponde ai filtri impostati
             </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.Business.Agents.BzEditorsMgr.ExecuteQueues(System.Collections.Generic.List{ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem})">
+            <summary>
+            Esegui la queue
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.Business.Agents.BzEditorsMgr.ExecuteSingleQueueRow(ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem)">
+            <summary>
+            Esegue una singola riga della queue di DocEditor
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
         </member>
         <member name="M:ITSB2B.Mixer.Business.Agents.BzEditorsMgr.DocEditors_Delete(System.String)">
             <summary>
@@ -1315,15 +1362,6 @@
             <param name="doOntological"></param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.DocBlockElements_WordCount(ITSB2B.Mixer.Entities.Blocks.WordCountFilterItem)">
-            <summary>
-            Conta il numero di parole degli elements
-            è già stata eliminata torna un dato vuoto non può essere eseguita
-            sulle tabelle FTS che non esistono più
-            </summary>
-            <param name="filters"></param>
-            <returns></returns>
-        </member>
         <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.DocBlocks_DocumentHasElements(System.Int32)">
             <summary>
             Verifica se un documento contiene elements
@@ -1354,24 +1392,37 @@
             <param name="filters">Filtro con la lista documenti da usare</param>
             <returns>Ritorna una lista di dynamic che contengono IDDoc e IDDocBlockElement del documento.</returns>
         </member>
-        <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.DocBlockElements_RenumberDefaultHierarchy(System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},ITSB2B.Mixer.Entities.Docs.DocItem,System.Boolean)">
+        <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.DocBlockElements_RenumberDefaultHierarchy(ITSB2B.Mixer.Entities.Docs.DocItem)">
             <summary>
             Renumbers the default hierarchy.
             
             </summary>
         </member>
-        <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.DocBlockElements_RenumberAllDocumentsHierarchy(System.String)">
+        <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.DocBlockElements_RenumberElementsListHierarchy(ITSB2B.Mixer.Entities.Blocks.DocBlockElementsCollection,System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},System.Int32,System.String)">
             <summary>
-            Rinumera la gerarchia dei blocchi
+            Ricostruzione della gerarchia per una lista di elements ordinati arbitrariamente via AI
+            Usato nel mixer.
             </summary>
-            <param name="idTree"></param>
+            <param name="allElements">Lista degli Elements</param>
+            <param name="orderedElements">Lista degli Elements ordinati</param>
+            <param name="pageNumber">Numero della pagina</param>
+            <param name="pageFormat">Formato della pagina</param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.DocBlockElements_GetParents(System.Collections.Generic.List{System.Int32})">
+        <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.DocBlockElements_RebuildHierarchyForAllDocs(System.Int32,System.Int32,System.Int32)">
             <summary>
-            Restituisce la lista dei Parent di una lista di Doc Block Elements
+            Ricostruzione della hierarchy per batch di tutti o dei documenti con ID maggiore di un certo valore
             </summary>
-            <param name="idElementsFilter">Lista degli elements di cui cercare i parent</param>
+            <param name="startFromIDDoc">Documento a cui partire 0= il primo</param>
+            <param name="endAtIDDoc">ID del documento a cui finire, default=0 per processare tutti i documenti con ID maggiore di startFromIDDoc</param>
+            <param name="batchSize">Dimensione del batch (determina quanti documenti alla volta sono processati)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.DocBlockElements_Select_by_IDDoc(System.Int32)">
+            <summary>
+            Lista di tutti gli elements di un documento senza alcun filtro specifico
+            </summary>
+            <param name="idDoc">ID Del documento</param>
             <returns></returns>
         </member>
         <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.DocBlockElements_Select_W_ACL(ITSB2B.Mixer.Entities.Blocks.DocBlockElementFilterItem)">
@@ -1396,26 +1447,6 @@
             </summary>
             <param name="idDocs">Lista degli ID Documenti</param>
             <returns></returns>
-        </member>
-        <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.DocBlockElements_SetFtsRanking_FtsResultAdditionalRows(System.Collections.Generic.List{ITSB2B.Mixer.Entities.FullText.FullTextResultItem},System.Collections.Generic.List{ITSB2B.Mixer.Entities.FullText.FullTextResultItem})">
-            <summary>
-            Data la lista delle righe rese dalla FulltextSearch per una query e
-            la lista degli Element Parent non compresi nella query ma collegati alle righe
-            di Internal Knowledge, copiamo dalla riga Fulltext nella riga parent i dati
-            di language e ranking usando la riga con il Max rank.
-            </summary>
-            <param name="ftsElements"></param>
-            <param name="additionalElements"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.GenerateElementsFromBlocks(ITSB2B.Mixer.Entities.Docs.DocItem,System.String)">
-            <summary>
-            Genera gli elements per una collection di blocks
-            così da poterla chiamare sia per alcuni che per tutti i blocks
-            sia manualmente che nella flash action
-            </summary>
-            <returns>True = Ok false + Errore in caso</returns>
-            
         </member>
         <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.DocBlockElements_Link_Texts_To_Images(System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem})">
             <summary>
@@ -1445,21 +1476,6 @@
             </summary>
             <param name="idElementsFilter">Lista degli elements di cui restituire gli elementi collegati</param>
             <returns>Lista degli ID degli elements richiesti più gli elements a loro collegati </returns>
-        </member>
-        <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.DocBlockElements_RenumberElementsListHierarchy(System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},System.Int32,System.String)">
-            <summary>
-            Renumbers the hierarchy of document block elements in the specified lists.
-            </summary>
-            <remarks>This method processes the provided lists of document block elements to renumber them according to
-            the specified hierarchy and order. It logs any exceptions encountered during the operation and returns an error
-            result in such cases.</remarks>
-            <param name="allElements">A list of all document block elements. This list represents the complete set of elements to be processed.</param>
-            <param name="orderedElements">A list of document block elements in the desired order. This list determines the hierarchy and order for
-            renumbering.</param>
-            <param name="pageNumber">The page number to associate with the renumbered elements. Must be a positive integer.</param>
-            <param name="pageFormat">The format string for the page number, which determines how the page number is displayed (e.g., "Page {0}").</param>
-            <returns>A <see cref="T:ITSB2B.Base.Entities.Result`1"/> object containing a boolean value that indicates whether the renumbering operation was
-            successful.</returns>
         </member>
         <member name="M:ITSB2B.Mixer.Business.Blocks.BzDocBlocksMgr.DocBlockElements_Select_By_IDDoc(System.Int32)">
             <summary>
@@ -2547,6 +2563,12 @@
             </summary>
             <param name="idTree">ID tree</param>
             <returns>Lista contenente una collection con i 3 valori MinID, MaxID, Count</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Business.Docs.BzDocsMgr.Docs_Select_GlobalInfo">
+            <summary>
+            Calcolo minimo e massimo ID nonché numero documenti presenti nel database.
+            </summary>
+            <returns>Item con MinID, MaxID, Count</returns>
         </member>
         <member name="M:ITSB2B.Mixer.Business.Docs.BzDocsMgr.Docs_Select1_By_FileHash(System.String)">
             <summary>
@@ -5018,7 +5040,7 @@
             </summary>
             <param name="theDoc">Documento</param>
             <param name="rootsData">Dati di Roots 2.0</param>
-            <param name="dataFile">File PDF originale</param>
+            <param name="pdfFile">File PDF originale</param>
             <returns></returns>
         </member>
         <member name="M:ITSB2B.Mixer.Business.Roots.BzRoots.SaveElementsGeneratedFromRoots(ITSB2B.Mixer.Entities.Docs.DocItem,System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem})">
@@ -5143,10 +5165,11 @@
             <param name="context"></param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.Business.Search.BzSearch.ExtractElements(System.Collections.Generic.List{ITSB2B.Mixer.Entities.Search.SearchChunkItem},System.Collections.Generic.List{System.Int32})">
+        <member name="M:ITSB2B.Mixer.Business.Search.BzSearch.ExtractElements(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{ITSB2B.Mixer.Entities.Search.SearchChunkItem},System.Collections.Generic.List{System.Int32})">
             <summary>
             Ricava elements da dal chunk. A seconda del parametro addReferencesBlocks mostra o meno i riferimenti all'element nel testo
             </summary>
+            <param name="idDocs"></param>
             <param name="chunks"></param>
             <param name="idsElement"></param>
             <returns></returns>
@@ -8310,6 +8333,9 @@
             <summary>
              Descrizione della classe: 
             </summary>
+            <summary>
+             Metodi per la gestione di file firmati PKCS#7 (.p7m).
+            </summary>
         </member>
         <member name="M:ITSB2B.Mixer.Helpers.PdfHelper.SplitPdf(ITSB2B.Mixer.Entities.ParBok.PdfSplitInfoItem)">
             <summary>
@@ -8418,6 +8444,34 @@
             <param name="idDataFile"></param>
             <param name="kemInputFolder"></param>
             <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Helpers.PdfHelper.PdfExtractFromP7mFile(System.String,System.Boolean)">
+            <summary>
+            Estrae il PDF incorporato in un file .p7m.
+            </summary>
+            <param name="p7mFile">Percorso del file .p7m.</param>
+            <param name="ensurePdfContent">Verifica che il contenuto estratto abbia intestazione PDF.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.Helpers.PdfHelper.PdfExtractFromP7mData(System.Byte[],System.Boolean)">
+            <summary>
+            Estrae il PDF incorporato in un payload .p7m.
+            </summary>
+            <param name="p7mContent">Byte del file .p7m.</param>
+            <param name="ensurePdfContent">Verifica che il contenuto estratto abbia intestazione PDF.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.Helpers.PdfHelper.VerifyP7mSignatureFromFile(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Verifica firma e certificato del .p7m e del timestamp, se presente.
+            </summary>
+            <param name="p7mFile">Percorso del file .p7m.</param>
+            <param name="validAt">Data/ora alla quale verificare la validità; se nulla usa DateTime.UtcNow.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.Helpers.PdfHelper.VerifyP7mSignatureFromData(System.Byte[],System.Nullable{System.DateTime})">
+            <summary>
+            Verifica firma e certificato del payload .p7m e del timestamp, se presente.
+            </summary>
+            <param name="p7mContent">Byte del file .p7m.</param>
+            <param name="validAt">Data/ora alla quale verificare la validità; se nulla usa DateTime.UtcNow.</param>
         </member>
         <member name="T:ITSB2B.Mixer.Helpers.SyfPdfExtractionHelper">
             <summary>
@@ -9069,6 +9123,39 @@
             <param name="jDItem">Mappe contenente tutti i documenti e allegati elaborati da un JSON</param>
             <returns></returns>
         </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.DetectMsgAndEmlMalformed(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem)">
+            <summary>
+            Metodo che controlla usando un detector binario se i file con estensione .msg o .eml
+            sono veramente dei file di posta elettronica e se sono correttamente formati
+            </summary>
+            <param name="jMapper">Oggettone con i dati elaborati</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.WriteErrorFile(System.String,System.String,ITSB2B.Base.BaseError)">
+            <summary>
+            Scriviamo un file di errore nella cartella di output in caso di errore
+            durante il processing dei documenti componenti in modo che il processore ParBok
+            non prenda in considerazione questa cartella quando passa di li.
+            </summary>
+            <param name="folderName">Cartella di output processore MG2 argonaut</param>
+            <param name="bokID">ID Bok x il nome file</param>
+            <param name="error">Errore che si è verificato</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.CheckDocumentExistenceInBok(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem,ITSB2B.Base.Entities.Dp.DpBaseParameters)">
+            <summary>
+            Controlla l'esistenza di tutti i documenti presenti nel JsonOutputMapperItem in BOK usando un detector basato su hash, id e nome file.
+            </summary>
+            <param name="jMapper">Mapper dei file da controllare</param>
+            <param name="dpParams">Parametri di connessione a database</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.EvaluateStatus(ITSB2B.Base.Entities.Result{System.Collections.Generic.List{System.ValueTuple{System.Int32,System.Boolean,System.Boolean,System.Boolean}}},System.String)">
+            <summary>
+            Genera lo status per un file da importare in BOK
+            </summary>
+            <param name="existResult">Risultato della ricerca del file con i parametri base dello stesso</param>
+            <param name="contextForLog">Contesto per il log</param>
+            <returns>Status del file in BOK</returns>
+        </member>
         <member name="T:ITSB2B.Mixer.ParserHelpers.LotusExistDocState">
             <summary>
             Enumerazione per il controllo di esistenza e di modifica dei documenti JSON
@@ -9281,6 +9368,7 @@
             <param name="moveDuplicates">Se ci sono duplicati non modificati spostali in Processed</param>
             <param name="moveModDuplicates">Se ci sono duplicati modificati spostali in [true] Updated ([false]altrimenti in Processed anche quelli modificati)</param>
             <returns></returns>
+            
         </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperLotus.LotusDocumentExistInBok(System.String)">
             <summary>
@@ -9364,16 +9452,6 @@
             <param name="documentFolder">Cartella del documento CRM MG2</param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMg2.WriteErrorFile(System.String,System.String,ITSB2B.Base.BaseError)">
-            <summary>
-            Scriviamo un file di errore nella cartella di output in caso di errore
-            durante il processing dei documenti componenti in modo che il processore ParBok
-            non prenda in considerazione questa cartella quando passa di li.
-            </summary>
-            <param name="folderName">Cartella di output processore MG2 argonaut</param>
-            <param name="bokID">ID Bok x il nome file</param>
-            <param name="error">Errore che si è verificato</param>
-        </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMg2.ParseMG2Document(System.String,System.String)">
             <summary>
             Parse del documento JSON in formato MG2 Microsoft CRM
@@ -9408,6 +9486,9 @@
             <summary>
              Descrizione della classe:
             </summary>
+            <summary>
+             Descrizione della classe: 
+            </summary>
         </member>
         <member name="F:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.FieldDictionaryCrm">
             <summary>
@@ -9434,7 +9515,7 @@
             Directory dove predisporre i file HTML e PDF per l'upload in BOK
             </summary>
         </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.#ctor(ITSB2B.Base.Entities.Dp.DpBaseParameters,System.String,System.String,System.Collections.Generic.List{ITSB2B.Mixer.Entities.JsonData.LotusFieldsConfigContainerItem})">
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.#ctor(ITSB2B.Base.Entities.Dp.DpBaseParameters,System.String,System.String,System.Collections.Generic.List{ITSB2B.Mixer.Entities.JsonData.LotusFieldsConfigContainerItem},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
             <summary>
             Costruttore del generatore di Documenti, parbok files predisposizione upload e accodamento.
             </summary>
@@ -9442,6 +9523,32 @@
             <param name="uploadDirectory">Cartella base per l'upload su server dove verranno copiati i file dai batch generati</param>
             <param name="externalDocumentsRootFolder">Cartella base dove copiare gli external documents che non vengono trattati solo generati</param>
             <param name="lotusConfigs">Lista dei file di configurazione per l'import attributi di Lotus Notes</param>
+            <param name="projectAttributesFieldNames">Lista dei nomi degli attributi che contengono un id progetto</param>
+            <param name="serialAttributesFieldNames">Lista dei nomi degli attributi che contengono un id matricola</param>
+        </member>
+        <member name="F:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.mProjectAttributesFieldNames">
+            <summary>
+            Lista degli attributi che contengono un id progetto
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ProjectAttributesFieldNames">
+             <summary>
+             Lista degli attributi che contengono un id progetto
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.mSerialAttributesFieldNames">
+            <summary>
+            Lista degli attributi che contengono un ID matricola
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.SerialAttributesFieldNames">
+             <summary>
+             Lista degli attributi che contengono un ID matricola
+             </summary>
+            <remarks>
+            </remarks>
         </member>
         <member name="P:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.DpParams">
              <summary>
@@ -9487,29 +9594,35 @@
             <param name="jMapper">Json mapper con i dati del documento primario e suoi allegati</param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_UpdatePrimaryAndReprocessThenImportMissingAttachments(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_IsExternalAttachment(ITSB2B.Mixer.Entities.JsonData.JsonFileItem)">
             <summary>
-            Update di un primary document esistente e aggiornamento degli attachments se necessario
-            
+            Verifica se un elemento è un attachment esterno
             </summary>
-            <param name="ctx"></param>
+            <param name="jfi"></param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_ResetExistingPrimaryDocumentForReprocessing(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_IsManagedByBok(ITSB2B.Mixer.Entities.JsonData.JsonFileItem)">
             <summary>
-            reset dei dati del documento esistente prima della rielaborazione.
-            Qui devi cancellare:
-            - Elements
-            - ChunkRows
-            - Chunks
-            - ChunkVectors
-            - DataFile (record + eventuale file fisico, se gestito)
-            E qualunque altro dato derivato dalla vecchia elaborazione (cache, indici, ecc.)
+            Verifica se un file item è gestito da BOK (ovvero è un PDF o un HTML) 
+            </summary>
+            <param name="jfi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_IsPdfOrHtml(System.String)">
+            <summary>
+            Verifica se un file item è un PDF o un HTML in base al nome del file (OutputFileName o OriginFileName)
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_NormalizeJMapper(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem)">
+            <summary>
+            Normalizza i dati “mancanti” nel mapper appena entra nel context.
             </summary>
         </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_SetExistingPrimaryDocToPdfLoaded(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_ShouldBeExternalAttachment(ITSB2B.Mixer.Entities.JsonData.JsonFileItem)">
             <summary>
-            Aggiorna lo stato del documento esistente per forzare la rielaborazione completa.
+            Regola: tutto ciò che NON è pdf/html e NON è PostProcessed (che comunque non dovrebbe arrivare) è ExternalAttachment.
             </summary>
         </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_Trunc255(System.String)">
@@ -9579,6 +9692,15 @@
             <param name="counter">Contatore</param>
             <returns></returns>
         </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_BuildExistingDocsByFileId(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
+            <summary>
+            Inserisce nel context la lista degli eventuali documenti esistenti, siano essi
+            il primary document o gli attachment, questo ci serve poi per generare tutti i link
+            il dictionary creato contiene FileID e IDDoc
+            </summary>
+            <param name="ctx">Dati del contesto di elaborazione.</param>
+            <returns></returns>
+        </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_BuildParBokForAttachment(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext,ITSB2B.Mixer.Entities.JsonData.JsonFileItem,System.String,System.String)">
             <summary>
             Generazione dei dati principali del ParBok per un attachment
@@ -9628,6 +9750,67 @@
             <param name="ctx"></param>
             <returns></returns>
         </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.FindMatchingAttributes(System.Collections.Generic.List{ITSB2B.Mixer.Entities.JsonData.JsonAttributeItem},System.Collections.Generic.List{System.String})">
+            <summary>
+            Cerca se esistono attributi con i nomi relativi alla lista degli attributi IDProgetto o IDMatricola
+            all'interno degli attributi del JsonFileItem.
+            </summary>
+            <param name="attrs">Lista degli attributi</param>
+            <param name="fieldNames">Lista dei FieldName della serie cercata (progetti o matricole)</param>
+            <returns>Lista degli attributi che hanno un FieldName tra quelli previsti</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.SplitMultiValue(System.String)">
+            <summary>
+            Verifica se ci sono + valori in una matricola o un progetto
+            e restituisce una lista di tali valori per poter poi
+            generare i documenti logici per ciascuno.
+            </summary>
+            <param name="rawAttributeValue">Stringa valore dell'attributo</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.EnsureLogicalDocAndLink(ITSB2B.Mixer.Entities.Docs.DocItem,System.String,System.Boolean)">
+            <summary>
+            Genera e collega il documento logico al documento
+            se il documento logico non esiste o se il link non esiste sono generati
+            </summary>
+            <param name="docForLink">Documento fisico da linkare</param>
+            <param name="logicalId">ID Logico del documento (IDProject o IDSerial)</param>
+            <param name="isProject">Indica se stiamo elaborando un project o un serial</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GetOrCreateTreeBranch(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Cerca se esiste o genera un Branch che può essere il parent o il branch del documento logico
+            Se parent il Branch avrà ImportCode = Progetti o Matricole
+            Se relativo ad una matricola o progetto l'import code è uguale a matricola o progetto stesso.
+            </summary>
+            <param name="idTree">ID Della Tree del documento fisico (e quindi logico)</param>
+            <param name="importCode">Import code da cercare</param>
+            <param name="ddTreeBranch">Descrizione da mettere nel branch se lo generiamo</param>
+            <param name="parentIdTreeBranch">Eventuale ID del Branch parent (per la generazione)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.CreateTreeBranchLeaf(System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Genera la foglia per il nuovo documento.
+            </summary>
+            <param name="idTree">Tree del documento</param>
+            <param name="idTreeBranch">Branch a cui agganciare la foglia</param>
+            <param name="ddTreeBranchLeaf">Descrizione della foglia</param>
+            <param name="idDocType">Tipo del documento sotto la foglia</param>
+            <param name="idLanguage">Lingua del documento sotto la foglia</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GetOrCreateLogicalDoc(System.Boolean,System.String,System.String,System.Int32)">
+            <summary>
+            Ricerchiamo il documento logico
+            </summary>
+            <param name="isProject">Flag per cercare/generare un project o una matricola</param>
+            <param name="logicalId">ID del documento logico (IDProject o IDSerial)</param>
+            <param name="idTree">Tree del documento</param>
+            <param name="idTreeBranch">Branch a cui allacciare il documento se lo generiamo</param>
+            <returns></returns>
+        </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_GenerateDocumentLinks(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
             <summary>
             Generazione dei link degli attachments mancanti
@@ -9663,7 +9846,16 @@
             <param name="pb">ParBok data dell'attachment</param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_LoadAttachments(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_InsertAttachmentPreProcessor(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext,ITSB2B.Mixer.Entities.ParBok.ParBokFileItem,System.String)">
+            <summary>
+            Generazione dei dati del preprocessore per gli attachments
+            </summary>
+            <param name="ctx"></param>
+            <param name="pbf"></param>
+            <param name="notes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_LoadNamingAndConfigs(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
             <summary>
             Carica sul context la lista degli attachment mancanti
             viene poi usato anche per decidere se il documento è del tutto duplicato.
@@ -9673,19 +9865,24 @@
             </summary>
             <param name="ctx"></param>
         </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_LoadNamingAndConfigs(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
-            <summary>
-            Mappatura delle nomenclature necessarie all'import di file provenienti da Lotus Notes
-            </summary>
-            <param name="ctx">Contesto contenente tutti i dati necessari alle elaborazioni</param>
-            <returns></returns>
-        </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_LoadParBokBaseFromMapper(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
             <summary>
             Generazione dei dati ParBok base dai Path Mapper e relativi ParBok Mappers
             </summary>
             <param name="ctx">Contesto con tutti i dati per l'elaborazione</param>
             <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_ResetExistingPrimaryDocumentForReprocessing(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
+            <summary>
+            reset dei dati del documento esistente prima della rielaborazione.
+            Qui devi cancellare:
+            - Elements
+            - ChunkRows
+            - Chunks
+            - ChunkVectors
+            - DataFile (record + eventuale file fisico, se gestito)
+            E qualunque altro dato derivato dalla vecchia elaborazione (cache, indici, ecc.)
+            </summary>
         </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_ResolveExistingPrimaryDocId(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
             <summary>
@@ -9706,29 +9903,19 @@
             <param name="ctx">Contesto che contiene tutti i dati per l'elaborazione</param>
             <returns></returns>
         </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_UpdatePrimaryAndReprocessThenImportMissingAttachments(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
+             <summary>
+             Update di un primary document esistente e aggiornamento degli attachments se necessario
+            
+             </summary>
+             <param name="ctx"></param>
+             <returns></returns>
+        </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_UploadAttachmentsAndMark(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
             <summary>
             Carica i file sorgente sulla cartella destinata agli upload
             </summary>
             <param name="ctx"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_InsertAttachmentPreProcessor(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext,ITSB2B.Mixer.Entities.ParBok.ParBokFileItem,System.String)">
-            <summary>
-            Generazione dei dati del preprocessore per gli attachments
-            </summary>
-            <param name="ctx"></param>
-            <param name="pbf"></param>
-            <param name="notes"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_BuildExistingDocsByFileId(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
-            <summary>
-            Inserisce nel context la lista degli eventuali documenti esistenti, siano essi
-            il primary document o gli attachment, questo ci serve poi per generare tutti i link
-            il dictionary creato contiene FileID e IDDoc
-            </summary>
-            <param name="ctx">Dati del contesto di elaborazione.</param>
             <returns></returns>
         </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.IsImagePath(System.String)">
@@ -9746,6 +9933,13 @@
             <param name="fieldName">Nome del campo</param>
             <returns></returns>
         </member>
+        <member name="P:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext.ExistingDocsByFileID">
+            <summary>
+            Dictionary contenente FileID e IDDoc di tutti gli eventuali
+            documenti già esistenti fra gli attachment controllati sia
+            via file hash che via origin file ID
+            </summary>
+        </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ZZZZ_GenerateImportDocumentsParbokAndUploadDocuments(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem)">
              <summary>
              Generazione dei Parbokfiles e upload dei documenti generati per un documento JSON Argonaut
@@ -9755,18 +9949,6 @@
              </summary>
              <param name="jMapper">Json Mapper con tutti i dati dei file coinvolti</param>
              <returns></returns>
-        </member>
-        <member name="P:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext.ExistingDocsByFileID">
-            <summary>
-            Dictionary contenente FileID e IDDoc di tutti gli eventuali
-            documenti già esistenti fra gli attachment controllati sia
-            via file hash che via origin file ID
-            </summary>
-        </member>
-        <member name="T:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParbok">
-            <summary>
-             Descrizione della classe: 
-            </summary>
         </member>
         <member name="T:ITSB2B.Mixer.ParserHelpers.LotusSupportHelper">
             <summary>
@@ -9813,6 +9995,69 @@
             <param name="wks"></param>
             <param name="row"></param>
             <param name="col"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ITSB2B.Mixer.ParserHelpers.MailContainerKinds">
+            <summary>
+            Tipologie dei file di tipo mail container (contenitori di email)
+            
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.ParserHelpers.MailContainerKinds.Unknown">
+            <summary>
+            Non si sa
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.ParserHelpers.MailContainerKinds.OutlookMsgOle">
+            <summary>
+            Tipo .msg
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.ParserHelpers.MailContainerKinds.Rfc822Eml">
+            <summary>
+            Tipo eml
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.ParserHelpers.MailContainerKinds.NotAMailContainer">
+            <summary>
+            Non è proprio un mail container
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Mixer.ParserHelpers.MailContainerDetector">
+            <summary>
+            Classe helper predisposta per rilevare se un file arrivato come attachment di qualcosa
+            e che dice di essere un .msg o .eml è effettivamente un mail container e di che tipo.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.MailContainerDetector.Detect(System.String,System.String@)">
+            <summary>
+            Funzione di rilevamento del tipo di mail container (MSG OLE o EML-like) basata su euristiche semplici:
+            </summary>
+            <param name="filePath">Path del file</param>
+            <param name="detail">Dettagli sul rilevamento</param>
+            <returns>Tipo di mail container rilevato</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.MailContainerDetector.HasOleSignature(System.String)">
+            <summary>
+            Indica se un file è un oggetto Ole Msg oppure no
+            </summary>
+            <param name="filePath">File da controllare</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.MailContainerDetector.ReadTextHead(System.String,System.Int32)">
+            <summary>
+            Lettura dello header di un file per capire poi cos'è.
+            </summary>
+            <param name="filePath">Nome completo del file</param>
+            <param name="maxBytes">Numero massimo di byte da leggere</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.MailContainerDetector.LooksLikeRfc822(System.String,System.String@)">
+            <summary>
+            Verifica e ritorna true se il file esaminato sembra essere un file .eml
+            </summary>
+            <param name="head">Stringa dell'intestazione</param>
+            <param name="why">Motivo per cui abbiamo detto che è un file eml</param>
             <returns></returns>
         </member>
         <member name="T:ITSB2B.Mixer.ParserHelpers.ManagedMimeTypes">
@@ -9899,6 +10144,7 @@
             </summary>
             <param name="jsonOutputFolder"> cartella di output dell'elaborazione JSON parent</param>
             <param name="jItem">JsonFileItem che identifica il file msg all'interno dell'elaborazione del JSON</param>
+            <param name="fileIndex">indice progressivo dei file per i nomi univoci</param>
             <returns></returns>
         </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.MsgParserHelper.ProcessMsgFile(System.String,System.String)">

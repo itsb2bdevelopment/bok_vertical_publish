@@ -3705,14 +3705,29 @@
             Classe Entity per il codice manuale aggiuntivo per il record della tabella DocEditorQueues
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mEndInProcessDateFilter">
+            <summary>
+            Data in cui è stato mandato in process
+            </summary>
+        </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mEndRowNum">
             <summary>
             Property filtro finale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mEndServiceProcessingDateFilter">
+            <summary>
+            Data in cui il servizio lo ha preso in carico
+            </summary>
+        </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mIDAgentListFilter">
             <summary>
             id Dell'Agente usato per le operazioni sull'area
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mIDDocEditorAreaListFilter">
+            <summary>
+            ID Dell'Area coinvolta nell'aggiornamento
             </summary>
         </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mIDDocEditorListFilter">
@@ -3730,6 +3745,11 @@
             ID del Documento
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mIsProcessingFilter">
+            <summary>
+            Indica che l'elemento della coda è in elaborazione da parte del servizio
+            </summary>
+        </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mOrderBySqlFields">
             <summary>
             Property per aggiungere al SQL della select una clausola order by deve contenere solo la lista dei campi separati da virgole con eventuale clausola ASC o DESC
@@ -3740,9 +3760,19 @@
             Sequenza di esecuzione dell'elaborazione
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mStartInProcessDateFilter">
+            <summary>
+            Data in cui è stato mandato in process
+            </summary>
+        </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mStartRowNum">
             <summary>
             Property filtro iniziale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mStartServiceProcessingDateFilter">
+            <summary>
+            Data in cui il servizio lo ha preso in carico
             </summary>
         </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mStateListFilter">
@@ -3755,14 +3785,29 @@
             Crea una nuova istanza della classe Entity DocEditorQueueFilterItem
             </summary>
         </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.EndInProcessDateFilter">
+            <summary>
+            Data in cui è stato mandato in process
+            </summary>
+        </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.EndRowNum">
             <summary>
             Property filtro finale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
             </summary>
         </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.EndServiceProcessingDateFilter">
+            <summary>
+            Data in cui il servizio lo ha preso in carico
+            </summary>
+        </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.IDAgentListFilter">
             <summary>
             id Dell'Agente usato per le operazioni sull'area
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.IDDocEditorAreaListFilter">
+            <summary>
+            ID Dell'Area coinvolta nell'aggiornamento
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.IDDocEditorListFilter">
@@ -3780,6 +3825,11 @@
             ID del Documento
             </summary>
         </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.IsProcessingFilter">
+            <summary>
+            Indica che l'elemento della coda è in elaborazione da parte del servizio
+            </summary>
+        </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.IsValid">
             <summary>
             Property usata per la validazione dei dati JSON ricevuti da una chiamata API
@@ -3795,9 +3845,19 @@
             Sequenza di esecuzione dell'elaborazione
             </summary>
         </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.StartInProcessDateFilter">
+            <summary>
+            Data in cui è stato mandato in process
+            </summary>
+        </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.StartRowNum">
             <summary>
             Property filtro iniziale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.StartServiceProcessingDateFilter">
+            <summary>
+            Data in cui il servizio lo ha preso in carico
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.StateListFilter">
@@ -3840,6 +3900,16 @@
             Genera una stringa con il contenuto dell'istanza corrente per l'entity DocEditorQueueFilterItem
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mHasServiceProcessingDate">
+            <summary>
+            Filtro per ServiceProcessingDate nulla o non nulla
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.HasServiceProcessingDate">
+            <summary>
+            Filtro per ServiceProcessingDate nulla o non nulla
+            </summary>
+        </member>
         <member name="M:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.CheckManualFilters">
             <summary>
             Metodo per aggiungere il controllo di esistenza dei filtri manuali
@@ -3873,6 +3943,11 @@
             Nome della tabella
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mAdditionalDocsCompressed">
+            <summary>
+            Documenti addizionali e informazioni su di essi (JSON)
+            </summary>
+        </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mCreateDate">
             <summary>
             Data Creazione
@@ -3898,9 +3973,24 @@
             ID dell'editor di appartenenza
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mIDDocEditorArea">
+            <summary>
+            ID Dell'Area coinvolta nell'aggiornamento
+            </summary>
+        </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mIDDocEditorQueue">
             <summary>
             ID dell'elemento della coda
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mInProcessDate">
+            <summary>
+            Data in cui è stato mandato in process
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mIsProcessing">
+            <summary>
+            Indica che l'elemento della coda è in elaborazione da parte del servizio
             </summary>
         </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mLastUpdateDate">
@@ -3938,6 +4028,16 @@
             Sequenza di esecuzione dell'elaborazione
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mServiceProcessingDate">
+            <summary>
+            Data in cui il servizio lo ha preso in carico
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mSourceCompressed">
+            <summary>
+            Dati da dare in pasto all'Agent presumo (JSON)
+            </summary>
+        </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mState">
             <summary>
             Stato della riga "UnderExecution", "Waiting","Done","Queued",
@@ -3946,6 +4046,11 @@
         <member name="M:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.#ctor">
             <summary>
             Crea una nuova istanza della classe Entity DocEditorQueueItem
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.AdditionalDocsCompressed">
+            <summary>
+            Documenti addizionali e informazioni su di essi (JSON)
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.CreateDate">
@@ -3973,9 +4078,24 @@
             ID dell'editor di appartenenza
             </summary>
         </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.IDDocEditorArea">
+            <summary>
+            ID Dell'Area coinvolta nell'aggiornamento
+            </summary>
+        </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.IDDocEditorQueue">
             <summary>
             ID dell'elemento della coda
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.InProcessDate">
+            <summary>
+            Data in cui è stato mandato in process
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.IsProcessing">
+            <summary>
+            Indica che l'elemento della coda è in elaborazione da parte del servizio
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.IsValid">
@@ -4018,6 +4138,16 @@
             Sequenza di esecuzione dell'elaborazione
             </summary>
         </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.ServiceProcessingDate">
+            <summary>
+            Data in cui il servizio lo ha preso in carico
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.SourceCompressed">
+            <summary>
+            Dati da dare in pasto all'Agent presumo (JSON)
+            </summary>
+        </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.State">
             <summary>
             Stato della riga "UnderExecution", "Waiting","Done","Queued",
@@ -4052,6 +4182,18 @@
             <summary>
             Genera una stringa con il contenuto dell'istanza corrente per l'entity DocEditorQueueItem
             </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mDDDocEditorArea">
+            <summary>
+            DDDocEditorArea
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.DDDocEditorArea">
+             <summary>
+             DDDocEditorArea
+             </summary>
+            <remarks>
+            </remarks>
         </member>
         <member name="M:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.CopyToManual(ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem)">
             <summary>
@@ -10134,6 +10276,42 @@
         <member name="P:ITSB2B.Mixer.Entities.BokWeb.AiAgentRequestItem.IDElements">
              <summary>
              IDElements: il tutto è filtrato per questa lista di ID
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.BokWeb.AiAgentRequestItem.mCustom">
+            <summary>
+            Custom: oggetto generico per parametri dinamici
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.BokWeb.AiAgentRequestItem.Custom">
+             <summary>
+             Custom: oggetto generico per parametri dinamici
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.BokWeb.AiAgentRequestItem.mPageFrom">
+            <summary>
+            PageFrom
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.BokWeb.AiAgentRequestItem.PageFrom">
+             <summary>
+             PageFrom
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.BokWeb.AiAgentRequestItem.mPageTo">
+            <summary>
+            PageTo
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.BokWeb.AiAgentRequestItem.PageTo">
+             <summary>
+             PageTo
              </summary>
             <remarks>
             </remarks>
@@ -27310,6 +27488,36 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:ITSB2B.Mixer.Entities.Helpers.P7mSignatureValidationResult">
+            <summary>
+            Risultato complessivo della verifica di un file .p7m.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Helpers.P7mSignatureValidationResult.IsValid">
+            <summary>
+            Indica che è validol'intero file .p7m (tutti i firmatari, certificati e timestamp validi).
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Helpers.P7mSignatureValidationResult.ValidatedAt">
+            <summary>
+            Data di validazione
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Helpers.P7mSignatureValidationResult.SignerInfos">
+            <summary>
+            Informazioni su chi ha firmato e sulla validità di firma, certificato e timestamp per ogni firmatario presente nel .p7m.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Helpers.P7mSignatureValidationResult.SummaryMessage">
+            <summary>
+            Messaggio riassuntivo
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Mixer.Entities.Helpers.P7mSignerValidationResult">
+            <summary>
+            Risultato per singolo firmatario nel .p7m.
+            </summary>
+        </member>
         <member name="T:ITSB2B.Mixer.Entities.HtmlData.HtmlBlockItem">
             <summary>
              Contiene un Block BOK proveniente da un file HTML
@@ -28273,6 +28481,24 @@
             Esiste ed è stato modificato rispetto alla versione precedente, quindi va rigenerato
             </summary>
         </member>
+        <member name="T:ITSB2B.Mixer.Entities.JsonData.JsonNotParsableAttachments">
+            <summary>
+            Enumerazione prevista per il futuro per ora la usiamo per
+            i messaggi di posta che non risultano tali in modo da
+            capire perché invece di essere trasformati in HTML rimangono
+            come external document
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonNotParsableAttachments.NotSet">
+            <summary>
+            Non indicato
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonNotParsableAttachments.MalformedMailMessage">
+            <summary>
+            Vorrebbe essere un mail message ma non lo è
+            </summary>
+        </member>
         <member name="T:ITSB2B.Mixer.Entities.JsonData.JsonFileItem">
             <summary>
              QUesta classe descrive un File Risultato del processing di un file sorgente JSON
@@ -28455,6 +28681,22 @@
              <summary>
              Lista degli Attachments non embeddabili (non immagini) per il processing corretto
              di tali attachments (usato in CRM MG2 documents)
+             </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonFileItem.mNotParsable">
+            <summary>
+            Flag che useremo per evidenziare messaggi di posta malformati
+            che provocano errori di import e che saranno importati solo
+            come external documents.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.JsonData.JsonFileItem.NotParsable">
+             <summary>
+             Flag che useremo per evidenziare messaggi di posta malformati
+             che provocano errori di import e che saranno importati solo
+             come external documents.
              </summary>
             <remarks>
             </remarks>
@@ -30204,9 +30446,27 @@
             </summary>
              <param name="propertyName">nome della property</param>
         </member>
+        <member name="T:ITSB2B.Mixer.Entities.MsgData.MsgNotParsableAttachments">
+            <summary>
+            Enumerazione prevista per il futuro per ora la usiamo per
+            i messaggi di posta che non risultano tali in modo da
+            capire perché invece di essere trasformati in HTML rimangono
+            come external document
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.MsgData.MsgNotParsableAttachments.NotSet">
+            <summary>
+            Non indicato
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.MsgData.MsgNotParsableAttachments.MalformedMailMessage">
+            <summary>
+            Vorrebbe essere un mail message ma non lo è
+            </summary>
+        </member>
         <member name="T:ITSB2B.Mixer.Entities.MsgData.MsgFileItem">
             <summary>
-             Descrizione della classe: 
+             Rappresenta il contenuto di una mail (usato x MSG e EML Parser)
             </summary>
         </member>
         <member name="F:ITSB2B.Mixer.Entities.MsgData.MsgFileItem.mBokID">
@@ -30355,6 +30615,24 @@
             <summary>
             Mime Type dell'attachment
             </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.MsgData.MsgFileItem.mNotParsable">
+            <summary>
+            Flag che useremo per evidenziare messaggi di posta malformati
+            che provocano errori di import e che saranno importati solo
+            come external documents.
+            Serve per governare gli attachment di attachment
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.MsgData.MsgFileItem.NotParsable">
+             <summary>
+             Flag che useremo per evidenziare messaggi di posta malformati
+             che provocano errori di import e che saranno importati solo
+             come external documents.
+             Serve per governare gli attachment di attachment
+             </summary>
+            <remarks>
+            </remarks>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.MsgData.MsgFileItem.OriginFileName">
             <summary>
@@ -30875,6 +31153,11 @@
             Property filtro finale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Ontologies.OntologyAliasFilterItem.mExcludeFromAutomaticSearchFilter">
+            <summary>
+            Escludere da ricerche automatiche
+            </summary>
+        </member>
         <member name="F:ITSB2B.Mixer.Entities.Ontologies.OntologyAliasFilterItem.mIDLanguageListFilter">
             <summary>
             Lingua dell'alias
@@ -30913,6 +31196,11 @@
         <member name="P:ITSB2B.Mixer.Entities.Ontologies.OntologyAliasFilterItem.EndRowNum">
             <summary>
             Property filtro finale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Ontologies.OntologyAliasFilterItem.ExcludeFromAutomaticSearchFilter">
+            <summary>
+            Escludere da ricerche automatiche
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.Ontologies.OntologyAliasFilterItem.IDLanguageListFilter">
@@ -31058,6 +31346,11 @@
             User  Creazione
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Ontologies.OntologyAliasItem.mExcludeFromAutomaticSearch">
+            <summary>
+            Escludere da ricerche automatiche
+            </summary>
+        </member>
         <member name="F:ITSB2B.Mixer.Entities.Ontologies.OntologyAliasItem.mIDLanguage">
             <summary>
             Lingua dell'alias
@@ -31106,6 +31399,11 @@
         <member name="P:ITSB2B.Mixer.Entities.Ontologies.OntologyAliasItem.CreateUser">
             <summary>
             User  Creazione
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Ontologies.OntologyAliasItem.ExcludeFromAutomaticSearch">
+            <summary>
+            Escludere da ricerche automatiche
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.Ontologies.OntologyAliasItem.IDLanguage">
@@ -31196,6 +31494,11 @@
             Classe Entity per il codice manuale aggiuntivo per il record della tabella Ontologies
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Ontologies.OntologyElementFilterItem.mAttentionFilter">
+            <summary>
+            Indica che è necessaria attenzione o che richiede attenzione per l'elemento dell'ontologia
+            </summary>
+        </member>
         <member name="F:ITSB2B.Mixer.Entities.Ontologies.OntologyElementFilterItem.mElementDescriptionFilter">
             <summary>
             Descrizione dell'elemento (più usata sulle categorie)
@@ -31254,6 +31557,11 @@
         <member name="M:ITSB2B.Mixer.Entities.Ontologies.OntologyElementFilterItem.#ctor">
             <summary>
             Crea una nuova istanza della classe Entity OntologyElementFilterItem
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Ontologies.OntologyElementFilterItem.AttentionFilter">
+            <summary>
+            Indica che è necessaria attenzione o che richiede attenzione per l'elemento dell'ontologia
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.Ontologies.OntologyElementFilterItem.ElementDescriptionFilter">
@@ -31384,6 +31692,11 @@
             Nome della tabella
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Ontologies.OntologyElementItem.mAttention">
+            <summary>
+            Indica che è necessaria attenzione o che richiede attenzione per l'elemento dell'ontologia
+            </summary>
+        </member>
         <member name="F:ITSB2B.Mixer.Entities.Ontologies.OntologyElementItem.mCreateDate">
             <summary>
             Data Creazione
@@ -31462,6 +31775,11 @@
         <member name="M:ITSB2B.Mixer.Entities.Ontologies.OntologyElementItem.#ctor">
             <summary>
             Crea una nuova istanza della classe Entity OntologyElementItem
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Ontologies.OntologyElementItem.Attention">
+            <summary>
+            Indica che è necessaria attenzione o che richiede attenzione per l'elemento dell'ontologia
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.Ontologies.OntologyElementItem.CreateDate">
@@ -55069,6 +55387,29 @@
             <summary>
             Classe CSS che da il colore ai tags ontologici
             </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.Html.HtmlHelper.GetHtmlStart(System.Text.StringBuilder,System.String,System.String)">
+            <summary>
+            Compone la testata di un html con titolo e css, lasciando aperto il body per poter aggiungere i contenuti dopo
+            </summary>
+            <param name="html"></param>
+            <param name="title"></param>
+            <param name="css"></param>
+        </member>
+        <member name="M:ITSB2B.Mixer.Html.HtmlHelper.GetHtmlText(System.String,System.String,System.String)">
+            <summary>
+            Genera un testo HTML completo usato per la visualizzazione degli elements
+            </summary>
+            <param name="title">titolo</param>
+            <param name="htmlContent">contenuto HTML</param>
+            <param name="css">stile CSS</param>
+            <returns>testo HTML completo</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Html.HtmlHelper.GetHtmlEnd(System.Text.StringBuilder)">
+            <summary>
+            Chiude il body e l'html di un testo HTML
+            </summary>
+            <param name="html">Contenitore dell'html</param>
         </member>
         <member name="T:ITSB2B.Mixer.Html.MarkDownHelper">
             <summary>

@@ -10,15 +10,15 @@
       "ITSB2B.NEOS.BokWeb/2026.1.9.84": {
         "dependencies": {
           "HtmlAgilityPack": "1.12.2",
-          "ITSB2B.Accessory.Entities.Core": "1.0.32",
-          "ITSB2B.BOK.BokWeb": "2026.1.9.86",
-          "ITSB2B.BOK.BokWeb.Client": "2026.1.9.86",
-          "ITSB2B.Base.Core": "1.0.32",
-          "ITSB2B.Item.Attributes.Entities.Core": "1.0.32",
+          "ITSB2B.Accessory.Entities.Core": "1.0.33",
+          "ITSB2B.BOK.BokWeb": "2026.1.9.88",
+          "ITSB2B.BOK.BokWeb.Client": "2026.1.9.88",
+          "ITSB2B.Base.Core": "1.0.33",
+          "ITSB2B.Item.Attributes.Entities.Core": "1.0.33",
           "ITSB2B.MCC.Entities.Core": "1.0.28",
-          "ITSB2B.Mixer.Business.Core": "2026.1.9.86",
-          "ITSB2B.Mixer.Entities.Core": "2026.1.9.86",
-          "ITSB2B.Syncfusion.Licensing.Core": "1.0.32",
+          "ITSB2B.Mixer.Business.Core": "2026.1.9.88",
+          "ITSB2B.Mixer.Entities.Core": "2026.1.9.88",
+          "ITSB2B.Syncfusion.Licensing.Core": "1.0.33",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "8.0.10",
           "Newtonsoft.Json": "13.0.3",
           "QRCoder": "1.6.0",
@@ -33,12 +33,12 @@
           "Syncfusion.DocIO.Net.Core": "32.2.3",
           "Syncfusion.XlsIO.Net.Core": "32.2.3",
           "System.Data.SqlClient": "4.8.6",
-          "ITSB2B.BOK.BokWeb.Client.Reference": "2026.1.9.86",
-          "ITSB2B.BOK.BokWeb.Reference": "2026.1.9.86",
-          "ITSB2B.BokMike.Entities": "2026.1.9.86",
-          "ITSB2B.Mixer.Business": "2026.1.9.86",
-          "ITSB2B.Mixer.Data": "2026.1.9.86",
-          "ITSB2B.Mixer.Entities": "2026.1.9.86"
+          "ITSB2B.BOK.BokWeb.Client.Reference": "2026.1.9.88",
+          "ITSB2B.BOK.BokWeb.Reference": "2026.1.9.88",
+          "ITSB2B.BokMike.Entities": "2026.1.9.88",
+          "ITSB2B.Mixer.Business": "2026.1.9.88",
+          "ITSB2B.Mixer.Data": "2026.1.9.88",
+          "ITSB2B.Mixer.Entities": "2026.1.9.88"
         },
         "runtime": {
           "ITSB2B.NEOS.BokWeb.dll": {}
@@ -273,11 +273,11 @@
           }
         }
       },
-      "ITSB2B.Accessory.Business.Core/1.0.32": {
+      "ITSB2B.Accessory.Business.Core/1.0.33": {
         "dependencies": {
-          "ITSB2B.Accessory.Data.Core": "1.0.32",
-          "ITSB2B.Accessory.Entities.Core": "1.0.32",
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Accessory.Data.Core": "1.0.33",
+          "ITSB2B.Accessory.Entities.Core": "1.0.33",
+          "ITSB2B.Base.Core": "1.0.33",
           "Newtonsoft.Json": "13.0.3",
           "SixLabors.ImageSharp": "3.1.11",
           "System.Data.SqlClient": "4.8.6"
@@ -289,10 +289,10 @@
           }
         }
       },
-      "ITSB2B.Accessory.Data.Core/1.0.32": {
+      "ITSB2B.Accessory.Data.Core/1.0.33": {
         "dependencies": {
-          "ITSB2B.Accessory.Entities.Core": "1.0.32",
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Accessory.Entities.Core": "1.0.33",
+          "ITSB2B.Base.Core": "1.0.33",
           "Newtonsoft.Json": "13.0.3",
           "SixLabors.ImageSharp": "3.1.11",
           "System.Data.SqlClient": "4.8.6"
@@ -304,9 +304,9 @@
           }
         }
       },
-      "ITSB2B.Accessory.Entities.Core/1.0.32": {
+      "ITSB2B.Accessory.Entities.Core/1.0.33": {
         "dependencies": {
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
           "Newtonsoft.Json": "13.0.3",
           "SixLabors.ImageSharp": "3.1.11",
           "System.Data.SqlClient": "4.8.6"
@@ -320,7 +320,7 @@
       },
       "ITSB2B.Base.API.Core/1.0.27": {
         "dependencies": {
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
           "Newtonsoft.Json": "13.0.3",
           "SixLabors.ImageSharp": "3.1.11",
           "System.Data.SqlClient": "4.8.6"
@@ -332,7 +332,7 @@
           }
         }
       },
-      "ITSB2B.Base.Core/1.0.32": {
+      "ITSB2B.Base.Core/1.0.33": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
           "SixLabors.ImageSharp": "3.1.11",
@@ -352,7 +352,7 @@
       },
       "ITSB2B.Base.DynamicCode.Core/1.0.27": {
         "dependencies": {
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
           "Microsoft.CodeAnalysis": "4.2.0",
           "Newtonsoft.Json": "13.0.3",
           "SixLabors.ImageSharp": "3.1.11",
@@ -365,9 +365,9 @@
           }
         }
       },
-      "ITSB2B.Base.Zip.Core/1.0.32": {
+      "ITSB2B.Base.Zip.Core/1.0.33": {
         "dependencies": {
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
           "Newtonsoft.Json": "13.0.3",
           "SharpZipLib": "1.4.2",
           "SixLabors.ImageSharp": "3.1.11",
@@ -382,7 +382,7 @@
       },
       "ITSB2B.IBM.Api.Entities.Core/1.0.27": {
         "dependencies": {
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
           "Newtonsoft.Json": "13.0.3",
           "SixLabors.ImageSharp": "3.1.11",
           "System.Data.SqlClient": "4.8.6"
@@ -404,7 +404,7 @@
           "IBM.Watson.SpeechToText.v1": "5.2.0",
           "IBM.Watson.TextToSpeech.v1": "5.2.0",
           "IBM.Watson.ToneAnalyzer.v3": "5.2.0",
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
           "ITSB2B.IBM.Api.Entities.Core": "1.0.27",
           "Newtonsoft.Json": "13.0.3",
           "SixLabors.ImageSharp": "3.1.11",
@@ -417,11 +417,11 @@
           }
         }
       },
-      "ITSB2B.Item.Attributes.Business.Core/1.0.32": {
+      "ITSB2B.Item.Attributes.Business.Core/1.0.33": {
         "dependencies": {
-          "ITSB2B.Base.Core": "1.0.32",
-          "ITSB2B.Item.Attributes.Data.Core": "1.0.32",
-          "ITSB2B.Item.Attributes.Entities.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
+          "ITSB2B.Item.Attributes.Data.Core": "1.0.33",
+          "ITSB2B.Item.Attributes.Entities.Core": "1.0.33",
           "Newtonsoft.Json": "13.0.3",
           "SixLabors.ImageSharp": "3.1.11",
           "System.Data.SqlClient": "4.8.6"
@@ -433,10 +433,10 @@
           }
         }
       },
-      "ITSB2B.Item.Attributes.Data.Core/1.0.32": {
+      "ITSB2B.Item.Attributes.Data.Core/1.0.33": {
         "dependencies": {
-          "ITSB2B.Base.Core": "1.0.32",
-          "ITSB2B.Item.Attributes.Entities.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
+          "ITSB2B.Item.Attributes.Entities.Core": "1.0.33",
           "Newtonsoft.Json": "13.0.3",
           "SixLabors.ImageSharp": "3.1.11",
           "System.Data.SqlClient": "4.8.6"
@@ -448,9 +448,9 @@
           }
         }
       },
-      "ITSB2B.Item.Attributes.Entities.Core/1.0.32": {
+      "ITSB2B.Item.Attributes.Entities.Core/1.0.33": {
         "dependencies": {
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
           "Newtonsoft.Json": "13.0.3",
           "SixLabors.ImageSharp": "3.1.11",
           "System.Data.SqlClient": "4.8.6"
@@ -467,17 +467,17 @@
           "HtmlAgilityPack": "1.12.2",
           "IBM.Cloud.SDK.Core": "1.2.0",
           "IBM.Watson.Assistant.v1": "5.3.0",
-          "ITSB2B.Accessory.Business.Core": "1.0.32",
-          "ITSB2B.Accessory.Data.Core": "1.0.32",
-          "ITSB2B.Accessory.Entities.Core": "1.0.32",
+          "ITSB2B.Accessory.Business.Core": "1.0.33",
+          "ITSB2B.Accessory.Data.Core": "1.0.33",
+          "ITSB2B.Accessory.Entities.Core": "1.0.33",
           "ITSB2B.Base.API.Core": "1.0.27",
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
           "ITSB2B.Base.DynamicCode.Core": "1.0.27",
           "ITSB2B.IBM.Api.Entities.Core": "1.0.27",
           "ITSB2B.IBM.Api.Services.Core": "1.0.27",
-          "ITSB2B.Item.Attributes.Business.Core": "1.0.32",
-          "ITSB2B.Item.Attributes.Data.Core": "1.0.32",
-          "ITSB2B.Item.Attributes.Entities.Core": "1.0.32",
+          "ITSB2B.Item.Attributes.Business.Core": "1.0.33",
+          "ITSB2B.Item.Attributes.Data.Core": "1.0.33",
+          "ITSB2B.Item.Attributes.Entities.Core": "1.0.33",
           "ITSB2B.MCC.Data.Core": "1.0.28",
           "ITSB2B.MCC.Entities.Core": "1.0.28",
           "ITSB2B.Security.Business.Core": "1.0.34",
@@ -506,7 +506,7 @@
         "dependencies": {
           "IBM.Cloud.SDK.Core": "1.2.0",
           "IBM.Watson.Assistant.v1": "5.3.0",
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
           "ITSB2B.IBM.Api.Entities.Core": "1.0.27",
           "ITSB2B.IBM.Api.Services.Core": "1.0.27",
           "ITSB2B.MCC.Entities.Core": "1.0.28",
@@ -527,7 +527,7 @@
         "dependencies": {
           "IBM.Cloud.SDK.Core": "1.2.0",
           "IBM.Watson.Assistant.v1": "5.3.0",
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
           "ITSB2B.IBM.Api.Entities.Core": "1.0.27",
           "ITSB2B.IBM.Api.Services.Core": "1.0.27",
           "Microsoft.AspNetCore.Components": "8.0.20",
@@ -545,7 +545,7 @@
       },
       "ITSB2B.Security.Business.Core/1.0.34": {
         "dependencies": {
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
           "ITSB2B.Security.Data.Core": "1.0.34",
           "Newtonsoft.Json": "13.0.3",
           "System.Data.SqlClient": "4.8.6",
@@ -561,7 +561,7 @@
       },
       "ITSB2B.Security.Data.Core/1.0.34": {
         "dependencies": {
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
           "Newtonsoft.Json": "13.0.3",
           "System.Data.SqlClient": "4.8.6",
           "System.DirectoryServices": "8.0.0",
@@ -579,7 +579,7 @@
           }
         }
       },
-      "ITSB2B.Syncfusion.Licensing.Core/1.0.32": {
+      "ITSB2B.Syncfusion.Licensing.Core/1.0.33": {
         "dependencies": {
           "Syncfusion.Licensing": "32.2.3"
         },
@@ -3429,16 +3429,16 @@
           }
         }
       },
-      "ITSB2B.BOK.BokWeb/2026.1.9.86": {
+      "ITSB2B.BOK.BokWeb/2026.1.9.88": {
         "dependencies": {
           "HtmlAgilityPack": "1.12.2",
-          "ITSB2B.Accessory.Entities.Core": "1.0.32",
-          "ITSB2B.BOK.BokWeb.Client": "2026.1.9.86",
-          "ITSB2B.Base.Core": "1.0.32",
-          "ITSB2B.Item.Attributes.Entities.Core": "1.0.32",
+          "ITSB2B.Accessory.Entities.Core": "1.0.33",
+          "ITSB2B.BOK.BokWeb.Client": "2026.1.9.88",
+          "ITSB2B.Base.Core": "1.0.33",
+          "ITSB2B.Item.Attributes.Entities.Core": "1.0.33",
           "ITSB2B.MCC.Entities.Core": "1.0.28",
-          "ITSB2B.Mixer.Entities.Core": "2026.1.9.86",
-          "ITSB2B.Syncfusion.Licensing.Core": "1.0.32",
+          "ITSB2B.Mixer.Entities.Core": "2026.1.9.88",
+          "ITSB2B.Syncfusion.Licensing.Core": "1.0.33",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "8.0.10",
           "Newtonsoft.Json": "13.0.3",
           "QRCoder": "1.6.0",
@@ -3456,16 +3456,16 @@
         },
         "runtime": {
           "ITSB2B.BOK.BokWeb.dll": {
-            "assemblyVersion": "2026.1.9.86",
+            "assemblyVersion": "2026.1.9.88",
             "fileVersion": ""
           }
         }
       },
-      "ITSB2B.BOK.BokWeb.Client/2026.1.9.86": {
+      "ITSB2B.BOK.BokWeb.Client/2026.1.9.88": {
         "dependencies": {
-          "ITSB2B.Base.Core": "1.0.32",
-          "ITSB2B.Item.Attributes.Entities.Core": "1.0.32",
-          "ITSB2B.Syncfusion.Licensing.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
+          "ITSB2B.Item.Attributes.Entities.Core": "1.0.33",
+          "ITSB2B.Syncfusion.Licensing.Core": "1.0.33",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.20",
           "Newtonsoft.Json": "13.0.3",
           "Syncfusion.Blazor.Cards": "32.2.3",
@@ -3477,42 +3477,42 @@
         },
         "runtime": {
           "ITSB2B.BOK.BokWeb.Client.dll": {
-            "assemblyVersion": "2026.1.9.86",
+            "assemblyVersion": "2026.1.9.88",
             "fileVersion": ""
           }
         }
       },
-      "ITSB2B.BokMike.Entities.Core/2026.1.9.86": {
+      "ITSB2B.BokMike.Entities.Core/2026.1.9.88": {
         "dependencies": {
-          "ITSB2B.Base.Core": "1.0.32",
+          "ITSB2B.Base.Core": "1.0.33",
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
           "ITSB2B.BokMike.Entities.dll": {
-            "assemblyVersion": "2026.1.9.86",
+            "assemblyVersion": "2026.1.9.88",
             "fileVersion": ""
           }
         }
       },
-      "ITSB2B.Mixer.Business.Core/2026.1.9.86": {
+      "ITSB2B.Mixer.Business.Core/2026.1.9.88": {
         "dependencies": {
           "DocumentFormat.OpenXml": "3.3.0",
           "HtmlAgilityPack": "1.12.2",
           "HtmlSanitizer": "9.0.892",
-          "ITSB2B.Accessory.Business.Core": "1.0.32",
-          "ITSB2B.Accessory.Data.Core": "1.0.32",
-          "ITSB2B.Accessory.Entities.Core": "1.0.32",
-          "ITSB2B.Base.Core": "1.0.32",
-          "ITSB2B.Base.Zip.Core": "1.0.32",
-          "ITSB2B.BokMike.Entities.Core": "2026.1.9.86",
-          "ITSB2B.Item.Attributes.Business.Core": "1.0.32",
-          "ITSB2B.Item.Attributes.Data.Core": "1.0.32",
-          "ITSB2B.Item.Attributes.Entities.Core": "1.0.32",
+          "ITSB2B.Accessory.Business.Core": "1.0.33",
+          "ITSB2B.Accessory.Data.Core": "1.0.33",
+          "ITSB2B.Accessory.Entities.Core": "1.0.33",
+          "ITSB2B.Base.Core": "1.0.33",
+          "ITSB2B.Base.Zip.Core": "1.0.33",
+          "ITSB2B.BokMike.Entities.Core": "2026.1.9.88",
+          "ITSB2B.Item.Attributes.Business.Core": "1.0.33",
+          "ITSB2B.Item.Attributes.Data.Core": "1.0.33",
+          "ITSB2B.Item.Attributes.Entities.Core": "1.0.33",
           "ITSB2B.MCC.Business.Core": "1.0.28",
           "ITSB2B.MCC.Data.Core": "1.0.28",
           "ITSB2B.MCC.Entities.Core": "1.0.28",
-          "ITSB2B.Mixer.Data.Core": "2026.1.9.86",
-          "ITSB2B.Mixer.Entities.Core": "2026.1.9.86",
+          "ITSB2B.Mixer.Data.Core": "2026.1.9.88",
+          "ITSB2B.Mixer.Entities.Core": "2026.1.9.88",
           "ITSB2B.Security.Business.Core": "1.0.34",
           "ITSB2B.Security.Data.Core": "1.0.34",
           "Markdig.Signed": "0.44.0",
@@ -3533,19 +3533,19 @@
         },
         "runtime": {
           "ITSB2B.Mixer.Business.dll": {
-            "assemblyVersion": "2026.1.9.86",
+            "assemblyVersion": "2026.1.9.88",
             "fileVersion": ""
           }
         }
       },
-      "ITSB2B.Mixer.Data.Core/2026.1.9.86": {
+      "ITSB2B.Mixer.Data.Core/2026.1.9.88": {
         "dependencies": {
-          "ITSB2B.Accessory.Data.Core": "1.0.32",
-          "ITSB2B.Accessory.Entities.Core": "1.0.32",
-          "ITSB2B.Base.Core": "1.0.32",
-          "ITSB2B.Item.Attributes.Data.Core": "1.0.32",
-          "ITSB2B.Item.Attributes.Entities.Core": "1.0.32",
-          "ITSB2B.Mixer.Entities.Core": "2026.1.9.86",
+          "ITSB2B.Accessory.Data.Core": "1.0.33",
+          "ITSB2B.Accessory.Entities.Core": "1.0.33",
+          "ITSB2B.Base.Core": "1.0.33",
+          "ITSB2B.Item.Attributes.Data.Core": "1.0.33",
+          "ITSB2B.Item.Attributes.Entities.Core": "1.0.33",
+          "ITSB2B.Mixer.Entities.Core": "2026.1.9.88",
           "ITSB2B.Security.Data.Core": "1.0.34",
           "Markdig.Signed": "0.44.0",
           "Newtonsoft.Json": "13.0.3",
@@ -3554,73 +3554,73 @@
         },
         "runtime": {
           "ITSB2B.Mixer.Data.dll": {
-            "assemblyVersion": "2026.1.9.86",
+            "assemblyVersion": "2026.1.9.88",
             "fileVersion": ""
           }
         }
       },
-      "ITSB2B.Mixer.Entities.Core/2026.1.9.86": {
+      "ITSB2B.Mixer.Entities.Core/2026.1.9.88": {
         "dependencies": {
           "AngleSharp.Css": "0.17.0",
-          "ITSB2B.Accessory.Entities.Core": "1.0.32",
-          "ITSB2B.Base.Core": "1.0.32",
-          "ITSB2B.Item.Attributes.Entities.Core": "1.0.32",
+          "ITSB2B.Accessory.Entities.Core": "1.0.33",
+          "ITSB2B.Base.Core": "1.0.33",
+          "ITSB2B.Item.Attributes.Entities.Core": "1.0.33",
           "ITSB2B.MCC.Entities.Core": "1.0.28",
           "Markdig.Signed": "0.44.0",
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
           "ITSB2B.Mixer.Entities.dll": {
-            "assemblyVersion": "2026.1.9.86",
+            "assemblyVersion": "2026.1.9.88",
             "fileVersion": ""
           }
         }
       },
-      "ITSB2B.BOK.BokWeb.Client.Reference/2026.1.9.86": {
+      "ITSB2B.BOK.BokWeb.Client.Reference/2026.1.9.88": {
         "runtime": {
           "ITSB2B.BOK.BokWeb.Client.dll": {
-            "assemblyVersion": "2026.1.9.86",
-            "fileVersion": "2026.1.9.86"
+            "assemblyVersion": "2026.1.9.88",
+            "fileVersion": "2026.1.9.88"
           }
         }
       },
-      "ITSB2B.BOK.BokWeb.Reference/2026.1.9.86": {
+      "ITSB2B.BOK.BokWeb.Reference/2026.1.9.88": {
         "runtime": {
           "ITSB2B.BOK.BokWeb.dll": {
-            "assemblyVersion": "2026.1.9.86",
-            "fileVersion": "2026.1.9.86"
+            "assemblyVersion": "2026.1.9.88",
+            "fileVersion": "2026.1.9.88"
           }
         }
       },
-      "ITSB2B.BokMike.Entities/2026.1.9.86": {
+      "ITSB2B.BokMike.Entities/2026.1.9.88": {
         "runtime": {
           "ITSB2B.BokMike.Entities.dll": {
-            "assemblyVersion": "2026.1.9.86",
-            "fileVersion": "2026.1.9.86"
+            "assemblyVersion": "2026.1.9.88",
+            "fileVersion": "2026.1.9.88"
           }
         }
       },
-      "ITSB2B.Mixer.Business/2026.1.9.86": {
+      "ITSB2B.Mixer.Business/2026.1.9.88": {
         "runtime": {
           "ITSB2B.Mixer.Business.dll": {
-            "assemblyVersion": "2026.1.9.86",
-            "fileVersion": "2026.1.9.86"
+            "assemblyVersion": "2026.1.9.88",
+            "fileVersion": "2026.1.9.88"
           }
         }
       },
-      "ITSB2B.Mixer.Data/2026.1.9.86": {
+      "ITSB2B.Mixer.Data/2026.1.9.88": {
         "runtime": {
           "ITSB2B.Mixer.Data.dll": {
-            "assemblyVersion": "2026.1.9.86",
-            "fileVersion": "2026.1.9.86"
+            "assemblyVersion": "2026.1.9.88",
+            "fileVersion": "2026.1.9.88"
           }
         }
       },
-      "ITSB2B.Mixer.Entities/2026.1.9.86": {
+      "ITSB2B.Mixer.Entities/2026.1.9.88": {
         "runtime": {
           "ITSB2B.Mixer.Entities.dll": {
-            "assemblyVersion": "2026.1.9.86",
-            "fileVersion": "2026.1.9.86"
+            "assemblyVersion": "2026.1.9.88",
+            "fileVersion": "2026.1.9.88"
           }
         }
       }
@@ -3772,26 +3772,26 @@
       "path": "ibm.watson.toneanalyzer.v3/5.2.0",
       "hashPath": "ibm.watson.toneanalyzer.v3.5.2.0.nupkg.sha512"
     },
-    "ITSB2B.Accessory.Business.Core/1.0.32": {
+    "ITSB2B.Accessory.Business.Core/1.0.33": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-HkJM5Rm7Gv18LPzHCqukFonFUaXVj3w1zAko9uteBRLU7F4yH6/6agWH8UstjzcrFJlDI/spN227/dSGB+J2KQ==",
-      "path": "itsb2b.accessory.business.core/1.0.32",
-      "hashPath": "itsb2b.accessory.business.core.1.0.32.nupkg.sha512"
+      "sha512": "sha512-KE3CXba3GWjtU+k9a5EpqEmDIjbf/MgPneMzdPb0WrMF/UqwI1PZwRo7KnsHboeBnFRICKTx9rei0uxHgtKKIA==",
+      "path": "itsb2b.accessory.business.core/1.0.33",
+      "hashPath": "itsb2b.accessory.business.core.1.0.33.nupkg.sha512"
     },
-    "ITSB2B.Accessory.Data.Core/1.0.32": {
+    "ITSB2B.Accessory.Data.Core/1.0.33": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zmDN4xIEUjsD3M10hgZgQVn0eXrBy11qeq5cBbSCbqB6PS44fwb2tS5Db0a/p8xY++AMgX7XJz1Vmz93BlhadA==",
-      "path": "itsb2b.accessory.data.core/1.0.32",
-      "hashPath": "itsb2b.accessory.data.core.1.0.32.nupkg.sha512"
+      "sha512": "sha512-o8otyQJLZNBOHYE7cKY66IsDSd2MwJiPy/uPCwxBy8xAG0KyitnprRWVuDM0zDD4G3hdHGBIFu+Nm+hXA73D7A==",
+      "path": "itsb2b.accessory.data.core/1.0.33",
+      "hashPath": "itsb2b.accessory.data.core.1.0.33.nupkg.sha512"
     },
-    "ITSB2B.Accessory.Entities.Core/1.0.32": {
+    "ITSB2B.Accessory.Entities.Core/1.0.33": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-TiS7SBk/WDsPAVp7UrAUG/QIGCSCy5SYEfsAjDm86duBrH198Chh2SS3AWINdbhe1Ui+wMnZfpSOocoLpv4p3A==",
-      "path": "itsb2b.accessory.entities.core/1.0.32",
-      "hashPath": "itsb2b.accessory.entities.core.1.0.32.nupkg.sha512"
+      "sha512": "sha512-8OGFrLtjFZIh3fFr5H2MuYftL5o4mccTBizdNbETUaCdMl91y3r26lc9dZ0nKRtCRgGscBCS0+c90lZV8whYLw==",
+      "path": "itsb2b.accessory.entities.core/1.0.33",
+      "hashPath": "itsb2b.accessory.entities.core.1.0.33.nupkg.sha512"
     },
     "ITSB2B.Base.API.Core/1.0.27": {
       "type": "package",
@@ -3800,12 +3800,12 @@
       "path": "itsb2b.base.api.core/1.0.27",
       "hashPath": "itsb2b.base.api.core.1.0.27.nupkg.sha512"
     },
-    "ITSB2B.Base.Core/1.0.32": {
+    "ITSB2B.Base.Core/1.0.33": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KRK9Q/tJqoSFPd6JJUV8ml2cpGuMe+aR6dwRnDf0xrjf0Qo7Ma4TlpHmnCYllRClWd1j/lrHzGEq31zceRKzLg==",
-      "path": "itsb2b.base.core/1.0.32",
-      "hashPath": "itsb2b.base.core.1.0.32.nupkg.sha512"
+      "sha512": "sha512-zdR9ZVK6jv5DEtQEon2J4OWOpmGcp5JjcCm9RKxZ7mi+ERdJoQwUKfhAkiq3KSlgGhTOvowbLtaCjlyJqewbNg==",
+      "path": "itsb2b.base.core/1.0.33",
+      "hashPath": "itsb2b.base.core.1.0.33.nupkg.sha512"
     },
     "ITSB2B.Base.DynamicCode.Core/1.0.27": {
       "type": "package",
@@ -3814,12 +3814,12 @@
       "path": "itsb2b.base.dynamiccode.core/1.0.27",
       "hashPath": "itsb2b.base.dynamiccode.core.1.0.27.nupkg.sha512"
     },
-    "ITSB2B.Base.Zip.Core/1.0.32": {
+    "ITSB2B.Base.Zip.Core/1.0.33": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3m6gp3sRLTqwZJqujLAHniXQ3618Q8vNOZ2A3RXKpG0BKVu2VNitIxl6IqwkwgQ98jG7MM9pfpLu6wxzV2mhmg==",
-      "path": "itsb2b.base.zip.core/1.0.32",
-      "hashPath": "itsb2b.base.zip.core.1.0.32.nupkg.sha512"
+      "sha512": "sha512-5HCmr+9UNmubQW8OE/rhRjPzdWrZipiJE4x++1tbUiNJp7xeoocVUIYKF+inBYzcgv9T7leyXdT3DmQfB8Cjvg==",
+      "path": "itsb2b.base.zip.core/1.0.33",
+      "hashPath": "itsb2b.base.zip.core.1.0.33.nupkg.sha512"
     },
     "ITSB2B.IBM.Api.Entities.Core/1.0.27": {
       "type": "package",
@@ -3835,26 +3835,26 @@
       "path": "itsb2b.ibm.api.services.core/1.0.27",
       "hashPath": "itsb2b.ibm.api.services.core.1.0.27.nupkg.sha512"
     },
-    "ITSB2B.Item.Attributes.Business.Core/1.0.32": {
+    "ITSB2B.Item.Attributes.Business.Core/1.0.33": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-5WUpYpwhfsJ5V9B+himZ180uUctCB+0Si9GLWuC4bHfHgZnG6WrNc1TJ0BdfVOa/NFCAMLiexPGqUjkDhr/9Ng==",
-      "path": "itsb2b.item.attributes.business.core/1.0.32",
-      "hashPath": "itsb2b.item.attributes.business.core.1.0.32.nupkg.sha512"
+      "sha512": "sha512-XXTa1/cGYM0UCHvGcbGBUqcgPH50WyzJnmsFZlqVgCalaKZ2pBDBxW5GjFvLbhCH8+4IrvbTc2GNptCuI/ydgQ==",
+      "path": "itsb2b.item.attributes.business.core/1.0.33",
+      "hashPath": "itsb2b.item.attributes.business.core.1.0.33.nupkg.sha512"
     },
-    "ITSB2B.Item.Attributes.Data.Core/1.0.32": {
+    "ITSB2B.Item.Attributes.Data.Core/1.0.33": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-QyF4/0bCMvqqllteKD5O+iCQKUl6OksW4Rhbh0yEb9KSTObZ3AzpmfrCC7ors1C75yHexbVaS8pChVx3cRYlKg==",
-      "path": "itsb2b.item.attributes.data.core/1.0.32",
-      "hashPath": "itsb2b.item.attributes.data.core.1.0.32.nupkg.sha512"
+      "sha512": "sha512-MKfFHtuYDHgqm3PwB31qvs/FeuMfcdgETeLXM96EcwXf2rMcpySoD5rjad8oG5M/akXQmb6+5X591u+bWmM0NA==",
+      "path": "itsb2b.item.attributes.data.core/1.0.33",
+      "hashPath": "itsb2b.item.attributes.data.core.1.0.33.nupkg.sha512"
     },
-    "ITSB2B.Item.Attributes.Entities.Core/1.0.32": {
+    "ITSB2B.Item.Attributes.Entities.Core/1.0.33": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1xx1//zgkgwfvujTlJP0JvHmike2ws5TsT4bAIL5QRpD3TLmz7KcPZaPMWd7B6SlfUIST7pGXh5eZz8a2PfARg==",
-      "path": "itsb2b.item.attributes.entities.core/1.0.32",
-      "hashPath": "itsb2b.item.attributes.entities.core.1.0.32.nupkg.sha512"
+      "sha512": "sha512-630at0ixgQtmTRyy83CJ417u1eUVc9a9/PSsKiXQ40I6GXXFClJtTKZEySXrfqB9kzDdLna8KvKpmOsjD23Jxw==",
+      "path": "itsb2b.item.attributes.entities.core/1.0.33",
+      "hashPath": "itsb2b.item.attributes.entities.core.1.0.33.nupkg.sha512"
     },
     "ITSB2B.MCC.Business.Core/1.0.28": {
       "type": "package",
@@ -3891,12 +3891,12 @@
       "path": "itsb2b.security.data.core/1.0.34",
       "hashPath": "itsb2b.security.data.core.1.0.34.nupkg.sha512"
     },
-    "ITSB2B.Syncfusion.Licensing.Core/1.0.32": {
+    "ITSB2B.Syncfusion.Licensing.Core/1.0.33": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-LnoIwoeVz4XVEpw2rQRi+YJzTD/97pW5uhBgjR/DK8RDcDC0JVT+WNst9Rn+bsnir0k4iMaGiqz5yXcPEO7jZA==",
-      "path": "itsb2b.syncfusion.licensing.core/1.0.32",
-      "hashPath": "itsb2b.syncfusion.licensing.core.1.0.32.nupkg.sha512"
+      "sha512": "sha512-rkHkaLkv4WP27ufFbijXNl7C3snPqjsQQ8OcssOw2BwrGTc50Pid2KZqNswezNt/0U42kl3DeY6AVk6OI3y8vA==",
+      "path": "itsb2b.syncfusion.licensing.core/1.0.33",
+      "hashPath": "itsb2b.syncfusion.licensing.core.1.0.33.nupkg.sha512"
     },
     "JsonSubTypes/1.8.0": {
       "type": "package",
@@ -5774,62 +5774,62 @@
       "path": "wdc.system.net.http.formatting.netstandard/1.0.7",
       "hashPath": "wdc.system.net.http.formatting.netstandard.1.0.7.nupkg.sha512"
     },
-    "ITSB2B.BOK.BokWeb/2026.1.9.86": {
+    "ITSB2B.BOK.BokWeb/2026.1.9.88": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ITSB2B.BOK.BokWeb.Client/2026.1.9.86": {
+    "ITSB2B.BOK.BokWeb.Client/2026.1.9.88": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ITSB2B.BokMike.Entities.Core/2026.1.9.86": {
+    "ITSB2B.BokMike.Entities.Core/2026.1.9.88": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ITSB2B.Mixer.Business.Core/2026.1.9.86": {
+    "ITSB2B.Mixer.Business.Core/2026.1.9.88": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ITSB2B.Mixer.Data.Core/2026.1.9.86": {
+    "ITSB2B.Mixer.Data.Core/2026.1.9.88": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ITSB2B.Mixer.Entities.Core/2026.1.9.86": {
+    "ITSB2B.Mixer.Entities.Core/2026.1.9.88": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ITSB2B.BOK.BokWeb.Client.Reference/2026.1.9.86": {
+    "ITSB2B.BOK.BokWeb.Client.Reference/2026.1.9.88": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "ITSB2B.BOK.BokWeb.Reference/2026.1.9.86": {
+    "ITSB2B.BOK.BokWeb.Reference/2026.1.9.88": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "ITSB2B.BokMike.Entities/2026.1.9.86": {
+    "ITSB2B.BokMike.Entities/2026.1.9.88": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "ITSB2B.Mixer.Business/2026.1.9.86": {
+    "ITSB2B.Mixer.Business/2026.1.9.88": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "ITSB2B.Mixer.Data/2026.1.9.86": {
+    "ITSB2B.Mixer.Data/2026.1.9.88": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "ITSB2B.Mixer.Entities/2026.1.9.86": {
+    "ITSB2B.Mixer.Entities/2026.1.9.88": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

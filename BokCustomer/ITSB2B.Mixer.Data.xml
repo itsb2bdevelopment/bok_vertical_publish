@@ -893,6 +893,11 @@
             Metodo per aggiungere Campi Manualmente definiti alla select se necessario per la tabella DocEditorQueues
             </summary>
         </member>
+        <member name="M:ITSB2B.Mixer.Data.Agents.DpEditorsMgr.DocEditorQueues_ClaimForService(System.Collections.Generic.List{System.Int32},System.DateTime)">
+            <summary>
+            Marca atomicamente come in lavorazione le righe indicate, restituendo gli ID realmente presi in carico.
+            </summary>
+        </member>
         <member name="F:ITSB2B.Mixer.Data.Agents.DpEditorsMgr.SQL_DocEditorQueues_Delete">
             <summary>
             Stringa SQL per la cancellazione di un record della tabella TbDocEditorQueues
@@ -946,6 +951,11 @@
         <member name="F:ITSB2B.Mixer.Data.Agents.DpEditorsMgr.SQL_DocEditorQueues_Update">
             <summary>
             Stringa SQL per modifica di un elemento per la tabella TbDocEditorQueues
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Data.Agents.DpEditorsMgr.SQL_DocEditorQueues_ClaimForService">
+            <summary>
+            Stringa SQL per marcare atomicamente le righe prese in carico dal servizio.
             </summary>
         </member>
         <member name="M:ITSB2B.Mixer.Data.Agents.DpEditorsMgr.DocEditors_Delete(System.String)">
@@ -1196,7 +1206,17 @@
              Codice manuale per la tabella DocBlockElements
             </summary>
             <summary>
+             Funzioni di cancellazione degli elements e del contenuto di documenti e loro contenuti
+             usate per varie tipologie di elaborazione prima fra tutte il prune, ma anche l'update di un documento
+            </summary>
+            <summary>
+             Metodi per il calcolo delle hierarchy dei blocchi di documentazione
+            </summary>
+            <summary>
             Classe Data provider per le stringhe SQL autogenerata per il record della tabella DocBlockElements
+            </summary>
+            <summary>
+             Descrizione della classe: 
             </summary>
             <summary>
              Descrizione della classe: 
@@ -1787,22 +1807,128 @@
             Aggiornamento di un record della tabella DocBlockElements
             </summary>
         </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.RecognizePageLayout(System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},System.Int32,System.Int32)">
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_DocumentHasElements(System.Int32)">
             <summary>
-            Verifica il layout di pagina (presumo ai fini della grafica)
+            Controlla se un documento ha dei blocchi
+            generata in origine per il bulk import
             </summary>
-            <param name="elements"></param>
-            <param name="pageWidth"></param>
-            <param name="tollerance"></param>
+            <param name="idDoc">The identifier document.</param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_Count(System.Int32)">
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_GetDocumentPagesNumber(System.Collections.Generic.List{System.Int32})">
             <summary>
-            Conta quanti blocks ci sono in un document
-            usato dalla flash action
+            Genera una lista di valori con IDDoc,PagesNumber
+            data una lista di documenti rendendo per ogni documento il numero di pagine dello stesso
+            se il documento non ha Blocks non viene restituito
+            </summary>
+            <param name="idDocs">Lista degli ID Documento di cui recuperare il numero di pagine</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_HasInternalKnowledge(System.Int32)">
+            <summary>
+            Verifica se un documento ha elementi di internal knowledge
             </summary>
             <param name="idDoc"></param>
             <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_List_Elements_Connected_Recursive(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Genera una lista di ID di elementi a partire da una lista di ID di elementi
+            la lista generata contiene oltre agli ID passati come filtro gli ID di eventuali elementi discendenti (internal knowledge collegati)
+            che gli ID di eventuali elementi parent, fino ad arrivare all'elemento radice (l'elemento Text da cui abbiamo iniziato a collegare l'internal knowledge)
+            Supposto che io abbia un elemento radice: 345 a cui collego l'elemento 765 a cui collego l'elemento 766 a cui collego l'elemento 767
+            se nella lista richiedo l'elemento 766 otterrò la lista 345, 765, 766, 767
+            </summary>
+            <param name="idElementsFilter">Lista degli elements di cui restituire gli elementi collegati</param>
+            <returns>Lista degli ID degli elements richiesti più gli elements a loro collegati </returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_UpdateLeaf(System.Int32,System.Object)">
+            <summary>
+            Updates the leaf.
+            </summary>
+            <param name="idDoc">The i d document.</param>
+            <param name="idTreeBranchLeaf">The identifier tree branch leaf.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.New_DocBlockElements_SelectIDsForSearchHistory(ITSB2B.Mixer.Entities.PowerSearch.SearchHistoryUpdateFilterItem)">
+            <summary>
+            Selezione degli ID per la search history verificare se usata e dove
+            </summary>
+            <param name="filters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_AddOtherSql(System.Text.StringBuilder,System.Data.SqlClient.SqlCommand,System.String,ITSB2B.Mixer.Entities.Blocks.DocBlockElementFilterItem)">
+            <summary>
+            In questo metodo possiamo aggiungere stringhe SQL all'SQL completo della select
+            Questo ci permette di inserire codice SQL che sta prima della Select * o della Select paginata
+            Attenzione!!! Il sql viene usato anche dalla Count e dalla SelectIDs
+            </summary>
+            <param name="sql"></param>
+            <param name="cmd"></param>
+            <param name="verb"></param>
+            <param name="filters"></param>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_List_Elements_Connected_Recursive(System.Data.SqlClient.SqlConnection,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Genera una lista di ID di elementi a partire da una lista di ID di elementi
+            la lista generata contiene oltre agli ID passati come filtro gli ID di eventuali elementi discendenti (internal knowledge collegati)
+            che gli ID di eventuali elementi parent, fino ad arrivare all'elemento radice (l'elemento Text da cui abbiamo iniziato a collegare l'internal knowledge)
+            Supposto che io abbia un elemento radice: 345 a cui collego l'elemento 765 a cui collego l'elemento 766 a cui collego l'elemento 767
+            se nella lista richiedo l'elemento 766 otterrò la lista 345, 765, 766, 767
+            </summary>
+            <param name="cn">Connection</param>
+            <param name="idElementsFilter">Lista degli elements di cui restituire gli elementi collegati</param>
+            <returns>Lista degli ID degli elements richiesti più gli elements a loro collegati </returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_PostInsertManualCode(ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem)">
+            <summary>
+            Permette di aggiungere Codice manuale dopo l'inserimento di un nuovo record nella tabella DocBlockElements
+            </summary>
+            <param name="item">Record</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_PreInsertManualCode(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem)">
+            <summary>
+            Permette di aggiungere Codice manuale prima dell'inserimento di un nuovo record nella tabella DocBlockElements
+            </summary>
+            <param name="cn">Sql connection</param>
+            <param name="tn">Sql Transaction</param>
+            <param name="item">Record</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_ReadIDsManualCode(System.Data.SqlClient.SqlDataReader,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Metodo per aggiungere codice manuale nella funzione di lettura delle ID se necessario per la tabella DocBlockElements
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_ReadItemManualCode(System.Data.SqlClient.SqlDataReader,ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem)">
+            <summary>
+            Metodo per aggiungere codice manuale nella funzione di lettura dati dal datareader se necessario per la tabella DocBlockElements
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_Select_by_IDDoc(System.Int32)">
+            <summary>
+            Shortcut per leggere tutti gli elements di un documento
+            </summary>
+            <param name="idDoc">ID Del documento</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_SqlAddManualFilters(System.Text.StringBuilder,System.Data.SqlClient.SqlCommand,System.String,ITSB2B.Mixer.Entities.Blocks.DocBlockElementFilterItem)">
+            <summary>
+            Metodo per aggiungere filtri manuali alla select per la tabella DocBlockElements
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_SqlAddManualPreFilters(System.Text.StringBuilder,System.Data.SqlClient.SqlCommand,ITSB2B.Mixer.Entities.Blocks.DocBlockElementFilterItem)">
+            <summary>
+            Metodo per aggiungere codice prima dei filtri manuali alla select per la tabella DocBlockElements
+            creata per poter inserire nella select la join per il filtro Join IN
+            </summary>
+            <param name="sql"></param>
+            <param name="cmd"></param>
+            <param name="filters"></param>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_SqlGenAdditionalFields">
+            <summary>
+            Metodo per aggiungere Campi Manualmente definiti alla select se necessario per la tabella DocBlockElements
+            </summary>
         </member>
         <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_Delete(System.Int32,System.Guid)">
              <summary>
@@ -1899,23 +2025,6 @@
             <param name="languageTableSuffix">Lingua del documento (xFTS)</param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_DocumentHasElements(System.Int32)">
-            <summary>
-            Controlla se un documento ha dei blocchi
-            generata in origine per il bulk import
-            </summary>
-            <param name="idDoc">The identifier document.</param>
-            <returns></returns>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_GetDocumentPagesNumber(System.Collections.Generic.List{System.Int32})">
-            <summary>
-            Genera una lista di valori con IDDoc,PagesNumber
-            data una lista di documenti rendendo per ogni documento il numero di pagine dello stesso
-            se il documento non ha Blocks non viene restituito
-            </summary>
-            <param name="idDocs">Lista degli ID Documento di cui recuperare il numero di pagine</param>
-            <returns></returns>
-        </member>
         <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_GetIDsFromFilters(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,ITSB2B.Mixer.Entities.Blocks.DocBlockElementsDeleteFilters)">
             <summary>
             Genera una lista di ID filtrando sui delete filters passati
@@ -1926,66 +2035,102 @@
             <param name="filters"></param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_GetParents(System.Collections.Generic.List{System.Int32})">
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_BuildIDValuesForTablesFilters(System.Collections.Generic.List{System.Int32},System.Int32)">
             <summary>
-            Data una lista di ID Di Doc elements ricava la lista dei Parent (per l'internal knowledge e Phrase Tags)
-            e produce una lista di coppie di ID su un Dynamic (per non dover creare una classe inutile).
+            Generazione di una lista di valori per un filtro in join
             </summary>
-            <param name="idElementsFilter"></param>
+            <param name="ids"></param>
+            <param name="batchSize"></param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_HasInternalKnowledge(System.Int32)">
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_RenumberDefaultHierarchy(ITSB2B.Mixer.Entities.Docs.DocItem)">
             <summary>
-            Verifica se un documento ha elementi di internal knowledge
+            Rinumera la hierarchy degli elementi del documento.
+            La hierarchy viene generata per pagina.
+            Gli elementi Text root generano la numerazione pppp.nn.
+            I child generano la numerazione ricorsiva pppp.nn.01, pppp.nn.01.01, ecc.
+            Gli elementi non Text senza parent vengono agganciati all'ultimo elemento Text della pagina.
+            Se non hanno pagina vengono spostati alla pagina massima del documento.
             </summary>
-            <param name="idDoc"></param>
+            <param name="document">Documento</param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_List_Elements_Connected_Recursive(System.Collections.Generic.List{System.Int32})">
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_RenumberPageHierarchy(ITSB2B.Mixer.Entities.Blocks.DocBlockElementsCollection,System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},System.Int32,System.String)">
             <summary>
-            Genera una lista di ID di elementi a partire da una lista di ID di elementi
-            la lista generata contiene oltre agli ID passati come filtro gli ID di eventuali elementi discendenti (internal knowledge collegati)
-            che gli ID di eventuali elementi parent, fino ad arrivare all'elemento radice (l'elemento Text da cui abbiamo iniziato a collegare l'internal knowledge)
-            Supposto che io abbia un elemento radice: 345 a cui collego l'elemento 765 a cui collego l'elemento 766 a cui collego l'elemento 767
-            se nella lista richiedo l'elemento 766 otterrò la lista 345, 765, 766, 767
+            Rinumera la hierarchy di una singola pagina.
             </summary>
-            <param name="idElementsFilter">Lista degli elements di cui restituire gli elementi collegati</param>
-            <returns>Lista degli ID degli elements richiesti più gli elements a loro collegati </returns>
         </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_RenumberAllDocumentsHierarchy(System.String,System.Collections.Generic.List{ITSB2B.Mixer.Entities.Support.LanguageItem})">
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_RenumberChildsHierarchy(ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem,ITSB2B.Mixer.Entities.Blocks.DocBlockElementsCollection,System.String)">
             <summary>
-            Ricostruzione della Hierarchy dei documenti di un intera tree
+            Rinumera ricorsivamente i child di un parent.
+            La hierarchy dei child dipende solo dal parent, mai dalla geometria.
             </summary>
-            <param name="IDTree">ID della tree</param>
-            <param name="languages">Lista dei languages che vengono passati x ogni documento</param>
-            <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_RenumberDefaultHierarchy(System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},ITSB2B.Mixer.Entities.Docs.DocItem,ITSB2B.Mixer.Entities.Support.LanguageItem,System.Boolean)">
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_OrderRootTextElementsForPage(System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem})">
             <summary>
-            Rinumera la hierarchy degli elements di un documento
-            è diventata una cosa molto lineare legata alle posizioni dei rettangoli
+            Ordina i root Text della pagina.
+            Se hanno geometria valida usa ordinamento posizionale umano.
+            Se non hanno geometria usa l'ordine originale di lettura.
             </summary>
-            <param name="elements"></param>
-            <param name="document"></param>
-            <param name="language"></param>
-            <param name="renumber"></param>
-            <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_RenumberElementsListHierarchy(System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},System.Int32,System.String)">
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_OrderElementsByHumanReadingPosition(System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},System.Int32)">
             <summary>
-            Renumbers the hierarchy of document block elements for a specific page, updating their hierarchy levels and
-            ensuring consistency across parent and child elements.
+            Ordinamento posizionale umano dei root Text della pagina.
+            Strategia:
+            - ordinamento preliminare per Y/X
+            - creazione di bande verticali
+            - nella singola banda: prima gli spanning, poi gli altri da sinistra a destra
             </summary>
-            <remarks>This method processes the provided ordered elements to assign a hierarchical numbering scheme
-            based on the page number and the position of each element. It updates the hierarchy levels for parent elements and
-            recursively renumbers child elements to maintain a consistent hierarchy. The method ensures that all updates are
-            persisted and handles any errors that occur during the process.</remarks>
-            <param name="allElements">A list of all document block elements, including both ordered and unordered elements.</param>
-            <param name="orderedElements">A list of document block elements ordered by their intended hierarchy for the specified page.</param>
-            <param name="pageNumber">The page number to which the elements belong. Used as the base for hierarchy numbering.</param>
-            <param name="pageFormat">The format string for numbering the page, such as "00#" or "000#".</param>
-            <returns>A <see cref="T:ITSB2B.Base.Entities.Result`1"/> containing a boolean value indicating whether the renumbering operation was successful.
-            If the operation fails, the result will contain error details.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_AttachRootNonTextOrphansToLastRootText(System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem)">
+            <summary>
+            Aggancia gli elementi non-Text root orfani all'ultimo elemento Text della pagina.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_IsRootTextElement(ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem)">
+            <summary>
+            Verifica se l'elemento è un root Text.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_IsRootNonTextElement(ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem)">
+            <summary>
+            Verifica se l'elemento è root e non è di tipo Text.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_HasValidGeometry(ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem)">
+            <summary>
+            Verifica se il root Text ha geometria valida.
+            ATTENZIONE: questo controllo deve essere applicato solo ai root Text,
+            mai ai child, perché i child possono avere coordinate tecniche non legate alla hierarchy.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_NormalizeElementsPageNumbers(ITSB2B.Mixer.Entities.Blocks.DocBlockElementsCollection,ITSB2B.Mixer.Entities.Docs.DocItem)">
+            <summary>
+            Normalizza i numeri di pagina degli elementi.
+            Gli elementi senza pagina vengono assegnati alla pagina massima disponibile.
+            Restituisce il numero massimo di pagina finale.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_BuildPageFormat(System.Int32)">
+            <summary>
+            Costruisce il formato del numero pagina.
+            Minimo 2 cifre.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_BuildRootElementFormat(System.Int32)">
+            <summary>
+            Costruisce il formato dei root element della pagina.
+            Minimo 2 cifre.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_GetReadOrderIndex(System.String)">
+            <summary>
+            Estrae l'indice di lettura da BlockIDCodeOnDoc.
+            Supporta:
+            - Pnnnn_mmy
+            - Pnnnn_ymm
+            Se non riesce a interpretarlo, restituisce int.MaxValue.
+            </summary>
         </member>
         <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_Select_Element_Doc(System.Collections.Generic.List{System.Int32})">
              <summary>
@@ -1994,148 +2139,40 @@
              <param name="elements"></param>
              <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_SelectFtsRowsByID(System.Collections.Generic.List{System.Int32})">
-            <summary>
-            Lettura di una lista di Doc Block Elements compilando degli elementi di risultato FtS
-            Per fornire ad una Search le righe Parent delle eventuali Internal Knowledge che non contengono
-            Le parole cercate via FtS.
-            </summary>
-            <param name="idDocBlockElementFilter">Lista di ID di Doc Block Elements da leggere</param>
-            <returns></returns>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_UpdateLeaf(System.Int32,System.Object)">
-            <summary>
-            Updates the leaf.
-            </summary>
-            <param name="idDoc">The i d document.</param>
-            <param name="idTreeBranchLeaf">The identifier tree branch leaf.</param>
-            <exception cref="T:System.NotImplementedException"></exception>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_WebInsertOrUpdate(ITSB2B.Mixer.Entities.Blocks.WebBlockElementItem)">
-            <summary>
-            Inserimento dal web non so se è ancora usato da anthony
-            </summary>
-            <param name="webItem"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_WordCount(ITSB2B.Mixer.Entities.Blocks.WordCountFilterItem)">
-            <summary>
-            Funzione di count delle parole trovate in un element x la search
-            non so se sia quella giusta o una obsoleta
-            </summary>
-            <param name="filters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.New_DocBlockElements_SelectIDsForSearchHistory(ITSB2B.Mixer.Entities.PowerSearch.SearchHistoryUpdateFilterItem)">
-            <summary>
-            Selezione degli ID per la search history verificare se usata e dove
-            </summary>
-            <param name="filters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.BuildIDValuesForTablesFilters(System.Collections.Generic.List{System.Int32},System.Int32)">
-            <summary>
-            Generazione di una lista di valori per un filtro in join
-            </summary>
-            <param name="ids"></param>
-            <param name="batchSize"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_AddOtherSql(System.Text.StringBuilder,System.Data.SqlClient.SqlCommand,System.String,ITSB2B.Mixer.Entities.Blocks.DocBlockElementFilterItem)">
-            <summary>
-            In questo metodo possiamo aggiungere stringhe SQL all'SQL completo della select
-            Questo ci permette di inserire codice SQL che sta prima della Select * o della Select paginata
-            Attenzione!!! Il sql viene usato anche dalla Count e dalla SelectIDs
-            </summary>
-            <param name="sql"></param>
-            <param name="cmd"></param>
-            <param name="verb"></param>
-            <param name="filters"></param>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_List_Elements_Connected_Recursive(System.Data.SqlClient.SqlConnection,System.Collections.Generic.List{System.Int32})">
-            <summary>
-            Genera una lista di ID di elementi a partire da una lista di ID di elementi
-            la lista generata contiene oltre agli ID passati come filtro gli ID di eventuali elementi discendenti (internal knowledge collegati)
-            che gli ID di eventuali elementi parent, fino ad arrivare all'elemento radice (l'elemento Text da cui abbiamo iniziato a collegare l'internal knowledge)
-            Supposto che io abbia un elemento radice: 345 a cui collego l'elemento 765 a cui collego l'elemento 766 a cui collego l'elemento 767
-            se nella lista richiedo l'elemento 766 otterrò la lista 345, 765, 766, 767
-            </summary>
-            <param name="cn">Connection</param>
-            <param name="idElementsFilter">Lista degli elements di cui restituire gli elementi collegati</param>
-            <returns>Lista degli ID degli elements richiesti più gli elements a loro collegati </returns>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_PostInsertManualCode(ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem)">
-            <summary>
-            Permette di aggiungere Codice manuale dopo l'inserimento di un nuovo record nella tabella DocBlockElements
-            </summary>
-            <param name="item">Record</param>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_PreInsertManualCode(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem)">
-            <summary>
-            Permette di aggiungere Codice manuale prima dell'inserimento di un nuovo record nella tabella DocBlockElements
-            </summary>
-            <param name="cn">Sql connection</param>
-            <param name="tn">Sql Transaction</param>
-            <param name="item">Record</param>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_ReadIDsManualCode(System.Data.SqlClient.SqlDataReader,System.Collections.Generic.List{System.Int32})">
-            <summary>
-            Metodo per aggiungere codice manuale nella funzione di lettura delle ID se necessario per la tabella DocBlockElements
-            </summary>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_ReadItemManualCode(System.Data.SqlClient.SqlDataReader,ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem)">
-            <summary>
-            Metodo per aggiungere codice manuale nella funzione di lettura dati dal datareader se necessario per la tabella DocBlockElements
-            </summary>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_RenumberChildsHierarchy(ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem,System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},System.String)">
-            <summary>
-            Recursively assigns hierarchy numbers to child elements
-            </summary>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_SqlAddManualFilters(System.Text.StringBuilder,System.Data.SqlClient.SqlCommand,System.String,ITSB2B.Mixer.Entities.Blocks.DocBlockElementFilterItem)">
-            <summary>
-            Metodo per aggiungere filtri manuali alla select per la tabella DocBlockElements
-            </summary>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_SqlAddManualPreFilters(System.Text.StringBuilder,System.Data.SqlClient.SqlCommand,ITSB2B.Mixer.Entities.Blocks.DocBlockElementFilterItem)">
-            <summary>
-            Metodo per aggiungere codice prima dei filtri manuali alla select per la tabella DocBlockElements
-            creata per poter inserire nella select la join per il filtro Join IN
-            </summary>
-            <param name="sql"></param>
-            <param name="cmd"></param>
-            <param name="filters"></param>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_SqlGenAdditionalFields">
-            <summary>
-            Metodo per aggiungere Campi Manualmente definiti alla select se necessario per la tabella DocBlockElements
-            </summary>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_WebInsert(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,ITSB2B.Mixer.Entities.Blocks.WebBlockElementItem)">
-            <summary>
-            Controllare se ancora usata da Anthony
-            </summary>
-            <param name="cn"></param>
-            <param name="tn"></param>
-            <param name="webItem"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_WebUpdate(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,ITSB2B.Mixer.Entities.Blocks.WebBlockElementItem)">
-            <summary>
-            Update da Web non so se sia ancora usato da anthony
-            </summary>
-            <param name="cn"></param>
-            <param name="tn"></param>
-            <param name="webItem"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.SplitList(System.Collections.Generic.List{System.Int32},System.Int32)">
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_SplitList(System.Collections.Generic.List{System.Int32},System.Int32)">
             <summary>
             Divide una lista di ID per creare una tabella temporanea per filtro in join
             </summary>
             <param name="list"></param>
             <param name="batchSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_RebuildHierarchyForAllDocs(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Ricostruzione della hierarchy di tutti gli elementi di tutti i documenti.
+            </summary>
+            <param name="startFromIDDoc">ID del documento da cui iniziare, default=0 per processare tutti i documenti</param>
+            <param name="endAtIDDoc">ID del documento a cui finire, default=0 per processare tutti i documenti</param>
+            <param name="batchSize">Dimensione del batch documenti da processare ad ogni giro, default=100</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.Docs_GetDocumentIDsBatchForHierarchyRebuild(System.Int32,System.Int32)">
+            <summary>
+            Genera un batch di ID documenti da processare per la ricostruzione della gerarchia.
+            </summary>
+            <param name="lastIDDoc">ID dell'ultimo documento processato</param>
+            <param name="batchSize">Dimensione del batch di documenti da processare</param>
+            <returns>Lista di ID documenti</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_RenumberElementsListHierarchy(ITSB2B.Mixer.Entities.Blocks.DocBlockElementsCollection,System.Collections.Generic.List{ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem},System.Int32,System.String)">
+            <summary>
+            Rinumerazione di una lista secondo una lista ordinata passata dall'esterno
+            usata nel mixer per la gerarchia ricalcolata tramite AI
+            </summary>
+            <param name="allElements"></param>
+            <param name="orderedElements"></param>
+            <param name="pageNumber"></param>
+            <param name="pageFormat"></param>
             <returns></returns>
         </member>
         <member name="F:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.SQL_DocBlockElements_Delete">
@@ -2203,6 +2240,31 @@
             Lista dei documenti di ogni element usata per aggiornare la history delle
             ricerche
             </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_WebInsertOrUpdate(ITSB2B.Mixer.Entities.Blocks.WebBlockElementItem)">
+            <summary>
+            Inserimento dal web non so se è ancora usato da anthony
+            </summary>
+            <param name="webItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_WebInsert(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,ITSB2B.Mixer.Entities.Blocks.WebBlockElementItem)">
+            <summary>
+            Controllare se ancora usata da Anthony
+            </summary>
+            <param name="cn"></param>
+            <param name="tn"></param>
+            <param name="webItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElements_WebUpdate(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,ITSB2B.Mixer.Entities.Blocks.WebBlockElementItem)">
+            <summary>
+            Update da Web non so se sia ancora usato da anthony
+            </summary>
+            <param name="cn"></param>
+            <param name="tn"></param>
+            <param name="webItem"></param>
+            <returns></returns>
         </member>
         <member name="M:ITSB2B.Mixer.Data.Blocks.DpDocBlocksMgr.DocBlockElementTypes_Delete(System.String)">
             <summary>
@@ -5287,12 +5349,16 @@
             <param name="idTreeBranchLeaf"></param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.Data.Docs.DpDocsMgr.Docs_Select1_By_OriginID(System.String)">
+        <member name="M:ITSB2B.Mixer.Data.Docs.DpDocsMgr.Docs_Select_GlobalInfo">
             <summary>
             Restituisce un Documento selezionato via OriginFileID
             </summary>
             <param name="originID">ID file origine</param>
             <returns>Il documento se esiste altrimenti null o l'eventuale errore</returns>
+            <summary>
+            Calcolo minimo e massimo ID nonché numero documenti presenti nel database.
+            </summary>
+            <returns>Item con MinID, MaxID, Count</returns>
         </member>
         <member name="M:ITSB2B.Mixer.Data.Docs.DpDocsMgr.Docs_SelectBase(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,ITSB2B.Mixer.Entities.Docs.DocsFilters)">
             <summary>

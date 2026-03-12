@@ -33,10 +33,33 @@ main[b-z2k9ho9j0m] {
     }
 }
 /* _content/ITSB2B.NEOS.BokWeb/Components/Layout/NavMenuCustom.razor.rz.scp.css */
-/* _content/ITSB2B.NEOS.BokWeb/Components/Pages/Custom.razor.rz.scp.css */
-#gridContent[b-k2cyadkbda]{
+/* _content/ITSB2B.NEOS.BokWeb/Components/Pages/DVRChimico/CSCE.razor.rz.scp.css */
+#gridContent[b-7zd2oqyg3l]{
     margin-top: 130px;
     padding: 12px;
+}
+
+.preview-doc[b-7zd2oqyg3l] {
+    height: calc(100vh - 300px);
+    overflow: auto;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    padding: 10px;
+    background: #fff;
+}
+
+.preview-edit-mode [data-position][b-7zd2oqyg3l] {
+    cursor: pointer;
+}
+
+.preview-edit-mode [data-position]:hover[b-7zd2oqyg3l] {
+    background: #f4fbf3;
+    outline: 1px dashed #6aa84f;
+}
+
+.preview-selected-word[b-7zd2oqyg3l] {
+    background: #d9f2d3 !important;
+    outline: 2px solid #6aa84f !important;
 }
 /* _content/ITSB2B.NEOS.BokWeb/Components/Pages/Home.razor.rz.scp.css */
 #gridContent[b-cib2zfjt76]{

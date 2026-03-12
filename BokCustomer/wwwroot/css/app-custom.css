@@ -1,0 +1,46 @@
+#navmenu .fa-quorum {
+    background-image: url(/icons/titles/logo-quorum.png);
+}
+#navmenu .fa-neos {
+    background-image: url(/icons/titles/logo-neos.png);
+}
+#navmenu .fa-academy {
+    background-image: url(/icons/titles/logo-academy.png);
+}
+#navmenu .fa-neos-group {
+    background-image: url(/icons/titles/logo-neos-group.png);
+    background-position-x: 10px!important;
+}
+#navmenu .fa-neosicon {
+    background-position: left;
+    background-size: 68px;
+    width: 200px !important;
+    height: 50px !important;
+    margin: 0px 0px 10px 0px!important;
+}
+#navmenu .e-treeview .e-icon-collapsible, .e-treeview .e-icon-expandable {
+    margin: 0px 0px 0 -10px!important;
+}
+.workspace-title-column{
+    background-color: #97C3B3;
+    border-radius: 5px;
+    padding: 8px;
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom:5px;
+}
+.elementsUl{
+    list-style-type: none!important;
+    padding-left: 0px;
+    width: 100%;
+    overflow: auto;
+}
+.elementsLi .page{
+    float:right;
+    width:90px;
+    text-align: right;
+}
+.workspace-content {
+    display: flex;
+    height: calc(100vh - 210px);
+}

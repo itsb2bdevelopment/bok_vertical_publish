@@ -25,6 +25,7 @@ function invokeAgentMethod(method, ...args) {
 
 // ricavo intestazioni delle tabelle per gestire la modifica
 window.getTheadDataRefs = (parentId, jsonPosition) => {
+    console.log("[getTheadDataRefs "+parentId+"]");
     const parent = document.getElementById(parentId);
     if (!parent) return [];
 
@@ -34,19 +35,23 @@ window.getTheadDataRefs = (parentId, jsonPosition) => {
     const thead = table.querySelector("thead");
     if (!thead) return [];
 
-    const tds = thead.querySelectorAll("td[data-ref]");
+    const headers = thead.querySelectorAll("td[data-ref], th[data-ref]");
 
-    // Mappa ogni td in un oggetto { dataRef, value }
-    const result = Array.from(tds).map(td => ({
-        reference: td.getAttribute("data-ref"),
-        value: td.innerHTML.trim()
+    // Mappa ogni td in un oggetto { dataRef, value, hidden }
+    const result = Array.from(headers).map(cell => ({
+        reference: cell.getAttribute("data-ref"),
+        value: cell.innerHTML.trim(),
+        hidden: cell.getAttribute("data-readonly") === "true",
+        width: cell.getAttribute("width") || "auto"
     }));
 
-
+    console.log("[/getTheadDataRefs]");
     return result;
 };
 
-
+// Evento che gestisce il campo modificabile
+// Se ha la classe .editMode intercetta il click e fa cose
+// Interagisce con data-type="fields" e data-type="table"
 document.addEventListener('click', function (e) {
     // Solo click SINISTRO
     if (e.button !== 0) return;
@@ -62,6 +67,7 @@ document.addEventListener('click', function (e) {
         var fieldsElem = e.target.closest('[data-type="fields"]');
         var tableTypeElem = e.target.closest('[data-type="table"]');
 
+        // prende quello più vicino tra fields e table
         var getDistanceToAncestor = function (startNode, ancestorNode) {
             var distance = 0;
             var node = startNode;
@@ -77,11 +83,19 @@ document.addEventListener('click', function (e) {
         var tableDistance = tableTypeElem ? getDistanceToAncestor(e.target, tableTypeElem) : Number.POSITIVE_INFINITY;
         var shouldHandleAsField = fieldsDistance < tableDistance;
 
+        // se è una tabella controlla che esista l'attributo data-table
+        // questo indica che oggetto del json prendere
         if (tableTypeElem && !shouldHandleAsField) {
-            var tableElem = e.target.closest('[data-table]');
-            var jsonPositionTable = tableElem ? tableElem.getAttribute("data-table") : null;
+            // Supporta sia data-position (nuovo) che data-table (legacy)
+            var positionElem = e.target.closest('[data-position]');
+            var jsonPositionTable = positionElem ? positionElem.getAttribute("data-position") : null;
             if (!jsonPositionTable) return;
+            
+            // Se il click arriva da una cella (es. Sez3.Codici[0].immagini[0].estensione),
+            // risale al path dell'array tabella (Sez3.Codici[0].immagini).
+            jsonPositionTable = jsonPositionTable.replace(/\[\d+\](?:\.[^.[]+)?$/, "");
 
+            // apre modale per visualizzazione tabella
             openEditModal(jsonPositionTable, idEditMode, true); // Puoi cambiare cosa passi!
             return;
         }
@@ -91,6 +105,8 @@ document.addEventListener('click', function (e) {
         var positionElem = e.target.closest('[data-position]');
         var jsonPosition = positionElem ? positionElem.getAttribute("data-position") : null;
         if (!jsonPosition) return;
+
+        // apre modale per visualizzazione singolo campo
         openEditModal(jsonPosition, idEditMode, false);
         return;
     }

@@ -1331,3 +1331,14 @@ a.linkwhite{
     border: 0px!important;
 }
     
+#navmenu .e-list-item{
+    margin: 0px!important;
+    padding: 10px 5px!important;
+}
+
+#navmenu .e-treeview .e-text-content {
+    padding: 0 0 0 5px!important;
+}
+#navmenu .e-treeview .e-ul {
+    padding: 0 0 0 12px !important;
+}

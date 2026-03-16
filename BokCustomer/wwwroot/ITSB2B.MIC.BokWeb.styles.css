@@ -1,0 +1,80 @@
+@import 'ITSB2B.BOK.BokWeb.Client.bundle.scp.css';
+@import '_content/ITSB2B.BOK.BokWeb/ITSB2B.BOK.BokWeb.bundle.scp.css';
+
+/* _content/ITSB2B.MIC.BokWeb/Components/Layout/MainLayoutCustom.razor.rz.scp.css */
+.page[b-cx0jatgtkg] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-cx0jatgtkg] {
+    flex: 1;
+}
+
+#UserMenu[b-cx0jatgtkg] {
+    position:fixed;
+    top: 19px;
+    right: 27px;
+    font-size: 20px;
+    color: #fff !important;
+}
+
+@media (min-width: 641px) {
+    .page[b-cx0jatgtkg] {
+        flex-direction: row;
+    }
+
+    #navmenu[b-cx0jatgtkg] {
+        width: 300px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+}
+/* _content/ITSB2B.MIC.BokWeb/Components/Layout/NavMenuCustom.razor.rz.scp.css */
+/* _content/ITSB2B.MIC.BokWeb/Components/Pages/Home.razor.rz.scp.css */
+#gridContent[b-xnwchyabj8] {
+    margin-top: 130px;
+    padding: 12px;
+}
+
+.preview-doc[b-xnwchyabj8] {
+    height: calc(100vh - 300px);
+    overflow: auto;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    padding: 10px;
+    background: #fff;
+}
+
+.preview-edit-mode [data-position][b-xnwchyabj8] {
+    cursor: pointer;
+}
+
+.preview-edit-mode [data-position]:hover[b-xnwchyabj8] {
+    background: #f4fbf3;
+    outline: 1px dashed #6aa84f;
+}
+
+.preview-selected-word[b-xnwchyabj8] {
+    background: #d9f2d3 !important;
+    outline: 2px solid #6aa84f !important;
+}
+/* _content/ITSB2B.MIC.BokWeb/Components/Pages/Login.razor.rz.scp.css */
+.config[b-sngjolu52y] {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+/* _content/ITSB2B.MIC.BokWeb/Components/Pages/SmallGridDocuments.razor.rz.scp.css */
+.power-search[b-kac6g3ql0n] {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.skeletonRectangle[b-kac6g3ql0n]{
+    border: 2px solid #fff;
+}

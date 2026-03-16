@@ -1,0 +1,213 @@
+.e-removeEditcommand .e-unboundcell .e-unboundcelldiv button.e-edit-delete {
+    display: none;
+}
+
+.e-templatecell div:has(.shissors-icon) {
+    display: flex !important;
+}
+
+.e-table td {
+    height: 41px !important;
+}
+
+.btn-slim {
+    padding: 1px !important;
+}
+
+.e-grid .e-headercell, .e-grid .e-detailheadercell {
+    padding: 8px 8px 8px !important;
+}
+.e-grid .e-headercell .e-icons {
+    color: #fff !important;
+}
+.e-grid .e-gridheader .e-sortfilter .e-fltr-icon .e-headercelldiv {
+    margin: -5px 5px -5px -5px !important;
+}
+
+.e-grid .e-gridheader .e-sortfilter .e-headercelldiv, .e-grid .e-gridheader .e-stackedheadercelldiv {
+    padding: 0 5px 0 5px !important;
+}
+
+.e-grid .e-columnheader.e-wrap .e-fltr-icon .e-sortfilterdiv, .e-grid.e-wrap .e-columnheader .e-fltr-icon .e-sortfilterdiv {
+    margin: -25px -2px -29px 14px !important;
+}
+
+.e-grid .e-filtermenudiv {
+    margin: -5px -2px -12px 8px !important;
+}
+.e-ul .e-hover .e-fullrow {
+    background-color: unset !important;
+    border: unset !important;
+}
+.e-ul .e-active .e-fullrow {
+    background-color: unset !important;
+    border: unset !important;
+}
+.e-treeview .e-list-item.e-active > .e-text-content {
+    color: unset !important;
+}
+
+
+.e-control {
+    font-size: unset !important;
+}
+.form-select-sf {
+    width: 100%;
+    height: 38px;
+    border-color: #BFDDE1!important;
+    font-size: 1rem!important;
+    padding-left: 4px;
+    padding-top: 1px;
+}
+
+
+#navmenu .e-ul {
+    list-style: none;
+    padding: 0px;
+}
+
+#navmenu .e-list-item {
+    font-size: 16px;
+    padding: 10px 20px;
+    display: block;
+    color: #000;
+    text-decoration: none;
+    margin: 0px 10px 10px 10px;
+    border-radius: 10px;
+}
+
+#navmenu .e-active {
+    background-color: #C2DFE4;
+    color: #008161;
+}
+
+#navmenu .e-list-item a {
+    color: #333333;
+    text-decoration: none;
+}
+
+#navmenu .e-list-item a:hover {
+    color: #008161;
+}
+
+#navmenu .e-list-item .e-list-icon {
+    margin-right: 10px;
+}
+
+.e-dlg-header-content {
+    background: #008161 !important;
+    border-radius: 5px 5px 0px 0px !important;
+}
+.e-dlg-header, .e-dlg-header * {
+    color: #fff !important;
+    font-size: 20px !important;
+}
+.e-icon-dlg-close{
+    color:#fff!important;
+}
+
+@media (min-width: 1200px) {
+    .h1, h1 {
+        font-size: 3.5rem;
+    }
+}
+
+.e-grid .e-gridheader .e-headercell {
+    background-color: #008161 !important;
+    color: #fff !important;
+}
+.e-grid .e-rowcell{
+    padding:5px;
+}
+.nav-link .active {
+    background-color: #008161;
+    color: #fff;
+}
+.nav-tabs .nav-link {
+    color: #008161;
+}
+
+.e-checkbox-wrapper .e-frame.e-check, .e-css.e-checkbox-wrapper .e-frame.e-check {
+    background-color: #6EB59F !important;
+    border-color: #008161 !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    width: 20px !important;
+    height: 20px !important;
+    padding-top: 4px !important;
+}
+
+.e-checkbox-wrapper .e-frame, .e-css.e-checkbox-wrapper .e-frame {
+    background-color: #fff;
+    border-color: #008161 !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+#PdfViewer .e-pv-toolbar.e-toolbar .e-toolbar-items .e-toolbar-item .e-tbar-btn-text {
+    display: block !important;
+    color: #ffffff !important;
+}
+#PdfViewer .e-toolbar .e-toolbar-item .e-tbar-btn {
+    background-color: #00816180 !important;
+}
+#PdfViewer .e-pv-toolbar.e-toolbar.e-toolbar .e-toolbar-item .e-tbar-btn.e-btn .e-icons.e-btn-icon {
+    color: #ffffff !important;
+}
+#PdfViewer_comment{
+    display:none;
+}
+#AdvancedSearchAttributesModal .e-input-group, #AdvancedSearchAttributesModal .e-input-group.e-control-wrapper {
+    padding: 0px .375rem .75rem !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    height: 38px !important;
+}
+#AdvancedSearchAttributesModal .e-input-group, #AdvancedSearchAttributesModal .e-input-group.e-control-wrapper {
+    color:#333!important;
+}
+
+#HtmlViewer .e-pv-toolbar.e-toolbar .e-toolbar-items .e-toolbar-item .e-tbar-btn-text {
+    display: block !important;
+    color: #ffffff !important;
+}
+#HtmlViewer .e-toolbar .e-toolbar-item .e-tbar-btn {
+    background-color: #00816180 !important;
+}
+#HtmlViewer .e-pv-toolbar.e-toolbar.e-toolbar .e-toolbar-item .e-tbar-btn.e-btn .e-icons.e-btn-icon {
+    color: #ffffff !important;
+}
+#HtmlViewer_comment{
+    display:none;
+}
+
+
+.e-grid .e-icon-descending, .e-grid-menu .e-icon-descending {
+    position: absolute;
+    right: 0px;
+    top: 3px;
+    font-size: 10px!important;
+}
+.e-grid .e-icon-ascending, .e-grid-menu .e-icon-ascending {
+    position: absolute;
+    right: 0px;
+    top: 3px;
+    font-size: 10px!important;
+}
+
+.e-grid .e-leftalign .e-sortnumber {
+    margin-left: auto;
+    position: absolute;
+    top: 1px;
+    font-size: 8px;
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    color: #ffffff;
+    right: 15px;
+}
+.e-grid .e-filtermenudiv.e-icons.e-icon-filter {
+    position: absolute;
+    right: 5px;
+    bottom: 17px;
+}

@@ -1342,3 +1342,14 @@ a.linkwhite{
 #navmenu .e-treeview .e-ul {
     padding: 0 0 0 12px !important;
 }
+.icon-template.novalue {
+    font-size: 25px;
+    color: red;
+}
+.icon-template.yesvalue {
+    font-size: 25px;
+    color: green;
+}
+.icon-template.changevalue {
+    font-size: 20px;
+}

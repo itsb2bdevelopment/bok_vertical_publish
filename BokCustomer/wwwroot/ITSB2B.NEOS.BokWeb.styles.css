@@ -61,6 +61,62 @@ main[b-z2k9ho9j0m] {
     background: #d9f2d3 !important;
     outline: 2px solid #6aa84f !important;
 }
+/* _content/ITSB2B.NEOS.BokWeb/Components/Pages/DVRChimico/ExcelMoVaRisCh.razor.rz.scp.css */
+#gridContent[b-secxbgn1va]{
+    margin-top: 130px;
+    padding: 12px;
+}
+
+.preview-doc[b-secxbgn1va] {
+    height: calc(100vh - 300px);
+    overflow: auto;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    padding: 10px;
+    background: #fff;
+}
+
+.preview-edit-mode [data-position][b-secxbgn1va] {
+    cursor: pointer;
+}
+
+.preview-edit-mode [data-position]:hover[b-secxbgn1va] {
+    background: #f4fbf3;
+    outline: 1px dashed #6aa84f;
+}
+
+.preview-selected-word[b-secxbgn1va] {
+    background: #d9f2d3 !important;
+    outline: 2px solid #6aa84f !important;
+}
+/* _content/ITSB2B.NEOS.BokWeb/Components/Pages/DVRChimico/ExcelRaccoltaDati.razor.rz.scp.css */
+#gridContent[b-nekja0x5mc]{
+    margin-top: 130px;
+    padding: 12px;
+}
+
+.preview-doc[b-nekja0x5mc] {
+    height: calc(100vh - 300px);
+    overflow: auto;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    padding: 10px;
+    background: #fff;
+}
+
+.preview-edit-mode [data-position][b-nekja0x5mc] {
+    cursor: pointer;
+}
+
+.preview-edit-mode [data-position]:hover[b-nekja0x5mc] {
+    background: #f4fbf3;
+    outline: 1px dashed #6aa84f;
+}
+
+.preview-selected-word[b-nekja0x5mc] {
+    background: #d9f2d3 !important;
+    outline: 2px solid #6aa84f !important;
+}
 /* _content/ITSB2B.NEOS.BokWeb/Components/Pages/Home.razor.rz.scp.css */
 #gridContent[b-cib2zfjt76]{
     margin-top: 130px;

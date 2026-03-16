@@ -2420,6 +2420,18 @@
             <param name="idDoc">ID documento</param>
             <returns></returns>
         </member>
+        <member name="M:ITSB2B.Mixer.Business.Docs.BzDocsMgr.Docs_RemoveDocFile(System.Int32)">
+            <summary>
+            Rimuove il file collegato ad un documento
+            e tutti i contenuti del documento 
+            quindi lo svuota di tutto ma lo lasciacome record
+            può servire nelle utility o in caso di
+            problemi di importazione documento fisico
+            o per trasformare un documento fisico in uno logico
+            </summary>
+            <param name="idDoc">ID Del documento</param>
+            <returns></returns>
+        </member>
         <member name="M:ITSB2B.Mixer.Business.Docs.BzDocsMgr.Docs_CanDeleteArtifact(System.Int32)">
             <summary>
             Controlla se un documento artifact può essere cancellato
@@ -2651,6 +2663,16 @@
             Lista delle testate documenti con i filtri standard (Tree e list in Mixer)
             </summary>
             <param name="filters">Filtri standard su Documenti (no fulltext)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Business.Docs.BzDocsMgr.CreateDocAndLink(System.Int32,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},ITSB2B.Mixer.Context.ApiContext,ITSB2B.Mixer.Context.NsDbSettingsManager)">
+            <summary>
+            Dato un testo in html e un doc parent crea un nuovo documento
+            Crea un singolo element e collega il nuovo documento al documento parent
+            TODO -> da sistemare metodo fatto al volo
+            </summary>
+            <param name="docParent"></param>
+            <param name="html"></param>
             <returns></returns>
         </member>
         <member name="M:ITSB2B.Mixer.Business.Docs.BzDocsMgr.Docs_GenerateFromParBokFileID(System.Int32)">

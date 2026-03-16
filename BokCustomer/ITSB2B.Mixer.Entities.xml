@@ -3740,9 +3740,14 @@
             ID dell'elemento della coda
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mIDDocGeneratedListFilter">
+            <summary>
+            ID Del documento generato a partire dai dati restituiti dall'AI
+            </summary>
+        </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mIDDocListFilter">
             <summary>
-            ID del Documento
+            ID del Documento Sorgente
             </summary>
         </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.mIsProcessingFilter">
@@ -3820,9 +3825,14 @@
             ID dell'elemento della coda
             </summary>
         </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.IDDocGeneratedListFilter">
+            <summary>
+            ID Del documento generato a partire dai dati restituiti dall'AI
+            </summary>
+        </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.IDDocListFilter">
             <summary>
-            ID del Documento
+            ID del Documento Sorgente
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueFilterItem.IsProcessingFilter">
@@ -3965,7 +3975,7 @@
         </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mIDDoc">
             <summary>
-            ID del Documento
+            ID del Documento Sorgente
             </summary>
         </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mIDDocEditor">
@@ -3981,6 +3991,11 @@
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mIDDocEditorQueue">
             <summary>
             ID dell'elemento della coda
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mIDDocGenerated">
+            <summary>
+            ID Del documento generato a partire dai dati restituiti dall'AI
             </summary>
         </member>
         <member name="F:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.mInProcessDate">
@@ -4070,7 +4085,7 @@
         </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.IDDoc">
             <summary>
-            ID del Documento
+            ID del Documento Sorgente
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.IDDocEditor">
@@ -4086,6 +4101,11 @@
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.IDDocEditorQueue">
             <summary>
             ID dell'elemento della coda
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.IDDocGenerated">
+            <summary>
+            ID Del documento generato a partire dai dati restituiti dall'AI
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.Agents.DocEditorQueueItem.InProcessDate">
@@ -6748,11 +6768,6 @@
             Descrizione Tree
             </summary>
         </member>
-        <member name="F:ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem.mFileName">
-            <summary>
-            Nome del file linkato
-            </summary>
-        </member>
         <member name="F:ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem.mHasIncomingLinks">
             <summary>
             Definisce se ci sono dei link entranti collegati a questo Item
@@ -6776,11 +6791,6 @@
         <member name="F:ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem.mHierarchyType">
             <summary>
             Rappresenta la tipologia di contenuto (se si tratta di ChapPara oppure di Content)
-            </summary>
-        </member>
-        <member name="F:ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem.mIDDataFileLinked">
-            <summary>
-            Contiene l'ID al file linkato a questo elemento (per le immagini è il file dell'immagine, per i testi è il collegamento al file DOCX)
             </summary>
         </member>
         <member name="F:ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem.mIDDoc">
@@ -6968,11 +6978,6 @@
             Descrizione Tree
             </summary>
         </member>
-        <member name="P:ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem.FileName">
-            <summary>
-            Nome del file linkato
-            </summary>
-        </member>
         <member name="P:ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem.HasIncomingLinks">
             <summary>
             Definisce se ci sono dei link entranti collegati a questo Item
@@ -6996,11 +7001,6 @@
         <member name="P:ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem.HierarchyType">
             <summary>
             Rappresenta la tipologia di contenuto (se si tratta di ChapPara oppure di Content)
-            </summary>
-        </member>
-        <member name="P:ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem.IDDataFileLinked">
-            <summary>
-            Contiene l'ID al file linkato a questo elemento (per le immagini è il file dell'immagine, per i testi è il collegamento al file DOCX)
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem.IDDoc">
@@ -17800,6 +17800,11 @@
             Flag per non permettere di inserire internal knowledge legato allo stato del workflow nel flusso
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Docs.DocItem.mJsonContentCompressed">
+            <summary>
+            Json proveniente da AI usato per generare il documento
+            </summary>
+        </member>
         <member name="F:ITSB2B.Mixer.Entities.Docs.DocItem.mKemBlocksIdentificationState">
             <summary>
             Definisce se sul documento sono stati identificati (nei PDF disegnati) i blocchi di estrazione dei testi - [NotStarted; Running; Completed]
@@ -18258,6 +18263,11 @@
         <member name="P:ITSB2B.Mixer.Entities.Docs.DocItem.IsValid">
             <summary>
             Property usata per la validazione dei dati JSON ricevuti da una chiamata API
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Docs.DocItem.JsonContentCompressed">
+            <summary>
+            Json proveniente da AI usato per generare il documento
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.Docs.DocItem.KemBlocksIdentificationState">
@@ -21475,12 +21485,6 @@
             <summary>
             Indica che è un documento sconosciuto a BOK
             </summary>
-        </member>
-        <member name="M:ITSB2B.Mixer.Entities.Files.DataFileItem.GetElementDocxFile(ITSB2B.Mixer.Entities.Blocks.DocBlockElementItem)">
-            <summary>
-            Metodo che serve generare un nuovo documento
-            </summary>
-            <param name="element">DocBlockElementItem.</param> 
         </member>
         <member name="M:ITSB2B.Mixer.Entities.Files.DataFileItem.CopyToManual(ITSB2B.Mixer.Entities.Files.DataFileItem)">
             <summary>
@@ -31554,6 +31558,11 @@
             Property filtro iniziale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Ontologies.OntologyElementFilterItem.mTwinCodeListFilter">
+            <summary>
+            ID Di uno degli elementi delle ontologies che sono equivalenti (o ID arbitrario se vogliamo fare casino)
+            </summary>
+        </member>
         <member name="M:ITSB2B.Mixer.Entities.Ontologies.OntologyElementFilterItem.#ctor">
             <summary>
             Crea una nuova istanza della classe Entity OntologyElementFilterItem
@@ -31622,6 +31631,11 @@
         <member name="P:ITSB2B.Mixer.Entities.Ontologies.OntologyElementFilterItem.StartRowNum">
             <summary>
             Property filtro iniziale per ottenere una specifica porzione di una lista di dati usando il campo RowNum da noi generato allo scopo della paginazione.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Ontologies.OntologyElementFilterItem.TwinCodeListFilter">
+            <summary>
+            ID Di uno degli elementi delle ontologies che sono equivalenti (o ID arbitrario se vogliamo fare casino)
             </summary>
         </member>
         <member name="M:ITSB2B.Mixer.Entities.Ontologies.OntologyElementFilterItem.CheckHasFilters">
@@ -31772,6 +31786,11 @@
             Ordinale della riga corrente nella query per poter paginare la query
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.Ontologies.OntologyElementItem.mTwinCode">
+            <summary>
+            ID Di uno degli elementi delle ontologies che sono equivalenti (o ID arbitrario se vogliamo fare casino)
+            </summary>
+        </member>
         <member name="M:ITSB2B.Mixer.Entities.Ontologies.OntologyElementItem.#ctor">
             <summary>
             Crea una nuova istanza della classe Entity OntologyElementItem
@@ -31860,6 +31879,11 @@
         <member name="P:ITSB2B.Mixer.Entities.Ontologies.OntologyElementItem.RowNum">
             <summary>
             Ordinale della riga corrente nella query per poter paginare la query
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Entities.Ontologies.OntologyElementItem.TwinCode">
+            <summary>
+            ID Di uno degli elementi delle ontologies che sono equivalenti (o ID arbitrario se vogliamo fare casino)
             </summary>
         </member>
         <member name="M:ITSB2B.Mixer.Entities.Ontologies.OntologyElementItem.Clone">

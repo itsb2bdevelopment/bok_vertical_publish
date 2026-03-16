@@ -37,9 +37,9 @@
 	<table class="datatable tablebordered" data-type="table" data-table="Sez2.CodiciClassificazione">
 		<thead>
 			<tr style="color:#ffffff;">
-				<th width="120" style="background-color: #1F497D; text-align: center;" data-ref="Codice">Codice</th>
+				<th width="140" style="background-color: #1F497D; text-align: center;" data-ref="Codice" colspan="2">Codice</th>
 				<th style="background-color: #1F497D; text-align: center;" data-ref="Note">Note</th>
-				<th style="background-color: #1F497D; text-align: center;" data-ref="Descrizione">Descrizione</th>
+				<th style="background-color: #1F497D; text-align: center;" data-ref="Descrizione" data-readonly="true">Descrizione</th>
 				<th width="80" style="background-color: #1F497D; text-align: center;" data-ref="Pittogramma" data-readonly="true">Pitt.</th>
 				<th width="120" style="background-color: #1F497D; text-align: center;" data-ref="MoVaRisCh_P_Score" data-readonly="true">MoVaRisCh<br>Score</th>
 				<th style="background-color: #1F497D; text-align: center;" data-ref="MoVaRisCh_P_Descrizione" data-readonly="true">MoVaRisCh<br>Descrizione</th>
@@ -49,8 +49,8 @@
 		<tbody data-array="Sez2.CodiciClassificazione"></tbody>
 		<tfooter>
 			<tr style="color:#ffffff;">
-				<th style="background-color: #1F497D; text-align: center;" data-ref="Pittogrammi" data-readonly="true">Pittogrammi</th>
-				<td colspan="5" data-key="Sez2.Pittogrammi" data-readonly="true"></td>
+				<th style="background-color: #1F497D; text-align: center;" data-ref="Pittogrammi" data-readonly="true" colspan="2">Pittogrammi</th>
+				<td colspan="6" data-key="Sez2.Pittogrammi" data-readonly="true"></td>
 			</tr>
 		</tfooter>
 	</table>
@@ -58,6 +58,7 @@
 	<template id="tmpl-Sez2.CodiciClassificazione">
 		<tr data-seq="#">
 			<td style="text-align: center;" data-key="Codice"></td>
+			<td style="text-align: center; width:50px" data-key="Avviso" data-readonly="true"></td>
 			<td style="text-align: center;" data-key="Note"></td>
 			<td style="text-align: center;" data-key="Descrizione" data-readonly="true"></td>
 			<td style="text-align: center;" data-key="Pittogramma" data-readonly="true"></td>
@@ -117,7 +118,7 @@
 			<td style="text-align: center;  vertical-align: top;"><table class="datatable tablenoborder" data-type="table" data-table="Sez3.Sostanze[*].CodiciClassificazioni">
 			<thead>
 			<tr style="display:none">
-				<th width="120" style="background-color: #1F497D; text-align: center;" data-ref="Codice">Codice</th>
+				<th width="140" style="background-color: #1F497D; text-align: center;" data-ref="Codice" colspan="2">Codice</th>
 				<th style="background-color: #1F497D; text-align: center;" data-ref="MoVaRisCh_NP_Score" data-readonly="true">NP Score</th>
 			</tr>
 			</thead>
@@ -131,6 +132,7 @@
 		<template id="tmpl-CodiciClassificazioni">
 			<tr data-seq="#">
 				<td style="text-align: center;" data-key="Codice"></td>
+				<td style="text-align: center;" data-key="Avviso" data-readonly="true"></td>
 				<td style="text-align: center;" data-key="MoVaRisCh_NP_Score" data-readonly="true"></td>
 				
 			</tr>

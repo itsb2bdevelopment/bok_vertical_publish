@@ -33,13 +33,19 @@ main[b-cx0jatgtkg] {
     }
 }
 /* _content/ITSB2B.MIC.BokWeb/Components/Layout/NavMenuCustom.razor.rz.scp.css */
-/* _content/ITSB2B.MIC.BokWeb/Components/Pages/Home.razor.rz.scp.css */
-#gridContent[b-xnwchyabj8] {
+/* _content/ITSB2B.MIC.BokWeb/Components/Pages/Login.razor.rz.scp.css */
+.config[b-sngjolu52y] {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+/* _content/ITSB2B.MIC.BokWeb/Components/Pages/Poc.razor.rz.scp.css */
+#gridContent[b-v0l0ok2tjz] {
     margin-top: 130px;
     padding: 12px;
 }
 
-.preview-doc[b-xnwchyabj8] {
+.preview-doc[b-v0l0ok2tjz] {
     height: calc(100vh - 300px);
     overflow: auto;
     border: 1px solid #d9d9d9;
@@ -48,24 +54,18 @@ main[b-cx0jatgtkg] {
     background: #fff;
 }
 
-.preview-edit-mode [data-position][b-xnwchyabj8] {
+.preview-edit-mode [data-position][b-v0l0ok2tjz] {
     cursor: pointer;
 }
 
-.preview-edit-mode [data-position]:hover[b-xnwchyabj8] {
+.preview-edit-mode [data-position]:hover[b-v0l0ok2tjz] {
     background: #f4fbf3;
     outline: 1px dashed #6aa84f;
 }
 
-.preview-selected-word[b-xnwchyabj8] {
+.preview-selected-word[b-v0l0ok2tjz] {
     background: #d9f2d3 !important;
     outline: 2px solid #6aa84f !important;
-}
-/* _content/ITSB2B.MIC.BokWeb/Components/Pages/Login.razor.rz.scp.css */
-.config[b-sngjolu52y] {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
 }
 /* _content/ITSB2B.MIC.BokWeb/Components/Pages/SmallGridDocuments.razor.rz.scp.css */
 .power-search[b-kac6g3ql0n] {

@@ -1,17 +1,8 @@
-#navmenu .fa-quorum {
-    background-image: url(/icons/titles/logo-quorum.png);
-}
-#navmenu .fa-neos {
-    background-image: url(/icons/titles/logo-neos.png);
-}
-#navmenu .fa-academy {
-    background-image: url(/icons/titles/logo-academy.png);
-}
-#navmenu .fa-neos-group {
-    background-image: url(/icons/titles/logo-neos-group.png);
+#navmenu .fa-mic-img {
+    background-image: url(/icons/titles/logo-mic.png);
     background-position-x: 10px!important;
 }
-#navmenu .fa-neosicon {
+#navmenu .fa-micicon {
     background-position: left;
     background-size: 68px;
     width: 200px !important;

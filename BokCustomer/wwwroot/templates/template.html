@@ -1,0 +1,151 @@
+<div class="document">
+
+	<div class="header">
+		<div class="logo" data-ref="Document.Title">Analisi Documenti</div>
+		<div class="subtitle" data-ref="Document.Subtitle">Rel 1.5</div>
+	</div>
+
+	<div class="checklist" data-type="table" data-table="Checklist.Items">
+		<div class="checklist-headers">
+			<div class="header-cell" data-ref="Column.Number">Punto</div>
+			<div class="header-cell" data-ref="Column.Question">Domanda</div>
+			<div class="header-cell" data-ref="Column.Status">Stato</div>
+			<div class="header-cell" data-ref="Column.Notes">Note</div>
+			<div class="header-cell" data-ref="Column.Error">Messaggio di Errore</div>
+			<div class="header-cell" data-ref="Column.Agent">Agente</div>
+			<div class="header-cell" data-ref="Column.Steps">Step</div>
+		</div>
+
+		<div class="checklist-rows" data-array="Checklist.Items"></div>
+
+		<!-- Row template for each checklist item -->
+		<template id="tmpl-Checklist.Items">
+			<div class="checklist-row" data-seq="#">
+				<div class="cell number" data-key="Number"></div>
+				<div class="cell question" data-key="Title"></div>
+				<div class="cell status" data-key="Status"></div>
+				<div class="cell notes" data-key="Notes"></div>
+				<div class="cell error" data-key="Error"></div>
+				<div class="cell agent" data-key="Agent"></div>
+				<div class="cell steps" data-key="Steps"></div>
+
+				<!-- Sub-items (es. 1.1, 2.1, ecc.) -->
+				<div class="subitems" data-type="table" data-table="SubItems">
+					<div class="subitems-header">
+						<div class="subheader-cell" data-ref="SubColumn.Number">Sub</div>
+						<div class="subheader-cell" data-ref="SubColumn.Question">Domanda</div>
+						<div class="subheader-cell" data-ref="SubColumn.Status">Stato</div>
+						<div class="subheader-cell" data-ref="SubColumn.Notes">Note</div>
+					</div>				
+					<div class="subitems-rows" data-array="SubItems"></div>
+					<template id="tmpl-SubItems">
+						<div class="subitem" data-seq="#">
+							<div class="subcell number" data-key="Number"></div>
+							<div class="subcell question" data-key="Title"></div>
+							<div class="subcell status" data-key="Status"></div>
+							<div class="subcell notes" data-key="Notes"></div>
+						</div>
+					</template>
+				</div>
+			</div>
+		</template>
+	</div>
+</div>
+
+<style>
+	.isolate .document {
+		font-family: Arial, Helvetica, sans-serif;
+		width: 100%;
+		max-width: 1100px;
+		background-color: #ffffff;
+		padding: 20px;
+		border: 1px solid #333333;
+		font-size: 14px;
+	}
+
+	.isolate .header {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: baseline;
+		margin-bottom: 18px;
+	}
+
+	.isolate .logo {
+		font-size: 18px;
+		font-weight: 700;
+	}
+
+	.isolate .subtitle {
+		font-size: 13px;
+		color: #555;
+	}
+
+	.isolate .checklist {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.isolate .checklist-headers,
+	.isolate .subitems-header {
+		display: grid;
+		grid-template-columns: 60px 1fr 90px 200px 220px 160px 200px;
+		gap: 8px;
+		background-color: #1F497D;
+		color: #fff;
+		padding: 10px 12px;
+		border-radius: 8px;
+		font-weight: 600;
+	}
+
+	.isolate .subitems-header {
+		grid-template-columns: 60px 1fr 120px 1fr;
+		background-color: #2a5c97;
+	}
+
+	.isolate .checklist-row,
+	.isolate .subitem {
+		display: grid;
+		grid-template-columns: 60px 1fr 90px 200px 220px 160px 200px;
+		gap: 8px;
+		padding: 10px 12px;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+		background-color: #f7f9fc;
+	}
+
+	.isolate .subitem {
+		grid-template-columns: 60px 1fr 120px 1fr;
+		background-color: #fafcff;
+		border: 1px solid #dce6f1;
+	}
+
+	.isolate .cell,
+	.isolate .subcell {
+		font-size: 12px;
+		word-break: break-word;
+	}
+
+	.isolate .status {
+		font-weight: 600;
+		color: #333;
+	}
+
+	.isolate .error {
+		color: #a00;
+	}
+
+	.isolate .notes {
+		color: #444;
+	}
+
+	.isolate .agent {
+		color: #333;
+	}
+
+	.isolate .steps {
+		color: #2f4f7c;
+	}
+</style>
+

@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "ITSB2B.BOK.BokWeb.Client",
   "resources": {
-    "hash": "sha256-En0uk/gl7gX4y7NNP8F3VYo2tuZZ1LqqAmM9RCPNDp8=",
+    "hash": "sha256-1W26JIyHKkmKf6X227BqSlDs6IWRG3JrBRq8Y2Q64LA=",
     "jsModuleNative": {
       "dotnet.native.8.0.24.ws7ii888fb.js": "sha256-4g0GzvOXSwZvTLca4PrWJkoeltz+V9IF/hEFDcnVros="
     },
@@ -18,7 +18,7 @@
     },
     "assembly": {
       "ITSB2B.Base.Core.wasm": "sha256-aV+23ZcFtOyHZv9ZVk1pbGhxEgOsJ/yDGYe8I2YihFc=",
-      "ITSB2B.BOK.BokWeb.Client.wasm": "sha256-nU6Qxq9ByQHAh59mQN6L2F8SYkhmTns7X6SYXh7EMNY=",
+      "ITSB2B.BOK.BokWeb.Client.wasm": "sha256-mTVa2Z+U+O7F75co6hk7LEAInZGW+50TgCyoCmVSrg0=",
       "ITSB2B.Items.Attributes.Entities.wasm": "sha256-fP9WbMYaJbfIkciRTO1YdPE9IodMAqObnQlN3cmTSCM=",
       "ITSB2B.Syncfusion.Licensing.wasm": "sha256-lAci74PPb0vevHxksxECVAmS227F10WbWhZWdi5Lg1M=",
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-zOo+1SCJbjggnxADQ1oY2k2DR8GNT0IWGKk7oSLRkWU=",

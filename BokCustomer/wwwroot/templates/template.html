@@ -1,6 +1,6 @@
 <div class="isolate">
 	<div class="document">
-		<center><img src="https://bokvertical.itsb2b.net/imgs/intestazione.png" /></center>
+		<center><img src="https://bokvertical.itsb2b.net/imgs/intestazione.png" style="max-width:1400px" /></center>
 		<table class="maintitletable tablebordered">
 			<tr style="background-color: #fff; font-size:14px;">
 				<td width="500">CUP</td>
@@ -1807,4 +1807,60 @@
 		font-weight: bold;
 		color:#333;
 	}
+
+	.isolate .esitook {
+		background-color: green;
+		padding: 5px;
+		color: #fff;
+		border-radius: 40px;
+	}
+	.isolate .esitona {
+		background-color: yellow;
+		padding: 5px;
+		color: #666;
+		border-radius: 40px;
+	}
+	.isolate .esitoko {
+		background-color: red;
+		padding: 5px;
+		color: #fff;
+		border-radius: 40px;
+	}
+	.isolate .esitoerrore {
+		background-color: red;
+		padding: 5px;
+		color: #fff;
+		border-radius: 40px;
+	}
+	.isolate .classe-esiti {
+		text-align: center;
+		font-weight: bold;
+	}
+
+	.isolate .link{
+		color:white;
+	}
+/* =========================
+   ESITI (OK / KO / NA / ERRORE)
+   ========================= */
+.isolate [data-key$=".EsitoOKHtml"],
+.isolate [data-key$=".EsitoKOHtml"],
+.isolate [data-key$=".EsitoNAHtml"],
+.isolate [data-key$=".EsitoErroreHtml"] {
+    text-align: center;
+    font-weight: bold;
+	padding-left: 0px!important;
+}
+
+
+/* =========================
+   DETTAGLI (valore, note, errore)
+   ========================= */
+.isolate [data-key$=".ValoreRequisito"],
+.isolate [data-key$=".Note"],
+.isolate [data-key$=".DescrizioneErrore"] {
+    word-break: break-word;
+    font-style: italic;
+	padding-left: 5px!important;
+}
 </style>

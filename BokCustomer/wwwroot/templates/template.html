@@ -1840,27 +1840,40 @@
 	.isolate .link{
 		color:white;
 	}
-/* =========================
-   ESITI (OK / KO / NA / ERRORE)
-   ========================= */
-.isolate [data-key$=".EsitoOKHtml"],
-.isolate [data-key$=".EsitoKOHtml"],
-.isolate [data-key$=".EsitoNAHtml"],
-.isolate [data-key$=".EsitoErroreHtml"] {
-    text-align: center;
-    font-weight: bold;
-	padding-left: 0px!important;
-}
+
+	.isolate .subsubtitle {
+		padding-left: 40px !important;
+		background-color: #90b6e7;
+		color: #333;
+		font-size: 14px;
+		font-weight: bold;
+	}
+	.isolate .link {
+		color: #fff !important;
+		text-decoration: underline !important;
+	}
+	
+	/* =========================
+	ESITI (OK / KO / NA / ERRORE)
+	========================= */
+	.isolate [data-key$=".EsitoOKHtml"],
+	.isolate [data-key$=".EsitoKOHtml"],
+	.isolate [data-key$=".EsitoNAHtml"],
+	.isolate [data-key$=".EsitoErroreHtml"] {
+		text-align: center;
+		font-weight: bold;
+		padding-left: 0px!important;
+	}
 
 
-/* =========================
-   DETTAGLI (valore, note, errore)
-   ========================= */
-.isolate [data-key$=".ValoreRequisito"],
-.isolate [data-key$=".Note"],
-.isolate [data-key$=".DescrizioneErrore"] {
-    word-break: break-word;
-    font-style: italic;
-	padding-left: 5px!important;
-}
+	/* =========================
+	DETTAGLI (valore, note, errore)
+	========================= */
+	.isolate [data-key$=".ValoreRequisito"],
+	.isolate [data-key$=".Note"],
+	.isolate [data-key$=".DescrizioneErrore"] {
+		word-break: break-word;
+		font-style: italic;
+		padding-left: 5px!important;
+	}
 </style>

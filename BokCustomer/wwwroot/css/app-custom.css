@@ -43,4 +43,15 @@
 .workspace-content {
     display: flex;
     height: calc(100vh - 210px);
+<<<<<<< Updated upstream
+=======
+}
+
+.linkOnTitleBar{
+    background: #fff !important;
+    float: right;
+    margin-top: -5px;
+    padding: 10px;
+    border-radius: 25px;
+>>>>>>> Stashed changes
 }

@@ -96,7 +96,7 @@
 
 	<template id="tmpl-Sez3.Sostanze">
 		<tr data-seq="#">
-			<td style="text-align: center;" data-key="NomeSostanza"></td>
+			<td style="text-align: center; word-break: break-all;" data-key="NomeSostanza"></td>
 			<td style="text-align: center; vertical-align: top;">
 				<table data-type="fields">
 					<tr>
@@ -121,9 +121,25 @@
 				<th width="140" style="background-color: #1F497D; text-align: center;" data-ref="Codice" colspan="2">Codice</th>
 				<th style="background-color: #1F497D; text-align: center;" data-ref="MoVaRisCh_NP_Score" data-readonly="true">NP Score</th>
 			</tr>
+			<tr>
+				<td colspan="3" class="tabletitle">SDS</td>
+			</tr>
 			</thead>
 			<tbody data-array="CodiciClassificazioni"></tbody>
-			</table></td>
+			</table>
+		
+			<table class="datatable tablenoborder">
+			<thead>
+			<tr>
+				<td class="tabletitle">ATP</td>
+			</tr>
+			</thead>
+			<tbody>
+				<td data-key="CHSC"></td>
+			</tbody>
+			</table>
+		
+			</td>
 			<td style="text-align: center;" data-key="Pittogrammi" data-readonly="true"></td>
 			<td style="text-align: center;" data-key="Max_MoVaRisCh_NP_Score" data-readonly="true"></td>
 			<td style="text-align: center;" data-key="Note"></td>
@@ -141,27 +157,27 @@
 	
 <div class="emptyline">&nbsp;</div>
 <table class="maintitletable tablestripped">
-		<tr>
-			<td class="icontd">
-			</td>
-			<td class="maintitletabletd">
-				<div class="title">Sezione 9</div>
-			</td>
-		</tr>
-	</table>
-	<div class="emptyline">&nbsp;</div>
+	<tr>
+		<td class="icontd">
+		</td>
+		<td class="maintitletabletd">
+			<div class="title">Sezione 9</div>
+		</td>
+	</tr>
+</table>
+<div class="emptyline">&nbsp;</div>
 
-	<table class="datatable tablebordered" data-type="table" data-table="Sez9.SostanzeOMiscele">
-		<thead>
-			<tr style="color:#ffffff;">
-				<th width="200" style="background-color: #1F497D; text-align: center;" data-ref="ClasseChimicoFisica">Classe Chimico-Fisica</th>
-				<th width="130" style="background-color: #1F497D; text-align: center;" data-ref="StatoFisico">Stato Fisico</th>
-				<th width="140" style="background-color: #1F497D; text-align: center;" data-ref="TemperaturaDiEbollizione">T. Di Ebollizione</th>
-				<th style="background-color: #1F497D; text-align: center;" data-ref="Note">Note</th>
-			<tr>
-		</thead>
-		<tbody data-array="Sez9.SostanzeOMiscele"></tbody>
-	</table>
+<table class="datatable tablebordered" data-type="table" data-table="Sez9.SostanzeOMiscele">
+	<thead>
+		<tr style="color:#ffffff;">
+			<th width="200" style="background-color: #1F497D; text-align: center;" data-ref="ClasseChimicoFisica">Classe Chimico-Fisica</th>
+			<th width="130" style="background-color: #1F497D; text-align: center;" data-ref="StatoFisico">Stato Fisico</th>
+			<th width="140" style="background-color: #1F497D; text-align: center;" data-ref="TemperaturaDiEbollizione">T. Di Ebollizione</th>
+			<th style="background-color: #1F497D; text-align: center;" data-ref="Note">Note</th>
+		<tr>
+	</thead>
+	<tbody data-array="Sez9.SostanzeOMiscele"></tbody>
+</table>
 
 <template id="tmpl-Sez9.SostanzeOMiscele">
 	<tr data-seq="#">
@@ -171,6 +187,28 @@
 		<td style="text-align: center;" data-key="Note"></td>
 	</tr>
 </template>
+
+
+<div class="emptyline">&nbsp;</div>
+<table class="maintitletable tablestripped">
+	<tr>
+		<td class="icontd">
+		</td>
+		<td class="maintitletabletd">
+			<div class="title">Note</div>
+		</td>
+	</tr>
+</table>
+<div class="emptyline">&nbsp;</div>
+
+<table class="datatable tablebordered">
+	<tr>
+		<td data-key="Sez1.Note" style="min-height: 50px;">
+
+		</td>
+	</tr>
+</table>
+
 </div>
 
 
@@ -299,5 +337,11 @@
 	}
 	.pictograms-mini{
 		width:40px;
+	}
+	.isolate .tabletitle{
+		background-color: #1F497D!important;
+		color:#fff;
+		text-align: center;
+		font-weight: bold;
 	}
 </style>

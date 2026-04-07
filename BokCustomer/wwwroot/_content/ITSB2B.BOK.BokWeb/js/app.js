@@ -50,7 +50,7 @@ function OpenElement(idElement) {
 }
 
 /// Apre pdf in Search
-function OpenPdfPreview(iddoc, idchunk = null, element = null, page = null) {
+function OpenPdfPreview(iddoc, idchunk = null, element = null, page = null,host = '') {
     var openPdf = [];
     if (openPdf.includes(iddoc) == false) {
         openPdf.push(iddoc);
@@ -67,7 +67,7 @@ function OpenPdfPreview(iddoc, idchunk = null, element = null, page = null) {
         query.push("e=" + element);
     }
     document.activeElement.blur();
-    window.open("/Pdf?id=" + iddoc + (query.length > 0 ? "&" + query.join("&") : ""), "_blank", 'noopener,noreferrer');
+    window.open(host + "/Pdf?id=" + iddoc + (query.length > 0 ? "&" + query.join("&") : ""), "_blank", 'noopener,noreferrer');
 
 }
 
@@ -93,7 +93,7 @@ function OpenPreview(iddoc, idchunk = null, element = null, page = null) {
 }
 
 /// Apre html in Search
-function OpenHtmlPreview(iddoc, idchunk = null, element = null, page = null) {
+function OpenHtmlPreview(iddoc, idchunk = null, element = null, page = null,host = '') {
     var openPdf = [];
     if (openPdf.includes(iddoc) == false) {
         openPdf.push(iddoc);
@@ -110,7 +110,7 @@ function OpenHtmlPreview(iddoc, idchunk = null, element = null, page = null) {
         query.push("e=" + element);
     }
     document.activeElement.blur();
-    window.open("/Html?id=" + iddoc + (query.length > 0 ? "&" + query.join("&") : ""), "_blank", 'noopener,noreferrer');
+    window.open(host+"/Html?id=" + iddoc + (query.length > 0 ? "&" + query.join("&") : ""), "_blank", 'noopener,noreferrer');
 
 }
 

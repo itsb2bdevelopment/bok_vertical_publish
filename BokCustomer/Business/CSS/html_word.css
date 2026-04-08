@@ -1,0 +1,96 @@
+:root {
+	--fg: #34271d;
+	--muted: #6b5648;
+	--bg: #ffffff;
+	--line: #e2d3c6;
+	--accent: #b4743d;
+	--accent-dark: #8d5728;
+	--box-border: #d4a270;
+	--box-bg: #fcf5ee;
+	--table-bg: #f7ede2;
+	--row-alt: #fdf8f3;
+}
+
+* { box-sizing: border-box; }
+body {
+	font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+	margin: 24px auto;
+	max-width: 960px;
+	color: var(--fg);
+	background: var(--bg);
+	padding: 0 24px 32px;
+}
+h1, h2, h3 { color: var(--accent-dark); margin: 0 0 12px; }
+p, li, td, th, div, span { line-height: 1.6; }
+a { color: var(--accent-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	background: #faf6f0;
+	border-radius: 6px;
+	padding: 8px 10px;
+}
+.box {
+	border: 2px solid var(--box-border);
+	border-radius: 10px;
+	padding: 14px 16px;
+	margin: 14px 0;
+	background: var(--box-bg);
+}
+.docid { background: var(--table-bg); }
+.document-kind {
+	display: inline-block;
+	margin-bottom: 8px;
+	padding: 4px 10px;
+	border-radius: 999px;
+	background: var(--accent);
+	color: #fff;
+	font-size: .85rem;
+	font-weight: 700;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+}
+.table-wrap {
+	overflow: auto;
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	background: #fff;
+}
+table.props {
+	width: 100%;
+	border-collapse: collapse;
+	background: var(--table-bg);
+}
+table.props td, table.props th {
+	border-bottom: 1px solid var(--line);
+	padding: 9px 10px;
+	text-align: left;
+	vertical-align: top;
+}
+table.props tbody tr:nth-child(odd) td { background: var(--row-alt); }
+table.props td:first-child {
+	width: 210px;
+	font-weight: 700;
+	color: var(--muted);
+}
+.image-preview img,
+.attached-image img,
+.ppt-slide-images img,
+img {
+	max-width: 100%;
+	height: auto;
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	background: #fff;
+}
+.attachments-list ul,
+.ppt-slide-content ul { margin: 0; padding-left: 22px; }
+.ppt-slide {
+	margin: 0 0 28px 0;
+	padding-bottom: 16px;
+	border-bottom: 2px dashed var(--line);
+	page-break-after: always;
+}
+.ppt-slide:last-child { page-break-after: auto; border-bottom: none; }
+ElementBreak { display: block; }

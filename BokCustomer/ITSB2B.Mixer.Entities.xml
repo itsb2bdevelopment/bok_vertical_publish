@@ -28814,6 +28814,66 @@
             Tipo di dati di provenienza convertiti in questo file dati.
             </summary>
         </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes.NotSet">
+            <summary>
+            Non indicato
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes.MicrosoftCRM">
+            <summary>
+            Dati provenienti da CRM Microsoft
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes.LotusNotes">
+            <summary>
+            Dati provenienti da Lotus Notes
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes.ODataFile">
+            <summary>
+            Dati provenienti da file OData (per ora non usato)
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes.DirectMsg">
+            <summary>
+            Dati provenienti da un file MSG elaborato direttamente
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes.DirectEml">
+            <summary>
+            Dati provenienti da un file EML elaborato direttamente
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes.DirectWord">
+            <summary>
+            Dati provenienti da un file Word elaborato direttamente
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes.DirectExternal">
+            <summary>
+            Dati provenienti da un file esterno elaborato direttamente
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes.DirectPowerPoint">
+            <summary>
+            Dati provenienti da un file PowerPoint elaborato direttamente
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes.DirectPowerPointPdf">
+            <summary>
+            Dati provenienti da un file PowerPoint convertito direttamente in PDF
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes.DirectPdf">
+            <summary>
+            Dati provenienti da un file PDF elaborato direttamente
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes.DirectHtml">
+            <summary>
+            Dati provenienti da un file HTML elaborato direttamente
+            </summary>
+        </member>
         <member name="T:ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem">
             <summary>
              Classe per la gestione dei file di import documenti multipli in BOK generati da Argonaut
@@ -34044,6 +34104,11 @@
         <member name="M:ITSB2B.Mixer.Entities.ParBok.ParBokFileBatchItem.ToString">
             <summary>
             Genera una stringa con il contenuto dell'istanza corrente per l'entity ParBokFileBatchItem
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.Entities.ParBok.ParBokFileBatchItem.FMT_BatchID">
+            <summary>
+            Formato in cui Stampare l'ID Del batch per i nomi di file univoci per l'upload su server
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Entities.ParBok.ParBokFileBatchItem.UploadFolder">
@@ -54783,6 +54848,12 @@
             Genera l'HTML per il contenuto dell' Header Item
             </summary>
         </member>
+        <member name="M:ITSB2B.Mixer.Entities.WpData.WpElementItem.GetElementCssClass">
+            <summary>
+            Restituisce la classe CSS da usare per distinguere il tipo di blocco Word renderizzato.
+            </summary>
+            <returns>Classe CSS coerente con il tipo di elemento Word.</returns>
+        </member>
         <member name="T:ITSB2B.Mixer.Entities.WpData.WpImageItem">
             <summary>
              Descrizione della classe: 
@@ -55259,6 +55330,13 @@
             Genera uno span contenente il testo formattato in HTML
             </summary>
             <returns>Html formatted text</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Entities.WpData.WpTextItem.NormalizeCssColor(System.String)">
+            <summary>
+            Normalizza il colore Word in una forma CSS valida.
+            </summary>
+            <param name="wordColor">Colore proveniente dal parser Word/OpenXML.</param>
+            <returns>Valore CSS valido oppure stringa vuota se il colore non deve essere forzato.</returns>
         </member>
         <member name="T:ITSB2B.Mixer.ExcelImport.AttributesImportDataItem">
             <summary>

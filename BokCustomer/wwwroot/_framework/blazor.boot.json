@@ -1,11 +1,7 @@
 {
   "mainAssemblyName": "ITSB2B.BOK.BokWeb.Client",
   "resources": {
-<<<<<<< Updated upstream
-    "hash": "sha256-LelTNBUVU4KtlxmikakLXCPWjY0AzztJCJabtmBpn7E=",
-=======
-    "hash": "sha256-Q7hHuxKb48Fvrwl5BQ6o3X64CCps1mMa+EBYilgu3ro=",
->>>>>>> Stashed changes
+    "hash": "sha256-nMHaI0pZfy6NSfB9UctGbAl3DlNlvUB4mhB1UyfwcUQ=",
     "jsModuleNative": {
       "dotnet.native.8.0.24.ws7ii888fb.js": "sha256-4g0GzvOXSwZvTLca4PrWJkoeltz+V9IF/hEFDcnVros="
     },
@@ -21,14 +17,10 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "ITSB2B.Base.Core.wasm": "sha256-aV+23ZcFtOyHZv9ZVk1pbGhxEgOsJ/yDGYe8I2YihFc=",
-<<<<<<< Updated upstream
-      "ITSB2B.BOK.BokWeb.Client.wasm": "sha256-x9fL7g3X1gatMIdU5faLuon8aeIImaiC+YkjUajUGPg=",
-=======
-      "ITSB2B.BOK.BokWeb.Client.wasm": "sha256-/V0McwmJNvQCVFTvLazWqV8Na1GHkVYJM2MvEbSrs1o=",
->>>>>>> Stashed changes
-      "ITSB2B.Items.Attributes.Entities.wasm": "sha256-fP9WbMYaJbfIkciRTO1YdPE9IodMAqObnQlN3cmTSCM=",
-      "ITSB2B.Syncfusion.Licensing.wasm": "sha256-lAci74PPb0vevHxksxECVAmS227F10WbWhZWdi5Lg1M=",
+      "ITSB2B.Base.Core.wasm": "sha256-0HB7+/UYMWo4H1LLFDf14fTAtUie4p9hyDRJhLjLoXo=",
+      "ITSB2B.BOK.BokWeb.Client.wasm": "sha256-VNm3FuLMgyCLRbhPW5wtTCIp5ioqWRnbZUmobROfBbI=",
+      "ITSB2B.Items.Attributes.Entities.wasm": "sha256-JAUj1KN8np8InZh1U390tlbkcTVm+KG29vg1xJASkt4=",
+      "ITSB2B.Syncfusion.Licensing.wasm": "sha256-jqe9aMUSyzkqRpp17IAC3i9Epc0lJPOgOp/WxKOTiqU=",
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-zOo+1SCJbjggnxADQ1oY2k2DR8GNT0IWGKk7oSLRkWU=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-TdutN4Uhn8NTjXhl+ZjP9z0zPR/w7zRr8qLs8vU+Zqs=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-/JPC43Ejbp9VrzP8aNNyxk6KRf6w88bQpPMsL71i3t0=",
@@ -133,7 +125,7 @@
     },
     "satelliteResources": {
       "it": {
-        "ITSB2B.Base.Core.resources.wasm": "sha256-sNreXot8kv7oGhbfxUqwtGHNGRMgevbDBqZ7ys8X5Hw="
+        "ITSB2B.Base.Core.resources.wasm": "sha256-SL8r8RAqG97IRw6CIC/IIC+bLZeRdFp/Z8UMNihbEFc="
       }
     }
   },

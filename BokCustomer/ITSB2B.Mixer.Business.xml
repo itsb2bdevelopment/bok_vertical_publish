@@ -2120,6 +2120,16 @@
             Restituisce il CSS corretto cercando prima nella cartella parametrica,
             poi nella cartella standard dell'app, infine sul file html_standard.css.
             </summary>
+            <param name="parametricFolder">Cartella parametrica opzionale da cui leggere i CSS personalizzati.</param>
+            <param name="familyId">Famiglia del CSS richiesto senza prefisso html_ e senza estensione.</param>
+            <returns>Contenuto testuale del CSS richiesto o del fallback standard.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.Business.CSS.CssProvider.GetCssFolders(System.String)">
+            <summary>
+            Costruisce la lista delle cartelle candidate da cui leggere i file CSS.
+            </summary>
+            <param name="parametricFolder">Cartella parametrica opzionale configurata dall'esterno.</param>
+            <returns>Lista ordinata di cartelle candidate senza duplicati.</returns>
         </member>
         <member name="T:ITSB2B.Mixer.Business.Customized.CustomerCustomizationDispatcher">
             <summary>
@@ -6170,7 +6180,7 @@
         </member>
         <member name="M:ITSB2B.Mixer.Business.Trees.BzTreesMgr.Tree_BuildNodesForDocuments(ITSB2B.Mixer.Entities.Docs.DocFiltersForTree)">
             <summary>
-            Funzione ideata per aggiornare uno o più nodi esistenti sulla tree
+            Funzione ideata per aggiornare uno o piÃƒÂ¹ nodi esistenti sulla tree
             Principalmente 1 solo nodo dopo la chiusura della analysis window
             Legge i documenti (E applica le ACL poi genera i nodi per tutti i doc trovati)
             E genera i Nodi per la Tree
@@ -6220,7 +6230,7 @@
         <member name="M:ITSB2B.Mixer.Business.Trees.BzTreesMgr.TreeBranchLeaves_UpdateWithNode(ITSB2B.Mixer.Entities.Trees.TreeBranchLeafItem,ITSB2B.Mixer.Entities.Trees.BokNodeItem,System.Boolean)">
             <summary>
             Aggiorna una foglia esistente della tree ed il nodo corrispondente
-            Con la possibilità di aggiungere anche l'icona in caso di necessità
+            Con la possibilitÃƒÂ  di aggiungere anche l'icona in caso di necessitÃƒÂ 
             Usato anche per l'insert dalla form della tree
             </summary>
             <param name="leafItem">Foglia da aggiornare</param>
@@ -6241,7 +6251,7 @@
             Per visualizzare i fratelli di un nodo, passare il nodo parent
             </summary>
             <param name="filter">Parametri di filtro: IDTree + DataID + NodeType del nodo o del nodo parent</param>
-            <returns>Lista dei nodi children (attenzione che per i siblings ci sarà anche il nodo origine)  Quindi ci potrebbero essere nodi esistenti che non devono essere aggiunti</returns>
+            <returns>Lista dei nodi children (attenzione che per i siblings ci sarÃƒÂ  anche il nodo origine)  Quindi ci potrebbero essere nodi esistenti che non devono essere aggiunti</returns>
         </member>
         <member name="M:ITSB2B.Mixer.Business.Trees.BzTreesMgr.Trees_SelectTree(System.String)">
             <summary>
@@ -6260,20 +6270,20 @@
         </member>
         <member name="M:ITSB2B.Mixer.Business.Trees.BzTreesMgr.TreeTypes_SelectFull">
             <summary>
-            Seleziona il contenuto dei tree types (perché è qui?)
+            Seleziona il contenuto dei tree types (perchÃƒÂ© ÃƒÂ¨ qui?)
             </summary>
             <returns></returns>
         </member>
         <member name="M:ITSB2B.Mixer.Business.Trees.BzTreesMgr.BuildBranches(ITSB2B.Mixer.Entities.Trees.BokTreeNodesItem)">
             <summary>
-            Genera i branch di una tree dopo che è stato generato il root node.
+            Genera i branch di una tree dopo che ÃƒÂ¨ stato generato il root node.
             </summary>
             <param name="data"></param>
             <returns></returns>
         </member>
         <member name="M:ITSB2B.Mixer.Business.Trees.BzTreesMgr.BuildBranchesForAcl(ITSB2B.Mixer.Entities.Trees.BokTreeNodesForAclItem)">
             <summary>
-            Genera i branch di una tree dopo che è stato generato il root node.
+            Genera i branch di una tree dopo che ÃƒÂ¨ stato generato il root node.
             </summary>
             <param name="data"></param>
             <returns></returns>
@@ -6324,7 +6334,7 @@
             <summary>
             Generazione dei nodi document per una lista di DocBaseItem
             </summary>
-            <param name="treeNodes">Struttura dati della tree che verrà aggiornata</param>
+            <param name="treeNodes">Struttura dati della tree che verrÃƒÂ  aggiornata</param>
             <param name="getDocs">Documenti di cui generare i nodi</param>
         </member>
         <member name="M:ITSB2B.Mixer.Business.Trees.BzTreesMgr.RecurBranches(ITSB2B.Mixer.Entities.Trees.TreeBranchesCollection,ITSB2B.Mixer.Entities.Trees.BokNodeItem,System.Collections.Generic.List{ITSB2B.Mixer.Entities.Trees.BokNodeItem})">
@@ -6353,7 +6363,7 @@
         </member>
         <member name="M:ITSB2B.Mixer.Business.Trees.BzTreesMgr.Tree_BuildTreeFlatNodes(System.Collections.Generic.List{System.Int32})">
             <summary>
-            Genera la tree flat partendo da una lista di idDocs che è già stata filtrata per ACL
+            Genera la tree flat partendo da una lista di idDocs che ÃƒÂ¨ giÃƒÂ  stata filtrata per ACL
             quindi all'interno non vengono fatti ragionamenti di questo tipo
             </summary>
             <param name="idDocs"></param>
@@ -7772,6 +7782,17 @@
             Cartella ove memorizzare i gli allegati non gestiti come documenti BOK
             </summary>
         </member>
+        <member name="P:ITSB2B.Mixer.Context.NsDbSettingsManager.BulkImportRootFolder">
+            <summary>
+            Cartella root per il Bulk import, serve per escludere dalla mappatura dei branch della tree
+            la parte iniziale della cartella di caricamento dei documenti bulk
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Context.NsDbSettingsManager.BulkImportExternalExtensionsIncluded">
+            <summary>
+            Lista delle extension per gli external file da importare quando si effettua un bulk import di file non gestiti da bok.
+            </summary>
+        </member>
         <member name="M:ITSB2B.Mixer.Context.NsDbSettingsManager.GetDbDefaultSettings(System.Byte[])">
             <summary>
             Generazione di tutti i settings per evitare che se aggiungiamo o togliamo settings
@@ -8614,17 +8635,489 @@
             <param name="attributesConfig">Lista degli attributi da generare</param>
             <returns></returns>
         </member>
+        <member name="T:ITSB2B.Mixer.OfficeHelpers.ExcelWorkbookHelper">
+            <summary>
+            Helper per leggere metadati sintetici dai workbook Excel senza importarli come documenti gestiti.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.ExcelWorkbookHelper.GetWorksheetNames(System.String)">
+            <summary>
+            Legge i nomi dei worksheet presenti in un file Excel.
+            </summary>
+            <param name="fileName">Percorso completo del file Excel da analizzare.</param>
+            <returns>Lista ordinata dei nomi dei worksheet contenuti nel workbook.</returns>
+        </member>
+        <member name="T:ITSB2B.Mixer.OfficeHelpers.PowerPointHtmlResult">
+            <summary>
+            Risultato della conversione di una presentazione PowerPoint in html.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointHtmlResult.Html">
+            <summary>
+            Html prodotto dalla conversione della presentazione.
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObjectKinds">
+            <summary>
+            Tipi di oggetto slide supportati dal renderer PowerPoint.
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObjectKinds.Text">
+            <summary>
+            Oggetto testuale.
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObjectKinds.Image">
+            <summary>
+            Oggetto immagine.
+            </summary>
+        </member>
+        <member name="F:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObjectKinds.Table">
+            <summary>
+            Oggetto tabella.
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObject">
+            <summary>
+            Oggetto logico estratto da una slide PowerPoint con posizione e dimensioni.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObject.Kind">
+            <summary>
+            Tipo dell'oggetto estratto.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObject.X">
+            <summary>
+            Coordinata orizzontale di inizio dell'oggetto espressa in pixel.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObject.Y">
+            <summary>
+            Coordinata verticale di inizio dell'oggetto espressa in pixel.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObject.Width">
+            <summary>
+            Larghezza dell'oggetto espressa in pixel.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObject.Height">
+            <summary>
+            Altezza dell'oggetto espressa in pixel.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObject.HtmlContent">
+            <summary>
+            Html pronto da inserire nel body della slide.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObject.IsTitle">
+            <summary>
+            Indica se l'oggetto è un titolo della slide.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObject.ZOrder">
+            <summary>
+            Ordine originale dell'oggetto nella shape tree della slide.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObject.FontSizePx">
+            <summary>
+            Dimensione font suggerita per il rendering del testo.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObject.VerticalAlign">
+            <summary>
+            Allineamento verticale del contenuto testuale.
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper">
+            <summary>
+            Helper OpenXML per estrarre una versione html leggibile di presentazioni PowerPoint OOXML.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.ConvertPresentationToHtml(System.String,System.String,System.String)">
+            <summary>
+            Converte una presentazione PowerPoint OOXML in html leggibile con immagini embedded in base64.
+            </summary>
+            <param name="sourceFileName">Percorso completo del file PowerPoint da convertire.</param>
+            <param name="cssFamilyId">Famiglia CSS da embeddare nel documento html prodotto.</param>
+            <param name="cssFolder">Cartella parametrica dei CSS configurata dal chiamante.</param>
+            <returns>Html prodotto dalla conversione della presentazione.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.BuildHtmlDocument(System.String,System.String,System.String,System.String)">
+            <summary>
+            Costruisce il documento html finale con CSS embeddato.
+            </summary>
+            <param name="title">Titolo del documento html.</param>
+            <param name="cssFamilyId">Famiglia CSS da caricare.</param>
+            <param name="bodyHtml">Contenuto del body già generato.</param>
+            <param name="cssFolder">Cartella parametrica dei CSS configurata dal chiamante.</param>
+            <returns>Documento html completo.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.BuildSlideHtml(DocumentFormat.OpenXml.Packaging.SlidePart,System.Int32,System.Int64,System.Int64)">
+            <summary>
+            Costruisce l'html completo di una singola slide usando l'ordine geometrico degli oggetti.
+            </summary>
+            <param name="slidePart">Parte OpenXML della slide da convertire.</param>
+            <param name="slideIndex">Indice progressivo della slide.</param>
+            <param name="slideWidthEmu">Larghezza logica della slide in EMU.</param>
+            <param name="slideHeightEmu">Altezza logica della slide in EMU.</param>
+            <returns>Html della slide completo di marker ElementBreak.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.ExtractSlideObjects(DocumentFormat.OpenXml.Packaging.SlidePart)">
+            <summary>
+            Estrae gli oggetti significativi della slide con posizione e dimensioni.
+            </summary>
+            <param name="slidePart">Parte OpenXML della slide da analizzare.</param>
+            <returns>Lista di oggetti ordinabili geometricamente.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.ExtractObjectsRecursive(DocumentFormat.OpenXml.Packaging.SlidePart,DocumentFormat.OpenXml.OpenXmlElement,System.Collections.Generic.List{ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObject},System.Int32@,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Estrae ricorsivamente gli oggetti supportati dalla slide, includendo i group shape.
+            </summary>
+            <param name="slidePart">Parte slide di riferimento.</param>
+            <param name="element">Elemento OpenXML corrente da ispezionare.</param>
+            <param name="output">Lista di output degli oggetti estratti.</param>
+            <param name="zOrder">Indice z-order progressivo della slide.</param>
+            <param name="offsetX">Offset X del gruppo parent in pixel.</param>
+            <param name="offsetY">Offset Y del gruppo parent in pixel.</param>
+            <param name="scaleX">Scala orizzontale del gruppo parent.</param>
+            <param name="scaleY">Scala verticale del gruppo parent.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.BuildTextObject(DocumentFormat.OpenXml.Packaging.SlidePart,DocumentFormat.OpenXml.Presentation.Shape,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Costruisce l'oggetto testuale della slide partendo da una shape PowerPoint.
+            </summary>
+            <param name="slidePart">Parte slide che contiene la shape testuale.</param>
+            <param name="shape">Shape testuale della slide.</param>
+            <param name="offsetX">Offset X del contenitore parent in pixel.</param>
+            <param name="offsetY">Offset Y del contenitore parent in pixel.</param>
+            <param name="scaleX">Fattore di scala orizzontale da applicare alla shape.</param>
+            <param name="scaleY">Fattore di scala verticale da applicare alla shape.</param>
+            <returns>Oggetto logico della slide o null se la shape non contiene testo utile.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.BuildImageObject(DocumentFormat.OpenXml.Packaging.SlidePart,DocumentFormat.OpenXml.Presentation.Picture,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Costruisce l'oggetto immagine della slide con data-uri base64 e dimensioni reali.
+            </summary>
+            <param name="slidePart">Parte slide da cui ricavare la relazione verso l'immagine.</param>
+            <param name="picture">Elemento immagine della slide.</param>
+            <param name="offsetX">Offset X del contenitore parent in pixel.</param>
+            <param name="offsetY">Offset Y del contenitore parent in pixel.</param>
+            <param name="scaleX">Fattore di scala orizzontale da applicare all'immagine.</param>
+            <param name="scaleY">Fattore di scala verticale da applicare all'immagine.</param>
+            <returns>Oggetto logico della slide o null se l'immagine non è leggibile.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.BuildGraphicFrameObject(DocumentFormat.OpenXml.Packaging.SlidePart,DocumentFormat.OpenXml.Presentation.GraphicFrame,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Costruisce l'oggetto logico a partire da un GraphicFrame, gestendo tabelle e diagrammi SmartArt.
+            </summary>
+            <param name="slidePart">Parte slide che contiene il frame grafico.</param>
+            <param name="graphicFrame">Frame grafico della slide.</param>
+            <param name="offsetX">Offset X del contenitore parent in pixel.</param>
+            <param name="offsetY">Offset Y del contenitore parent in pixel.</param>
+            <param name="scaleX">Fattore di scala orizzontale da applicare al frame.</param>
+            <param name="scaleY">Fattore di scala verticale da applicare al frame.</param>
+            <returns>Oggetto logico della slide o null se il frame non contiene tipi supportati.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.BuildDiagramObject(DocumentFormat.OpenXml.Packaging.SlidePart,DocumentFormat.OpenXml.Presentation.GraphicFrame,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Costruisce un blocco testuale a partire da un diagramma SmartArt.
+            </summary>
+            <param name="slidePart">Parte slide che contiene il diagramma.</param>
+            <param name="graphicFrame">Frame grafico del diagramma.</param>
+            <param name="offsetX">Offset X del contenitore parent in pixel.</param>
+            <param name="offsetY">Offset Y del contenitore parent in pixel.</param>
+            <param name="scaleX">Fattore di scala orizzontale da applicare al diagramma.</param>
+            <param name="scaleY">Fattore di scala verticale da applicare al diagramma.</param>
+            <returns>Oggetto logico della slide o null se il diagramma non espone testo leggibile.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.ResolveShapeBounds(DocumentFormat.OpenXml.Packaging.SlidePart,DocumentFormat.OpenXml.Presentation.Shape,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Determina le coordinate effettive di una shape tenendo conto anche dei placeholder ereditati dal layout.
+            </summary>
+            <param name="slidePart">Parte slide che contiene la shape.</param>
+            <param name="shape">Shape da analizzare.</param>
+            <param name="offsetX">Offset X del contenitore parent in pixel.</param>
+            <param name="offsetY">Offset Y del contenitore parent in pixel.</param>
+            <param name="scaleX">Fattore di scala orizzontale da applicare.</param>
+            <param name="scaleY">Fattore di scala verticale da applicare.</param>
+            <returns>Coordinate e dimensioni in pixel della shape.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.HasValidTransform(DocumentFormat.OpenXml.Drawing.Transform2D)">
+            <summary>
+            Verifica se un transform OpenXML contiene dimensioni utili per il rendering HTML.
+            </summary>
+            <param name="transform">Transform da verificare.</param>
+            <returns>True se il transform contiene extents maggiori di zero.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.IsMatchingPlaceholder(DocumentFormat.OpenXml.Presentation.Shape,DocumentFormat.OpenXml.Presentation.PlaceholderShape)">
+            <summary>
+            Verifica se una shape del layout corrisponde al placeholder della slide.
+            </summary>
+            <param name="layoutShape">Shape del layout da confrontare.</param>
+            <param name="slidePlaceholder">Placeholder della slide.</param>
+            <returns>True se tipo e indice del placeholder coincidono.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.GetAdjustedTextWidth(System.Double,System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            Allarga i contenitori testuali troppo stretti per evitare la resa verticale lettera per lettera.
+            </summary>
+            <param name="currentWidth">Larghezza attuale del contenitore in pixel.</param>
+            <param name="paragraphs">Paragrafi testuali contenuti nella shape.</param>
+            <param name="isTitle">Indica se la shape rappresenta un titolo.</param>
+            <returns>Larghezza corretta da usare nel rendering HTML.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.BuildTableObject(DocumentFormat.OpenXml.Presentation.GraphicFrame,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Costruisce l'oggetto tabella della slide, se presente in un GraphicFrame.
+            </summary>
+            <param name="graphicFrame">Frame grafico della slide.</param>
+            <param name="offsetX">Offset X del contenitore parent in pixel.</param>
+            <param name="offsetY">Offset Y del contenitore parent in pixel.</param>
+            <param name="scaleX">Fattore di scala orizzontale da applicare alla tabella.</param>
+            <param name="scaleY">Fattore di scala verticale da applicare alla tabella.</param>
+            <returns>Oggetto logico della slide o null se il frame non contiene una tabella.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.ExtractDiagramTexts(DocumentFormat.OpenXml.Packaging.SlidePart,DocumentFormat.OpenXml.Presentation.GraphicFrame)">
+            <summary>
+            Estrae i contenuti testuali utili da un diagramma SmartArt collegato a un graphic frame.
+            </summary>
+            <param name="slidePart">Parte slide che contiene il diagramma.</param>
+            <param name="graphicFrame">Frame grafico che referenzia il diagramma.</param>
+            <returns>Lista ordinata di testi del diagramma con indicazione dei titoli logici.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.IsDiagramHeading(System.Xml.Linq.XElement,System.Xml.Linq.XNamespace)">
+            <summary>
+            Determina se un nodo SmartArt rappresenta un titolo o un'etichetta principale.
+            </summary>
+            <param name="point">Nodo del diagramma da analizzare.</param>
+            <param name="drawingNamespace">Namespace DrawingML usato dal data model.</param>
+            <returns>True se il contenuto del nodo ha evidenza tipografica da titolo.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.GetParagraphText(DocumentFormat.OpenXml.Drawing.Paragraph)">
+            <summary>
+            Estrae il testo di un paragrafo DrawingML mantenendo gli hard-break interni.
+            </summary>
+            <param name="paragraph">Paragrafo da convertire in testo piano.</param>
+            <returns>Testo del paragrafo ripulito dagli spazi superflui.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.IsTitleShape(DocumentFormat.OpenXml.Presentation.Shape)">
+            <summary>
+            Verifica se la shape corrente rappresenta un titolo della slide.
+            </summary>
+            <param name="shape">Shape da analizzare.</param>
+            <returns>True se la shape è un placeholder di titolo o di centro titolo.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.GetShapeBounds(DocumentFormat.OpenXml.Drawing.Transform2D,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Calcola coordinate e dimensioni in pixel a partire dal transform di una shape.
+            </summary>
+            <param name="transform">Transform2D della shape.</param>
+            <param name="offsetX">Offset X del contenitore parent in pixel.</param>
+            <param name="offsetY">Offset Y del contenitore parent in pixel.</param>
+            <param name="scaleX">Fattore di scala orizzontale da applicare.</param>
+            <param name="scaleY">Fattore di scala verticale da applicare.</param>
+            <returns>Coordinate e dimensioni in pixel.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.GetGraphicFrameBounds(DocumentFormat.OpenXml.Presentation.Transform,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Calcola coordinate e dimensioni in pixel a partire dal transform di un GraphicFrame.
+            </summary>
+            <param name="transform">Transform del frame grafico.</param>
+            <param name="offsetX">Offset X del contenitore parent in pixel.</param>
+            <param name="offsetY">Offset Y del contenitore parent in pixel.</param>
+            <param name="scaleX">Fattore di scala orizzontale da applicare.</param>
+            <param name="scaleY">Fattore di scala verticale da applicare.</param>
+            <returns>Coordinate e dimensioni in pixel.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.GetGroupTransform(DocumentFormat.OpenXml.Presentation.GroupShape,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Calcola offset e scala effettivi di un gruppo PowerPoint.
+            </summary>
+            <param name="groupShape">Gruppo PowerPoint da analizzare.</param>
+            <param name="offsetX">Offset X del parent in pixel.</param>
+            <param name="offsetY">Offset Y del parent in pixel.</param>
+            <param name="scaleX">Scala X del parent.</param>
+            <param name="scaleY">Scala Y del parent.</param>
+            <returns>Offset e scala effettivi da applicare ai figli del gruppo.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.EmuToPixel(System.Int64)">
+            <summary>
+            Converte una misura EMU in pixel usando il rapporto standard di OpenXML.
+            </summary>
+            <param name="emuValue">Valore espresso in EMU.</param>
+            <returns>Misura equivalente in pixel.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.ResolveBlockType(ITSB2B.Mixer.OfficeHelpers.PowerPointSlideObject)">
+            <summary>
+            Restituisce il tipo di blocco BOK da usare per l'oggetto slide corrente.
+            </summary>
+            <param name="slideObject">Oggetto slide da classificare.</param>
+            <returns>Codice del tipo blocco da usare nell'ElementBreak.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.BuildElementBreak(System.Int32,System.String,System.Int32,System.String)">
+            <summary>
+            Costruisce il wrapper ElementBreak da usare nel documento html della presentazione.
+            </summary>
+            <param name="pageID">Numero logico della slide/pagina.</param>
+            <param name="blockType">Tipo blocco da usare nel marker.</param>
+            <param name="blockID">Indice progressivo del blocco.</param>
+            <param name="innerHtml">Contenuto html del blocco.</param>
+            <returns>Html del blocco racchiuso nel marker ElementBreak.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.BuildPositionedObjectStart(System.Double,System.Double,System.Double,System.Double,System.String,System.String)">
+            <summary>
+            Costruisce il wrapper html posizionato assolutamente per un oggetto della slide.
+            </summary>
+            <param name="x">Coordinata X in pixel.</param>
+            <param name="y">Coordinata Y in pixel.</param>
+            <param name="width">Larghezza in pixel.</param>
+            <param name="height">Altezza in pixel.</param>
+            <param name="cssClass">Classi CSS del contenitore.</param>
+            <param name="extraStyle">Stile CSS addizionale da concatenare allo style inline di base.</param>
+            <returns>Tag di apertura del contenitore posizionato.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.GetShapeFontSizePx(DocumentFormat.OpenXml.Presentation.Shape)">
+            <summary>
+            Ricava una dimensione font indicativa in pixel dalla shape testuale PowerPoint.
+            </summary>
+            <param name="shape">Shape da analizzare.</param>
+            <returns>Dimensione font indicativa in pixel.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.GetVerticalAlign(DocumentFormat.OpenXml.Presentation.Shape)">
+            <summary>
+            Ricava l'allineamento verticale del contenuto di una shape testuale.
+            </summary>
+            <param name="shape">Shape da analizzare.</param>
+            <returns>Valore CSS justify-content coerente con l'anchor PowerPoint.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.FormatCssNumber(System.Double)">
+            <summary>
+            Converte un numero da usare in CSS usando sempre il separatore decimale invariabile.
+            </summary>
+            <param name="value">Valore numerico da convertire.</param>
+            <returns>Numero pronto per essere scritto in uno style inline CSS.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.GetImageDataUri(DocumentFormat.OpenXml.Packaging.ImagePart,System.String)">
+            <summary>
+            Estrae l'immagine referenziata come data-uri base64.
+            </summary>
+            <param name="imagePart">Parte immagine da leggere.</param>
+            <param name="mimeType">Mime type dell'immagine.</param>
+            <returns>Data-uri base64 dell'immagine.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptOpenXmlHelper.GetImageMimeType(DocumentFormat.OpenXml.Packaging.ImagePart)">
+            <summary>
+            Determina il mime type da usare per una immagine estratta dalla presentazione.
+            </summary>
+            <param name="imagePart">Parte immagine OpenXML da analizzare.</param>
+            <returns>Mime type coerente con il content type dell'immagine.</returns>
+        </member>
+        <member name="T:ITSB2B.Mixer.OfficeHelpers.PowerPointMetadataItem">
+            <summary>
+            Metadati principali rilevabili da un file PowerPoint OOXML.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointMetadataItem.Title">
+            <summary>
+            Titolo del documento.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointMetadataItem.Subject">
+            <summary>
+            Oggetto del documento.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointMetadataItem.Author">
+            <summary>
+            Autore del documento.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointMetadataItem.LastModifiedBy">
+            <summary>
+            Ultimo utente che ha modificato il documento.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointMetadataItem.Keywords">
+            <summary>
+            Parole chiave del documento.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointMetadataItem.Description">
+            <summary>
+            Descrizione del documento.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointMetadataItem.Category">
+            <summary>
+            Categoria del documento.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointMetadataItem.Company">
+            <summary>
+            Azienda associata al documento.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointMetadataItem.Manager">
+            <summary>
+            Manager associato al documento.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointMetadataItem.SlidesCount">
+            <summary>
+            Numero di slide della presentazione.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointMetadataItem.CreatedOn">
+            <summary>
+            Data di creazione del pacchetto OOXML.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.OfficeHelpers.PowerPointMetadataItem.ModifiedOn">
+            <summary>
+            Data di ultima modifica del pacchetto OOXML.
+            </summary>
+        </member>
+        <member name="T:ITSB2B.Mixer.OfficeHelpers.PptxHelpers">
+            <summary>
+            Helper per le operazioni su file PowerPoint OOXML.
+            </summary>
+        </member>
         <member name="M:ITSB2B.Mixer.OfficeHelpers.PptxHelpers.ConvertPptxToPdf(System.String)">
             <summary>
-            Converte una presentazione powerpoint in un file PDF
+            Converte una presentazione powerpoint in un file PDF.
             </summary>
-            <param name="fileName"></param>
-            <returns></returns>
+            <param name="fileName">Percorso completo del file PowerPoint da convertire.</param>
+            <returns>Percorso del file PDF generato.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptxHelpers.ConvertPptxToPdf(System.String,System.String)">
+            <summary>
+            Converte una presentazione powerpoint in un file PDF nel percorso richiesto.
+            </summary>
+            <param name="fileName">Percorso completo del file PowerPoint da convertire.</param>
+            <param name="pdfOutputFile">Percorso completo del file PDF di destinazione.</param>
+            <returns>Percorso del file PDF generato.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.PptxHelpers.GetPowerPointMetadata(System.String)">
+            <summary>
+            Estrae i metadati principali dal file PowerPoint OOXML.
+            </summary>
+            <param name="fileName">Percorso completo del file PowerPoint da analizzare.</param>
+            <returns>Metadati rilevati dal pacchetto OOXML.</returns>
         </member>
         <member name="T:ITSB2B.Mixer.OfficeHelpers.WpOpenXmlParser">
             <summary>
              Descrizione della classe: 
             </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.WpOpenXmlParser.#ctor(System.IO.Stream)">
+            <summary>
+            Costruttore del parser che accetta un flusso di dati di un documento Word e inizializza le parti necessarie per l'estrazione dei contenuti.
+            </summary>
+            <param name="docStream">Stream del documento Word da elaborare.</param>
         </member>
         <member name="F:ITSB2B.Mixer.OfficeHelpers.WpOpenXmlParser.mInputDoc">
             <summary>
@@ -8694,6 +9187,71 @@
             <summary>
             Estrae tutti gli header come WpHeaderItem
             </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.WpOpenXmlParser.ParseFooters(System.Boolean)">
+            <summary>
+            Estrae tutti i footer del documento come elementi Word importabili.
+            </summary>
+            <param name="withElementBreak">Flag che indica se generare gli ElementBreak nell'html.</param>
+            <returns>Lista degli elementi footer distinti trovati nel documento.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.WpOpenXmlParser.ParsePageSections(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer},ITSB2B.Mixer.Entities.WpData.WpElementType,System.Boolean)">
+            <summary>
+            Estrae una lista di elementi univoci da una collezione di parti pagina come header o footer.
+            </summary>
+            <param name="parts">Parti OpenXML da analizzare.</param>
+            <param name="elementType">Tipo elemento da assegnare ai blocchi prodotti.</param>
+            <param name="withElementBreak">Flag che indica se generare gli ElementBreak nell'html.</param>
+            <returns>Lista degli elementi distinti trovati nelle parti richieste.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.WpOpenXmlParser.GetRootElement(DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer)">
+            <summary>
+            Restituisce il root element della parte OpenXML passata se disponibile.
+            </summary>
+            <param name="pagePart">Parte OpenXML della pagina da ispezionare.</param>
+            <returns>Root element della parte oppure null se non supportata.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.WpOpenXmlParser.BuildNormalizedContainerFingerprint(ITSB2B.Mixer.Entities.WpData.WpElementItem)">
+            <summary>
+            Costruisce una fingerprint stabile dei contenitori di un elemento per eliminare header/footer duplicati.
+            </summary>
+            <param name="pageItem">Elemento di cui creare la fingerprint.</param>
+            <returns>Stringa fingerprint del contenuto logico dell'elemento.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.WpOpenXmlParser.NormalizeFingerprintFragment(System.String)">
+            <summary>
+            Normalizza un frammento html per confrontare header e footer ignorando differenze dinamiche come i numeri pagina.
+            </summary>
+            <param name="htmlFragment">Frammento html da normalizzare.</param>
+            <returns>Versione normalizzata del frammento utile per il confronto semantico.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.WpOpenXmlParser.GetPageSectionScore(ITSB2B.Mixer.Entities.WpData.WpElementItem)">
+            <summary>
+            Calcola un punteggio di ricchezza del contenuto per scegliere la migliore variante tra header/footer quasi uguali.
+            </summary>
+            <param name="pageItem">Elemento header o footer da valutare.</param>
+            <returns>Punteggio intero crescente al crescere della ricchezza del contenuto.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.WpOpenXmlParser.CountTableTextLength(ITSB2B.Mixer.Entities.WpData.WpTableItem)">
+            <summary>
+            Conta la lunghezza totale del testo contenuto in una tabella Word.
+            </summary>
+            <param name="table">Tabella da ispezionare.</param>
+            <returns>Numero totale di caratteri testuali trovati nella tabella.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.WpOpenXmlParser.CountTableImages(ITSB2B.Mixer.Entities.WpData.WpTableItem)">
+            <summary>
+            Conta il numero totale di immagini contenute in una tabella Word, incluse eventuali tabelle annidate.
+            </summary>
+            <param name="table">Tabella da ispezionare.</param>
+            <returns>Numero totale di immagini rilevate nella tabella.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.WpOpenXmlParser.ParseBodyGroupContainersIntoElements(System.Boolean)">
+            <summary>
+            Parse degli elementi del Body del documento raggruppando i container in elementi distinti secondo le regole:
+            </summary>
+            <param name="withElementBreak">Con la generazione degli element break</param>
+            <returns></returns>
         </member>
         <member name="M:ITSB2B.Mixer.OfficeHelpers.WpOpenXmlParser.ParseBody(System.Boolean)">
             <summary>
@@ -8786,14 +9344,32 @@
             <param name="inputPath">File di input</param>
             <param name="outputPath">File di output</param>
         </member>
-        <member name="M:ITSB2B.Mixer.OfficeHelpers.WpParserHelper.RenderDocToHtml(ITSB2B.Mixer.Entities.WpData.WpDocumentItem)">
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.WpParserHelper.RenderDocToHtml(ITSB2B.Mixer.Entities.WpData.WpDocumentItem,System.String,System.String)">
             <summary>
             Genera il documento HTML partendo da un file word elaborato dal parser via OpenXML
             Gli elementi del documento possiedono già il loro HTML generato
             E possono quindi essere utilizzati per l'Import in BOK
             </summary>
-            <param name="docItem"></param>
+            <param name="docItem">Documento Word giÃ  parseato via OpenXML.</param>
+            <param name="cssData">Eventuale CSS esterno da embeddare nel documento html.</param>
+            <param name="documentTitle">Titolo da inserire nel tag title dell'html.</param>
             <returns>contenuto html del documento word</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.WpParserHelper.GetWordHtmlCss(ITSB2B.Mixer.Entities.WpData.WpDocumentItem,System.String,System.String)">
+            <summary>
+            Restituisce il CSS da usare per il rendering html dei documenti Word.
+            </summary>
+            <param name="docItem">Documento Word giÃ  parseato via OpenXML.</param>
+            <param name="cssFamilyId">Famiglia CSS esterna da cercare tramite il provider.</param>
+            <param name="cssFolder">Cartella parametrica dei CSS configurata dal chiamante.</param>
+            <returns>CSS da embeddare nel documento html Word.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.OfficeHelpers.WpParserHelper.BuildDefaultCss(ITSB2B.Mixer.Entities.WpData.WpDocumentItem)">
+            <summary>
+            Costruisce il CSS di fallback storico per il renderer Word quando non viene passato un foglio esterno.
+            </summary>
+            <param name="docItem">Documento Word giÃ  parseato via OpenXML.</param>
+            <returns>CSS di fallback da embeddare nel documento html.</returns>
         </member>
         <member name="M:ITSB2B.Mixer.OfficeHelpers.WpParserHelper.RenderDocToMarkdown(ITSB2B.Mixer.Entities.WpData.WpDocumentItem)">
             <summary>
@@ -8808,7 +9384,7 @@
             Funzioni di parse dei messaggi di posta di tipo .eml (RFC822, MIME)
             </summary>
         </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.EmlParserHelper.ParseEmlFileRecursive(System.Boolean,System.Int32,System.Int32@,ITSB2B.Mixer.Entities.MsgData.MsgDataItem,System.String,System.String)">
+        <member name="M:ITSB2B.Mixer.ParserHelpers.EmlParserHelper.ParseEmlFileRecursive(System.Boolean,System.Int32,System.Int32@,ITSB2B.Mixer.Entities.MsgData.MsgDataItem,System.String,System.String,System.String,System.String)">
             <summary>
             Funzione ricorsiva per il parse di un file eml e l'estrazione dei suoi contenuti
             con eventuale ricorsione su allegati eml (molto rari)
@@ -8819,15 +9395,17 @@
             <param name="emlData">Classe ove saranno memorizzati i contenuti del messaggio in modo strutturato</param>
             <param name="fileName">Nome del file da elaborare</param>
             <param name="parentBokFileID">ID Del file parent se questo eml è un allegato (può essere nullo)</param>
+            <param name="cssFamilyId">Famiglia CSS da usare per gli html prodotti durante il parse.</param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.EmlParserHelper.ProcessEmlAttachedFile(System.String,ITSB2B.Mixer.Entities.JsonData.JsonFileItem,System.Int32@)">
+        <member name="M:ITSB2B.Mixer.ParserHelpers.EmlParserHelper.ProcessEmlAttachedFile(System.String,ITSB2B.Mixer.Entities.JsonData.JsonFileItem,System.Int32@,System.String,System.String)">
             <summary>
             Metodo che permette di processare un file EML allegato ad un JSON del crm o di lotus notes
             </summary>
             <param name="jsonOutputFolder">Cartella dove scaricare i file prodotti</param>
             <param name="jItem">Json File Item con il messaggio eml allegato e le sue info</param>
             <param name="fileIndex">indice necessario a produrre dei nomi di file coerenti</param>
+            <param name="cssFamilyId">Famiglia CSS da usare per gli html prodotti durante il parse degli allegati.</param>
             <returns></returns>
         </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.EmlParserHelper.ProcessEmlFile(System.String,System.String)">
@@ -8838,6 +9416,23 @@
             <param name="caterpillarOutputFolder">Cartella ove verranno inseriti i file estratti</param>
             <param name="originFileName">Nome del file da elaborare</param>
             <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.EmlParserHelper.ProcessEmlFileToData(System.String,System.String,System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            Processa un file EML diretto ritornando la struttura dati completa prodotta dal parser.
+            </summary>
+            <param name="outputFolder">Cartella dove scrivere tutti i file generati dal parser.</param>
+            <param name="originFileName">Percorso completo del file EML da elaborare.</param>
+            <param name="bokID">BokID già calcolato dal chiamante.</param>
+            <param name="deleteReplacedFiles">Flag che indica se eliminare i file marcati come sostituiti dal parser.</param>
+            <param name="cssFamilyId">Famiglia CSS da usare per gli html prodotti dal parser.</param>
+            <returns>Struttura dati completa del messaggio elaborato.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.EmlParserHelper.DeleteReplacedFiles(ITSB2B.Mixer.Entities.MsgData.MsgDataItem)">
+            <summary>
+            Elimina i file marcati come sostituiti dal parser perché non devono essere importati.
+            </summary>
+            <param name="msgData">Dati del messaggio elaborato da cui ricavare i file da eliminare.</param>
         </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.EmlParserHelper.AppendNonEmbeddedImages(System.String,ITSB2B.Mixer.Entities.MsgData.MsgFileItem,ITSB2B.Mixer.Entities.MsgData.MsgDataItem)">
             <summary>
@@ -8857,6 +9452,23 @@
             <param name="emailInfo"></param>
             <returns></returns>
         </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.EmlParserHelper.BuildEmailDocumentHtml(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Costruisce il documento html finale della mail con CSS embeddato.
+            </summary>
+            <param name="title">Titolo del documento html.</param>
+            <param name="metadataTable">Blocco html dei metadati della mail.</param>
+            <param name="cleanBody">Corpo html giÃ  sanificato della mail.</param>
+            <param name="cssFamilyId">Famiglia CSS da applicare al documento prodotto.</param>
+            <returns>Documento html completo della mail.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.EmlParserHelper.GetEmbeddedCss(System.String,System.String)">
+            <summary>
+            Restituisce il CSS da embeddare nel documento html della mail.
+            </summary>
+            <param name="cssFamilyId">Famiglia CSS richiesta dal chiamante.</param>
+            <returns>Contenuto del CSS da iniettare nel tag style.</returns>
+        </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.EmlParserHelper.IsPptDocument(System.String)">
             <summary>
             Funzioni di supporto per riconoscere i tipi di documenti allegati
@@ -8873,7 +9485,7 @@
             <param name="fileName">Nome del file allegato</param>
             <returns></returns>
         </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.EmlParserHelper.ParseEmlFile(System.Boolean,System.Int32,System.Int32@,ITSB2B.Mixer.Entities.MsgData.MsgDataItem,System.String,System.String)">
+        <member name="M:ITSB2B.Mixer.ParserHelpers.EmlParserHelper.ParseEmlFile(System.Boolean,System.Int32,System.Int32@,ITSB2B.Mixer.Entities.MsgData.MsgDataItem,System.String,System.String,System.String,System.String)">
             <summary>
             Questo è il parser vero e proprio del file EML
             </summary>
@@ -8883,6 +9495,7 @@
             <param name="emlData">Dati strutturati del messaggio</param>
             <param name="fileName">Nome del file da elaborare</param>
             <param name="parentBokFileID">Eventuale file parent, di cui il messaggio è un attachment</param>
+            <param name="cssFamilyId">Famiglia CSS da usare per gli html prodotti durante il parse.</param>
             <returns></returns>
         </member>
         <member name="T:ITSB2B.Mixer.ParserHelpers.HtmlParserHelper">
@@ -9123,19 +9736,46 @@
              Costruttore
             </summary>
         </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.ParseMsgFiles(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem)">
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.ParseMsgFiles(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem,System.String)">
             <summary>
             Funzione per aggiungere l'elaborazione dei file MSG allegati ai documenti JSON
             </summary>
             <param name="jDItem">Json Output Mapper Item contenente le info sul documento e i suoi attachment</param>
+            <param name="cssFolder">Cartella parametrica dei CSS configurata dal chiamante.</param>
             <returns>true se tutto ok e se non ci sono MSG da elaborare, false + errore altrimenti</returns>
         </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.ParseEmlFiles(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem)">
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.ParseEmlFiles(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem,System.String)">
             <summary>
             Funzione per aggiungere l'elaborazione dei file MSG allegati ai documenti JSON
             </summary>
             <param name="jDItem">Json Output Mapper Item contenente le info sul documento e i suoi attachment</param>
+            <param name="cssFolder">Cartella parametrica dei CSS configurata dal chiamante.</param>
             <returns>true se tutto ok e se non ci sono MSG da elaborare, false + errore altrimenti</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.GetInheritedMailOriginPath(ITSB2B.Mixer.Entities.JsonData.JsonFileItem,ITSB2B.Mixer.Entities.MsgData.MsgFileItem)">
+            <summary>
+            Restituisce il percorso origine da assegnare ai file estratti da una email,
+            ereditando la cartella del documento email parent invece della cartella tecnica di output.
+            </summary>
+            <param name="parentMailItem">Documento email parent da cui deriva l'estrazione.</param>
+            <param name="generatedMailItem">File generato dal parser mail.</param>
+            <returns>Cartella origine coerente da riportare sul file estratto.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.ResolveGeneratedMailParentFileID(ITSB2B.Mixer.Entities.JsonData.JsonFileItem,ITSB2B.Mixer.Entities.MsgData.MsgFileItem,System.Collections.Generic.Dictionary{System.String,ITSB2B.Mixer.Entities.JsonData.JsonFileItem})">
+            <summary>
+            Ricostruisce il ParentFileID corretto dei file generati dal parsing ricorsivo delle email.
+            </summary>
+            <param name="sourceMailItem">File email originario presente nel mapper prima del post-processing.</param>
+            <param name="generatedMailItem">File generato dal parser ricorsivo.</param>
+            <param name="generatedItemsByBokFileID">Mappa tra BokFileID del parser mail e JsonFileItem generato.</param>
+            <returns>FileID del parent corretto per mantenere la struttura ad albero.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.ShouldSkipMailPostProcessing(ITSB2B.Mixer.Entities.JsonData.JsonFileItem)">
+            <summary>
+            Verifica se un allegato mail deve essere escluso dal post-processing ricorsivo.
+            </summary>
+            <param name="jItem">File allegato da verificare.</param>
+            <returns>True se il file deve rimanere come binario originale senza ulteriori conversioni.</returns>
         </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.ParseWordFiles(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem)">
             <summary>
@@ -9144,6 +9784,53 @@
             </summary>
             <param name="jDItem">Mappe contenente tutti i documenti e allegati elaborati da un JSON</param>
             <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.ParseHtmlFiles(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem)">
+            <summary>
+            Ciclo per processare eventuali file HTML allegati al documento JSON o alle email preprocessate.
+            </summary>
+            <param name="jDItem">Mapper contenente tutti i documenti e allegati elaborati.</param>
+            <returns>True se tutto ok o se non ci sono file HTML da elaborare.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.ParseExcelFiles(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem,System.String)">
+            <summary>
+            Ciclo per arricchire eventuali file Excel allegati con i nomi dei worksheet senza post-processarli.
+            </summary>
+            <param name="jDItem">Mapper contenente tutti i documenti e allegati elaborati.</param>
+            <param name="cssFolder">Parametro mantenuto per compatibilità di firma, non usato.</param>
+            <returns>True se tutto ok o se non ci sono file Excel da arricchire.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.AddOrUpdateFileAttribute(ITSB2B.Mixer.Entities.JsonData.JsonFileItem,System.String,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Aggiunge o aggiorna un attributo file mantenendo il file sorgente come attachment importabile.
+            </summary>
+            <param name="jfi">File sul quale impostare l'attributo.</param>
+            <param name="fieldName">Nome tecnico dell'attributo.</param>
+            <param name="description">Descrizione leggibile dell'attributo.</param>
+            <param name="value">Valore da assegnare all'attributo.</param>
+            <param name="htmlOrder">Ordine html da assegnare all'attributo.</param>
+            <param name="writeToHtml">Flag che indica se l'attributo deve essere mostrato anche in html.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.ParsePowerPointFiles(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem)">
+            <summary>
+            Ciclo per processare eventuali file PowerPoint OOXML allegati convertendoli in PDF.
+            </summary>
+            <param name="jDItem">Mapper contenente tutti i documenti e allegati elaborati.</param>
+            <returns>True se tutto ok o se non ci sono file PowerPoint da elaborare.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.IsExcelFile(System.String)">
+            <summary>
+            Verifica se l'estensione passata appartiene a un formato Excel.
+            </summary>
+            <param name="extension">Estensione del file da verificare.</param>
+            <returns>True se l'estensione appartiene a un workbook Excel.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.IsPowerPointFile(System.String)">
+            <summary>
+            Verifica se l'estensione passata appartiene a un formato PowerPoint OOXML gestito.
+            </summary>
+            <param name="extension">Estensione del file da verificare.</param>
+            <returns>True se l'estensione appartiene a un file PowerPoint OOXML.</returns>
         </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperCommon.DetectMsgAndEmlMalformed(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem)">
             <summary>
@@ -9177,6 +9864,370 @@
             <param name="existResult">Risultato della ricerca del file con i parametri base dello stesso</param>
             <param name="contextForLog">Contesto per il log</param>
             <returns>Status del file in BOK</returns>
+        </member>
+        <member name="T:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon">
+            <summary>
+            Funzioni comuni per i nuovi parser diretti di Argonaut.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.#ctor(System.String,ITSB2B.Base.Entities.Dp.DpBaseParameters,System.String,System.String)">
+            <summary>
+            Costruttore dell'helper comune per i parser diretti di Argonaut.
+            </summary>
+            <param name="outputRootFolder">Cartella radice di output per i file generati.</param>
+            <param name="dpParams">Parametri di base per il Data Processing.</param>
+            <param name="cssFolder">Cartella parametrica dei CSS configurata da Argonaut.</param>
+            <param name="bulkImportRootFolder">Cartella radice opzionale per il calcolo della tree di bulk import.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.GetCssData(System.String)">
+            <summary>
+            Restituisce il CSS da usare per la famiglia html richiesta con fallback automatico allo standard.
+            </summary>
+            <param name="cssFamilyId">Identificativo della famiglia CSS richiesta.</param>
+            <returns>Contenuto testuale del CSS da embeddare nell'html.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.BuildHtmlDocument(System.String,System.String,System.String)">
+            <summary>
+            Costruisce un documento html self contained con CSS embeddato nel tag style.
+            </summary>
+            <param name="title">Titolo del documento html.</param>
+            <param name="cssFamilyId">Famiglia CSS da caricare.</param>
+            <param name="bodyHtml">Contenuto del body del documento.</param>
+            <returns>Documento html completo pronto per il salvataggio.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.BuildElementBreak(System.Int32,System.String,System.Int32,System.String)">
+            <summary>
+            Costruisce il wrapper ElementBreak da usare nei documenti html prodotti dai parser diretti.
+            </summary>
+            <param name="pageID">Numero pagina logica del documento.</param>
+            <param name="blockType">Tipo blocco da usare nel marker.</param>
+            <param name="blockID">Indice progressivo del blocco.</param>
+            <param name="innerHtml">Contenuto html del blocco.</param>
+            <returns>Html del blocco racchiuso nel marker ElementBreak.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.BuildPropertiesTableHtml(System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}})">
+            <summary>
+            Costruisce una tabella html di proprietÃ  riusabile per le copertine dei documenti diretti.
+            </summary>
+            <param name="rows">Righe da renderizzare nella tabella.</param>
+            <returns>Html della tabella dei metadati.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.GenerateStableBokID(System.String,System.String,System.String)">
+            <summary>
+            Genera un BokID stabile partendo da una fingerprint del file.
+            </summary>
+            <param name="sourceFileName">File sorgente da identificare.</param>
+            <param name="prefix">Prefisso da usare per il BokID.</param>
+            <param name="preferredOriginID">Eventuale identificativo sorgente preferenziale da usare nella fingerprint.</param>
+            <returns>BokID stabile per il file richiesto.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.CreateOutputFolder(System.String,System.String)">
+            <summary>
+            Crea la cartella di output del documento preprocessato.
+            </summary>
+            <param name="bokID">BokID del documento preprocessato.</param>
+            <param name="processorFolderName">Sottocartella del processore diretto nella root Argonaut.</param>
+            <returns>Percorso completo della cartella di output.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.CreateDirectMapper(System.String,System.String,ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes,System.String)">
+            <summary>
+            Costruisce il mapper base per i documenti diretti.
+            </summary>
+            <param name="bokID">BokID del documento.</param>
+            <param name="outputFolder">Cartella di output del documento.</param>
+            <param name="originType">Tipo di origine del documento.</param>
+            <param name="sourceFolderPath">Cartella contenitore del file sorgente da usare per costruire la tree.</param>
+            <returns>Mapper base inizializzato per il documento diretto.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.BuildDirectBranchesCodesSequence(System.String)">
+            <summary>
+            Costruisce la lista dei branch code a partire dalla cartella sorgente e dal root folder opzionale del bulk import.
+            </summary>
+            <param name="sourceFolderPath">Cartella sorgente del documento.</param>
+            <returns>Lista ordinata dei branch code.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.NormalizeDirectoryPath(System.String)">
+            <summary>
+            Normalizza un percorso directory rimuovendo i separatori finali.
+            </summary>
+            <param name="directoryPath">Cartella da normalizzare.</param>
+            <returns>Percorso normalizzato oppure stringa vuota.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.SaveMapper(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem)">
+            <summary>
+            Scrive il file nsarg del mapper.
+            </summary>
+            <param name="mapper">Mapper da serializzare.</param>
+            <returns>Percorso del file nsarg scritto.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.CheckDocumentExistenceInBok(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem)">
+            <summary>
+            Applica il controllo standard di esistenza documenti in BOK.
+            </summary>
+            <param name="mapper">Mapper da verificare rispetto ai documenti già presenti in BOK.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.WriteErrorFile(System.String,System.String,ITSB2B.Base.BaseError)">
+            <summary>
+            Scrive il file di errore standard per Argonaut.
+            </summary>
+            <param name="folderName">Cartella nella quale scrivere il file di errore.</param>
+            <param name="bokID">BokID del documento in errore.</param>
+            <param name="error">Errore da serializzare nel file nserr.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.BuildExternalDocumentCoverHtml(System.IO.FileInfo,System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Genera un semplice html di copertina per documenti che restano external.
+            </summary>
+            <param name="fileInfo">Informazioni del file sorgente.</param>
+            <param name="title">Titolo da inserire nella copertina html.</param>
+            <param name="description">Descrizione testuale del contenuto della copertina.</param>
+            <param name="cssFamilyId">Famiglia CSS da usare per la copertina html.</param>
+            <param name="documentTypeLabel">Etichetta del tipo documento da mostrare in testata.</param>
+            <param name="additionalRows">Eventuali righe aggiuntive da appendere alla tabella dei metadati.</param>
+            <param name="additionalBlocksHtml">Eventuali blocchi html extra giÃ  pronti da appendere alla pagina.</param>
+            <returns>Html completo della copertina del documento.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.CreateStandardDateAttributes(System.DateTime,System.DateTime,System.Int32,System.Boolean)">
+            <summary>
+            Crea gli attributi standard di data da esporre sui file Argonaut diretti.
+            </summary>
+            <param name="originCreateDate">Data di creazione/origine del file.</param>
+            <param name="originLastUpdateDate">Data di ultimo aggiornamento/origine del file.</param>
+            <param name="startHtmlOrder">Posizione iniziale degli attributi nell'eventuale html.</param>
+            <param name="writeToHtml">Flag che indica se gli attributi devono comparire anche in html.</param>
+            <returns>Lista di attributi standard di data valorizzati solo se disponibili.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.CreateAttribute(System.String,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Crea un attributo standard per il file.
+            </summary>
+            <param name="fieldName">Nome tecnico dell'attributo.</param>
+            <param name="description">Descrizione leggibile dell'attributo.</param>
+            <param name="value">Valore dell'attributo.</param>
+            <param name="htmlOrder">Ordine di rendering eventuale in html.</param>
+            <param name="writeToHtml">Flag che indica se l'attributo deve essere scritto nel documento html.</param>
+            <returns>Nuovo attributo JSON inizializzato.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.NormalizeIdToken(System.String,System.String)">
+            <summary>
+            Normalizza un token da usare all'interno di un identificativo.
+            </summary>
+            <param name="value">Valore da normalizzare.</param>
+            <param name="fallback">Valore di fallback se il token risulta vuoto.</param>
+            <returns>Token normalizzato composto da soli caratteri alfanumerici.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon.GetSourceFolderName(System.String)" -->
+        <member name="T:ITSB2B.Mixer.ParserHelpers.JsonParserHelperEmlDirect">
+            <summary>
+            Parser diretto per file EML.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperEmlDirect.#ctor(System.String,ITSB2B.Base.Entities.Dp.DpBaseParameters,System.String,System.String)">
+            <summary>
+            Costruttore del parser diretto per file EML.
+            </summary>
+            <param name="outputRootFolder">Cartella radice di output di Argonaut.</param>
+            <param name="dpParams">Parametri di connessione al database.</param>
+            <param name="cssFolder">Cartella parametrica dei CSS configurata in Argonaut.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperEmlDirect.ProcessEmlDocument(System.String,System.Boolean)">
+            <summary>
+            Processa un file EML diretto generando html, allegati e file nsarg.
+            </summary>
+            <param name="sourceFileName">Percorso completo del file EML da elaborare.</param>
+            <param name="keepOriginalFile">Flag che indica se mantenere il file EML originale come allegato esterno.</param>
+            <returns>Lista dei file generati durante il preprocessing.</returns>
+        </member>
+        <member name="T:ITSB2B.Mixer.ParserHelpers.JsonParserHelperExternalDirect">
+            <summary>
+            Parser diretto per documenti esterni non gestiti.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperExternalDirect.#ctor(System.String,ITSB2B.Base.Entities.Dp.DpBaseParameters,System.String,System.String)">
+            <summary>
+            Costruttore del parser diretto per documenti esterni.
+            </summary>
+            <param name="outputRootFolder">Cartella radice di output di Argonaut.</param>
+            <param name="dpParams">Parametri di connessione al database.</param>
+            <param name="cssFolder">Cartella parametrica dei CSS configurata in Argonaut.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperExternalDirect.ProcessExternalDocument(System.String)">
+            <summary>
+            Processa un file esterno generando copertina html e file nsarg.
+            </summary>
+            <param name="sourceFileName">Percorso completo del file esterno da preprocessare.</param>
+            <returns>Lista dei file generati durante il preprocessing.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperExternalDirect.ResolveOriginDocType(System.Boolean,System.Boolean)">
+            <summary>
+            Restituisce la tipologia documento origine da applicare al primary diretto.
+            </summary>
+            <param name="isImageFile">Flag che indica se il file sorgente è una immagine standalone.</param>
+            <param name="isExcelFile">Flag che indica se il file sorgente è un workbook Excel.</param>
+            <returns>Tipologia documento origine coerente con il file elaborato.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperExternalDirect.BuildAdditionalBlocksForHtml(ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon,System.String,System.Boolean)">
+            <summary>
+            Costruisce eventuali blocchi html aggiuntivi per la copertina del documento esterno.
+            </summary>
+            <param name="common">Helper comune usato per generare i marker html.</param>
+            <param name="sourceFileName">Percorso completo del file sorgente.</param>
+            <param name="isImageFile">Flag che indica se il file sorgente è una immagine standalone.</param>
+            <returns>Lista di blocchi html aggiuntivi da appendere alla cover.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperExternalDirect.GetWorksheetNamesIfNeeded(System.IO.FileInfo)">
+            <summary>
+            Restituisce i nomi dei worksheet se il file esterno è un workbook Excel.
+            </summary>
+            <param name="sourceInfo">Informazioni del file sorgente da analizzare.</param>
+            <returns>Lista dei nomi worksheet o lista vuota per file non Excel.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperExternalDirect.BuildAdditionalRowsForHtml(System.Collections.Generic.List{System.String})">
+            <summary>
+            Costruisce le righe aggiuntive da mostrare nella cover html per i file Excel.
+            </summary>
+            <param name="worksheetNames">Lista dei worksheet rilevati nel workbook.</param>
+            <returns>Righe aggiuntive da aggiungere alla tabella html dei metadati.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperExternalDirect.CreateWorksheetAttributes(ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon,System.Collections.Generic.List{System.String},System.Int32,System.Boolean)">
+            <summary>
+            Costruisce gli attributi worksheet da applicare ai file Excel trattati come external document.
+            </summary>
+            <param name="common">Helper comune usato per creare gli attributi standard.</param>
+            <param name="worksheetNames">Lista dei worksheet rilevati nel workbook.</param>
+            <param name="startHtmlOrder">Ordine iniziale da usare per gli attributi html.</param>
+            <param name="writeToHtml">Flag che indica se gli attributi devono comparire anche nell'html.</param>
+            <returns>Lista degli attributi worksheet valorizzati se presenti.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperExternalDirect.IsExcelFile(System.String)">
+            <summary>
+            Verifica se l'estensione passata appartiene alla famiglia di formati Excel trattati come external.
+            </summary>
+            <param name="extension">Estensione del file da controllare.</param>
+            <returns>True se il file è un workbook Excel supportato dalla lettura dei worksheet.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperExternalDirect.IsImageFile(System.String)">
+            <summary>
+            Verifica se l'estensione passata appartiene a un formato immagine da inglobare direttamente nell'html.
+            </summary>
+            <param name="extension">Estensione del file da controllare.</param>
+            <returns>True se il file è una immagine standalone supportata.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperExternalDirect.BuildEmbeddedImagePreview(System.String)">
+            <summary>
+            Costruisce l'html della preview di una immagine standalone come data-uri base64.
+            </summary>
+            <param name="sourceFileName">Percorso completo del file immagine da embeddare.</param>
+            <returns>Html della preview embedded oppure stringa vuota se la preview non può essere costruita.</returns>
+        </member>
+        <member name="T:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect">
+            <summary>
+            Parser diretto per documenti HTML importati direttamente in Argonaut.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect.#ctor(System.String,ITSB2B.Base.Entities.Dp.DpBaseParameters,System.String,System.String)">
+            <summary>
+            Costruttore del parser diretto per documenti HTML.
+            </summary>
+            <param name="outputRootFolder">Cartella radice di output di Argonaut.</param>
+            <param name="dpParams">Parametri di connessione al database.</param>
+            <param name="cssFolder">Cartella parametrica dei CSS configurata in Argonaut.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect.NormalizeHtmlDocument(System.String,System.Boolean@)">
+            <summary>
+            Normalizza un file HTML embeddando le immagini e aggiungendo gli ElementBreak se mancanti.
+            </summary>
+            <param name="sourceFileName">Percorso completo del file HTML da normalizzare.</param>
+            <param name="isAlreadyBokHtml">Flag valorizzato a true se il file sorgente era già in formato BOK.</param>
+            <returns>Html finale normalizzato pronto per il salvataggio.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect.ProcessHtmlDocument(System.String)">
+            <summary>
+            Processa un file HTML diretto embeddando le immagini e aggiungendo gli ElementBreak se mancanti.
+            </summary>
+            <param name="sourceFileName">Percorso completo del file HTML da preprocessare.</param>
+            <returns>Lista dei file generati durante il preprocessing.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect.BuildNormalizedHtml(System.String,ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon,System.Boolean@)">
+            <summary>
+            Costruisce l'HTML finale self contained embeddando tutte le immagini e inserendo gli ElementBreak se mancanti.
+            </summary>
+            <param name="sourceFileName">Percorso completo del file HTML sorgente.</param>
+            <param name="common">Helper comune dei parser diretti.</param>
+            <param name="isAlreadyBokHtml">Flag valorizzato a true se il file sorgente era già in formato BOK.</param>
+            <returns>Html finale pronto per il salvataggio.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect.EnsureHtmlSkeleton(HtmlAgilityPack.HtmlDocument)">
+            <summary>
+            Garantisce che il documento contenga i nodi html, head e body minimi richiesti.
+            </summary>
+            <param name="doc">Documento HTML da normalizzare.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect.HasBokElementBreaks(HtmlAgilityPack.HtmlDocument)">
+            <summary>
+            Verifica se il documento contiene già tag ElementBreak completi dell'attributo data-idelement.
+            </summary>
+            <param name="doc">Documento HTML da analizzare.</param>
+            <returns>True se il documento è già in formato BOK.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect.AppendNodeBlocks(HtmlAgilityPack.HtmlNode,System.Collections.Generic.List{System.String},System.Int32@,ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon,System.Int32)">
+            <summary>
+            Appende alla lista dei blocchi i contenuti significativi del nodo passato.
+            </summary>
+            <param name="node">Nodo da trasformare in uno o più blocchi.</param>
+            <param name="blocksHtml">Lista dei blocchi html accumulati.</param>
+            <param name="blockIndex">Indice progressivo del blocco corrente.</param>
+            <param name="common">Helper comune usato per generare i marker ElementBreak.</param>
+            <param name="currentDepth">Profondità corrente della ricorsione nel DOM.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect.IsIgnorableNode(HtmlAgilityPack.HtmlNode)">
+            <summary>
+            Verifica se il nodo è un elemento strutturale da ignorare direttamente.
+            </summary>
+            <param name="node">Nodo da valutare.</param>
+            <returns>True se il nodo può essere ignorato.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect.IsHeadingNode(System.String)">
+            <summary>
+            Verifica se il nodo rappresenta un titolo html.
+            </summary>
+            <param name="nodeName">Nome normalizzato del nodo da controllare.</param>
+            <returns>True se il nodo è un titolo.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect.IsParagraphLikeNode(System.String)">
+            <summary>
+            Verifica se il nodo rappresenta un blocco assimilabile a un paragrafo.
+            </summary>
+            <param name="nodeName">Nome normalizzato del nodo da controllare.</param>
+            <returns>True se il nodo può essere trattato come blocco testuale.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect.IsImageNode(HtmlAgilityPack.HtmlNode)">
+            <summary>
+            Verifica se il nodo contiene un'immagine o un contenuto grafico trattabile come elemento immagine.
+            </summary>
+            <param name="node">Nodo da valutare.</param>
+            <returns>True se il nodo rappresenta un contenuto immagine.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect.HasStructuredChildren(HtmlAgilityPack.HtmlNode)">
+            <summary>
+            Verifica se il nodo contiene sotto-nodi strutturati che è preferibile esplorare ricorsivamente.
+            </summary>
+            <param name="node">Nodo da analizzare.</param>
+            <returns>True se il nodo contiene elementi figli strutturati.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect.HasMeaningfulContent(HtmlAgilityPack.HtmlNode)">
+            <summary>
+            Verifica se il nodo contiene testo o contenuti utili da trasformare in elemento.
+            </summary>
+            <param name="node">Nodo da analizzare.</param>
+            <returns>True se il nodo contiene contenuto significativo.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperHtmlDirect.IsHtmlExtension(System.String)">
+            <summary>
+            Verifica se l'estensione passata appartiene a un file html trattabile dal processore diretto.
+            </summary>
+            <param name="extension">Estensione del file da verificare.</param>
+            <returns>True se il file è un html supportato.</returns>
         </member>
         <member name="T:ITSB2B.Mixer.ParserHelpers.LotusExistDocState">
             <summary>
@@ -9504,6 +10555,125 @@
             Generazione del file HTML per il contenuto del documento JSON (CRM / MG2)
             </summary>
         </member>
+        <member name="T:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMsgDirect">
+            <summary>
+            Parser diretto per file MSG.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMsgDirect.#ctor(System.String,ITSB2B.Base.Entities.Dp.DpBaseParameters,System.String,System.String)">
+            <summary>
+            Costruttore del parser diretto per file MSG.
+            </summary>
+            <param name="outputRootFolder">Cartella radice di output di Argonaut.</param>
+            <param name="dpParams">Parametri di connessione al database.</param>
+            <param name="cssFolder">Cartella parametrica dei CSS configurata in Argonaut.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMsgDirect.ProcessMsgDocument(System.String,System.Boolean)">
+            <summary>
+            Processa un file MSG diretto generando html, allegati e file nsarg.
+            </summary>
+            <param name="sourceFileName">Percorso completo del file MSG da elaborare.</param>
+            <param name="keepOriginalFile">Flag che indica se mantenere il file MSG originale come allegato esterno.</param>
+            <returns>Lista dei file generati durante il preprocessing.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMsgDirect.MarkReplacedMailContainersAsPostprocessed(ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem)">
+            <summary>
+            Marca come postprocessati i contenitori mail binari già sostituiti dal relativo HTML e rimossi dal disco.
+            </summary>
+            <param name="mapper">Mapper Argonaut da normalizzare prima del salvataggio.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMsgDirect.BuildMapperFromMsgData(ITSB2B.Mixer.Entities.MsgData.MsgDataItem,System.IO.FileInfo,System.String,System.String,System.String,ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes,System.String,System.Boolean,System.String,ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon)">
+            <summary>
+            Costruisce il mapper Argonaut a partire dai dati prodotti dal parser MSG.
+            </summary>
+            <param name="msgData">Dati del messaggio elaborato.</param>
+            <param name="sourceInfo">Informazioni del file sorgente.</param>
+            <param name="sourceHash">Hash del file sorgente.</param>
+            <param name="bokID">BokID del documento preprocessato.</param>
+            <param name="outputFolder">Cartella di output del documento preprocessato.</param>
+            <param name="originType">Tipo di origine da impostare nel mapper.</param>
+            <param name="originSource">Sorgente di origine del documento.</param>
+            <param name="keepOriginalFile">Flag che indica se mantenere anche il file originale MSG.</param>
+            <param name="originalExtension">Estensione del file originale da conservare come allegato.</param>
+            <param name="common">Helper comune usato per creare attributi standard.</param>
+            <returns>Mapper Argonaut popolato con i dati del messaggio.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMsgDirect.GetMaxGeneratedFileIndex(ITSB2B.Mixer.Entities.MsgData.MsgDataItem)">
+            <summary>
+            Calcola il massimo indice file già usato dal parser mail per evitare collisioni nei post-processamenti successivi.
+            </summary>
+            <param name="msgData">Dati del messaggio elaborato da cui leggere gli identificativi già generati.</param>
+            <returns>Massimo indice file già utilizzato dal parser mail.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMsgDirect.ExtractIndexFromBokFileID(System.String)">
+            <summary>
+            Estrae l'indice numerico finale da un BokFileID generato dal parser mail.
+            </summary>
+            <param name="bokFileID">Identificativo del file generato dal parser mail.</param>
+            <returns>Indice numerico estratto dal BokFileID o 1 in fallback.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMsgDirect.CreateJsonFileFromMsg(ITSB2B.Mixer.Entities.MsgData.MsgFileItem,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            Crea un file json Argonaut a partire da un file del parser mail.
+            </summary>
+            <param name="msgFile">File prodotto dal parser mail.</param>
+            <param name="bokID">BokID del documento preprocessato.</param>
+            <param name="originFileName">Nome del file origine da registrare.</param>
+            <param name="originFilePath">Cartella del file origine da registrare.</param>
+            <param name="originHash">Hash origine del file.</param>
+            <param name="originID">OriginID da registrare nel mapper.</param>
+            <param name="originSource">Sorgente di origine del documento.</param>
+            <param name="isPrimary">Flag che indica se il file rappresenta il documento primario.</param>
+            <param name="outputFolder">Cartella Argonaut dove il parser mail ha generato i file finali.</param>
+            <returns>Nuovo file json Argonaut inizializzato.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMsgDirect.ResolveOriginDocType(ITSB2B.Mixer.Entities.MsgData.MsgFileItem,System.String)">
+            <summary>
+            Determina il tipo documento Argonaut da assegnare al file derivato dal parser mail.
+            </summary>
+            <param name="msgFile">File prodotto dal parser mail.</param>
+            <param name="fullOutputFileName">Percorso completo del file di output.</param>
+            <returns>Tipo documento da registrare nel mapper.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMsgDirect.GetFullOutputFileName(ITSB2B.Mixer.Entities.MsgData.MsgFileItem,System.String)">
+            <summary>
+            Ricava il percorso completo del file prodotto dal parser mail.
+            </summary>
+            <param name="msgFile">File prodotto dal parser mail.</param>
+            <param name="outputFolder">Cartella Argonaut dove il parser mail ha generato i file finali.</param>
+            <returns>Percorso completo del file di output.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMsgDirect.GetEmailOriginCreateDate(ITSB2B.Mixer.Entities.MsgData.MsgFileItem,System.DateTime)">
+            <summary>
+            Restituisce la data di creazione/origine più appropriata per una email.
+            </summary>
+            <param name="msgFile">File prodotto dal parser mail.</param>
+            <param name="fallbackDate">Data di fallback da usare se il parser non ha valorizzato date strutturate.</param>
+            <returns>Data di origine più appropriata da registrare nel mapper.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMsgDirect.GetEmailOriginLastUpdateDate(ITSB2B.Mixer.Entities.MsgData.MsgFileItem,System.DateTime)">
+            <summary>
+            Restituisce la data di ultimo aggiornamento più appropriata per una email.
+            </summary>
+            <param name="msgFile">File prodotto dal parser mail.</param>
+            <param name="fallbackDate">Data di fallback da usare se il parser non ha valorizzato date strutturate.</param>
+            <returns>Data di ultimo aggiornamento più appropriata da registrare nel mapper.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMsgDirect.CreateEmailAttributes(ITSB2B.Mixer.Entities.MsgData.MsgFileItem,ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon)">
+            <summary>
+            Crea gli attributi standard dell'email da inserire nel file Argonaut.
+            </summary>
+            <param name="msgFile">File prodotto dal parser mail.</param>
+            <param name="common">Helper comune usato per creare gli attributi.</param>
+            <returns>Lista di attributi dell'email.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperMsgDirect.CreateJsonEmailInfo(ITSB2B.Mixer.Entities.MsgData.MsgFileItem)">
+            <summary>
+            Converte le informazioni email del parser mail nel formato JsonEmailInfoItem.
+            </summary>
+            <param name="msgFile">File prodotto dal parser mail.</param>
+            <returns>Informazioni email nel formato Argonaut.</returns>
+        </member>
         <member name="T:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok">
             <summary>
              Descrizione della classe:
@@ -9654,6 +10824,96 @@
             <param name="s">Stringa da controllare spesso è il value di un Parbok element di tipo attribute</param>
             <returns></returns>
         </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_IsDirectOrigin(ITSB2B.Mixer.Entities.JsonData.JsonOriginTypes)">
+            <summary>
+            Verifica se il tipo origine è uno dei processori direct.
+            </summary>
+            <param name="originType">Tipo origine da controllare.</param>
+            <returns>True se il tipo è direct.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_GetAttributesFamilyName(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
+            <summary>
+            Restituisce la famiglia attributi da usare nel ParBok.
+            </summary>
+            <param name="ctx">Contesto di elaborazione.</param>
+            <returns>Nome della famiglia attributi.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_GetDocumentBranchImportCode(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
+            <summary>
+            Restituisce il codice stabile da usare come ImportCode del branch documento.
+            </summary>
+            <param name="ctx">Contesto di elaborazione.</param>
+            <returns>Codice stabile del documento, preferibilmente BokID.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_GetParBokValue(ITSB2B.Mixer.Entities.ParBok.ParBokDataItem,System.String)">
+            <summary>
+            Restituisce il valore di un elemento dal ParBok di base.
+            </summary>
+            <param name="pbData">ParBok dati base.</param>
+            <param name="name">Nome dell'elemento da cercare.</param>
+            <returns>Valore rilevato oppure null.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_NormalizeDisplayText(System.String)">
+            <summary>
+            Normalizza una stringa per generare valori leggibili.
+            </summary>
+            <param name="value">Valore da normalizzare.</param>
+            <returns>Stringa ripulita.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_ToSafeCode(System.String,System.String)">
+            <summary>
+            Genera un codice sicuro per identificativi tecnici.
+            </summary>
+            <param name="value">Valore da convertire.</param>
+            <param name="fallbackValue">Fallback se il valore non è valido.</param>
+            <returns>Codice normalizzato.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_GetDisplayOriginFileName(ITSB2B.Mixer.Entities.JsonData.JsonFileItem)">
+            <summary>
+            Restituisce il nome file origine più opportuno per il file.
+            </summary>
+            <param name="jFile">File da esaminare.</param>
+            <returns>Nome file leggibile.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_GetDisplayOriginPath(ITSB2B.Mixer.Entities.JsonData.JsonFileItem)">
+            <summary>
+            Restituisce il percorso origine più opportuno per il file.
+            </summary>
+            <param name="jFile">File da esaminare.</param>
+            <returns>Percorso origine leggibile.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_FindFileAttribute(ITSB2B.Mixer.Entities.JsonData.JsonFileItem,System.String[])">
+            <summary>
+            Cerca un attributo file per nome.
+            </summary>
+            <param name="jFile">File da esaminare.</param>
+            <param name="fieldNames">Possibili nomi del campo.</param>
+            <returns>Attributo trovato oppure null.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GenerateDirectDocumentNameAndDescription(ITSB2B.Mixer.Entities.JsonData.JsonFileItem,System.String)">
+            <summary>
+            Genera nome e description per i documenti direct.
+            </summary>
+            <param name="jFile">File per cui generare i dati.</param>
+            <param name="attFallBackName">Nome di fallback per gli attachment.</param>
+            <returns>Nome e description del documento.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_EnsureDirectAttributesConfig(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
+            <summary>
+            Garantisce l'esistenza delle configurazioni attributi per i documenti direct.
+            </summary>
+            <param name="ctx">Contesto di elaborazione.</param>
+            <returns>True se la configurazione è disponibile.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_EnsureItemAttributeFamily(ITSB2B.Base.Items.Business.Attributes.BzItemsAttributes,System.String,System.String)">
+            <summary>
+            Garantisce l'esistenza di una famiglia attributi.
+            </summary>
+            <param name="bzAtt">Business manager degli attributi.</param>
+            <param name="familyId">ID della famiglia attributi.</param>
+            <param name="familyDescription">Descrizione della famiglia.</param>
+            <returns>True se la famiglia esiste o viene creata.</returns>
+        </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_UpsertPbValue(ITSB2B.Mixer.Entities.ParBok.ParBokDataItem,System.String,System.String,System.String,System.String)">
             <summary>
             Metodo di servizio che controlla l'esistenza di un element nel ParBok e lo aggiorna o lo inserisce
@@ -9732,6 +10992,101 @@
             <param name="docName">Docname generato</param>
             <param name="docDesc">Doc description generata</param>
             <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_GetDirectTypeKey(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext,ITSB2B.Mixer.Entities.JsonData.JsonFileItem)">
+            <summary>
+            Restituisce la chiave tipologica per i fallback direct.
+            </summary>
+            <param name="ctx">Contesto di elaborazione.</param>
+            <param name="file">File per cui generare la chiave.</param>
+            <returns>Chiave tipologica normalizzata.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_EnsureDirectDocFamily(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
+            <summary>
+            Garantisce l'esistenza della family documentale per i fallback direct.
+            </summary>
+            <param name="ctx">Contesto di elaborazione.</param>
+            <returns>ID della family disponibile.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_EnsureBaseDocFamily(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext,System.String,System.String)">
+            <summary>
+            Garantisce l'esistenza della family documentale richiesta.
+            </summary>
+            <param name="ctx">Contesto di elaborazione.</param>
+            <param name="idDocFamily">ID della family da verificare.</param>
+            <param name="ddDocFamily">Descrizione della family.</param>
+            <returns>ID della family disponibile.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_EnsureVisualAttribute(System.String,System.String)">
+            <summary>
+            Garantisce l'esistenza del visual attribute richiesto.
+            </summary>
+            <param name="idVisualAttribute">ID del visual attribute.</param>
+            <param name="ddVisualAttribute">Descrizione del visual attribute.</param>
+            <returns>ID del visual attribute disponibile.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_EnsureDirectVisualAttribute(System.String)">
+            <summary>
+            Garantisce l'esistenza del visual attribute per i fallback direct.
+            </summary>
+            <param name="typeKey">Chiave tipologica del documento.</param>
+            <returns>ID del visual attribute disponibile.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_EnsureDocFamilyElement(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext,System.String,System.String,System.String,System.String)">
+            <summary>
+            Garantisce l'esistenza del family element richiesto.
+            </summary>
+            <param name="ctx">Contesto di elaborazione.</param>
+            <param name="idDocFamily">ID della family.</param>
+            <param name="idFamilyElement">ID del family element.</param>
+            <param name="idVisualAttribute">Visual attribute collegato.</param>
+            <param name="description">Descrizione leggibile del family element.</param>
+            <returns>True se l'elemento esiste o viene creato.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_GetProcessorBaseFamily(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
+            <summary>
+            Restituisce la family base del processore che ha generato il mapper.
+            </summary>
+            <param name="ctx">Contesto di elaborazione.</param>
+            <returns>Family base del processore.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_GetProcessorBaseFamilyDescription(System.String)">
+            <summary>
+            Restituisce la descrizione leggibile della family base.
+            </summary>
+            <param name="idDocFamily">ID della family.</param>
+            <returns>Descrizione leggibile della family.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_GetAttachmentTypeKey(ITSB2B.Mixer.Entities.JsonData.JsonFileItem)">
+            <summary>
+            Classifica un attachment in una tipologia normalizzata.
+            </summary>
+            <param name="file">File attachment da classificare.</param>
+            <returns>Tipologia normalizzata dell'attachment.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_IsOriginalBinaryAttachment(ITSB2B.Mixer.Entities.JsonData.JsonFileItem)">
+            <summary>
+            Verifica se un attachment rappresenta il file originale binario conservato dal preprocessore.
+            </summary>
+            <param name="file">Attachment da controllare.</param>
+            <returns>True se il file è l'originale binario conservato.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_GetOriginalAttachmentTypeKey(System.String,System.String)">
+            <summary>
+            Restituisce la tipologia compatta del family element per gli originali conservati come allegati.
+            </summary>
+            <param name="originDocType">Tipo origine del file.</param>
+            <param name="ext">Estensione del file originale.</param>
+            <returns>Type key compatto da usare nel family element.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_ResolveDocTypeInfo(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext,ITSB2B.Mixer.Entities.JsonData.JsonFileItem,System.Boolean)">
+            <summary>
+            Risolve i dati tipologici del documento a partire dal mapper o dai fallback.
+            </summary>
+            <param name="ctx">Contesto di elaborazione.</param>
+            <param name="file">File per cui rilevare i dati.</param>
+            <param name="isPrimary">True se il file è il primary document.</param>
+            <returns>Tuple contenente family, family element e visual attribute.</returns>
         </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.GIDN_CreateAttachmentParBokFilesAndPreProcessors(ITSB2B.Mixer.ParserHelpers.JsonParserHelperParBok.ImportContext)">
              <summary>
@@ -9972,6 +11327,136 @@
              <param name="jMapper">Json Mapper con tutti i dati dei file coinvolti</param>
              <returns></returns>
         </member>
+        <member name="T:ITSB2B.Mixer.ParserHelpers.JsonParserHelperPdfDirect">
+            <summary>
+            Parser diretto per documenti PDF importati direttamente in Argonaut.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperPdfDirect.#ctor(System.String,ITSB2B.Base.Entities.Dp.DpBaseParameters,System.String,System.String)">
+            <summary>
+            Costruttore del parser diretto per documenti PDF.
+            </summary>
+            <param name="outputRootFolder">Cartella radice di output di Argonaut.</param>
+            <param name="dpParams">Parametri di connessione al database.</param>
+            <param name="cssFolder">Cartella parametrica dei CSS configurata in Argonaut.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperPdfDirect.ProcessPdfDocument(System.String)">
+            <summary>
+            Processa un file PDF diretto generando il file nsarg.
+            </summary>
+            <param name="sourceFileName">Percorso completo del file PDF da preprocessare.</param>
+            <returns>Lista dei file generati durante il preprocessing.</returns>
+        </member>
+        <member name="T:ITSB2B.Mixer.ParserHelpers.JsonParserHelperPowerPointDirect">
+            <summary>
+            Parser diretto per file PowerPoint OOXML.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperPowerPointDirect.#ctor(System.String,ITSB2B.Base.Entities.Dp.DpBaseParameters,System.String,System.String)">
+            <summary>
+            Costruttore del parser diretto per file PowerPoint.
+            </summary>
+            <param name="outputRootFolder">Cartella radice di output di Argonaut.</param>
+            <param name="dpParams">Parametri di connessione al database.</param>
+            <param name="cssFolder">Cartella parametrica dei CSS configurata in Argonaut.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperPowerPointDirect.ProcessPowerPointDocument(System.String,System.Boolean)">
+            <summary>
+            Processa un file PowerPoint diretto generando html e nsarg.
+            </summary>
+            <param name="sourceFileName">Percorso completo del file PowerPoint da elaborare.</param>
+            <param name="keepOriginalFile">Flag che indica se mantenere anche il file originale come external attachment.</param>
+            <returns>Lista dei file generati durante il preprocessing.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperPowerPointDirect.IsOpenXmlPowerPointExtension(System.String)">
+            <summary>
+            Verifica se l'estensione passata appartiene a un formato PowerPoint OOXML trattabile.
+            </summary>
+            <param name="extension">Estensione del file da verificare.</param>
+            <returns>True se l'estensione è supportata dal parser diretto PowerPoint.</returns>
+        </member>
+        <member name="T:ITSB2B.Mixer.ParserHelpers.JsonParserHelperPowerPointPdfDirect">
+            <summary>
+            Parser diretto per file PowerPoint OOXML convertiti in PDF.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperPowerPointPdfDirect.#ctor(System.String,ITSB2B.Base.Entities.Dp.DpBaseParameters,System.String)">
+            <summary>
+            Costruttore del parser diretto per file PowerPoint convertiti in PDF.
+            </summary>
+            <param name="outputRootFolder">Cartella radice di output di Argonaut.</param>
+            <param name="dpParams">Parametri di connessione al database.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperPowerPointPdfDirect.ProcessPowerPointDocument(System.String,System.Boolean)">
+            <summary>
+            Processa un file PowerPoint diretto generando PDF e nsarg.
+            </summary>
+            <param name="sourceFileName">Percorso completo del file PowerPoint da elaborare.</param>
+            <param name="keepOriginalFile">Flag che indica se mantenere anche il file originale come external attachment.</param>
+            <returns>Lista dei file generati durante il preprocessing.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperPowerPointPdfDirect.AddMetadataAttributes(ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon,ITSB2B.Mixer.Entities.JsonData.JsonFileItem,ITSB2B.Mixer.OfficeHelpers.PowerPointMetadataItem)">
+            <summary>
+            Aggiunge al file primario gli attributi rilevati dai metadati PowerPoint.
+            </summary>
+            <param name="common">Helper comune dei parser diretti.</param>
+            <param name="primary">File primario sul quale aggiungere gli attributi.</param>
+            <param name="metadata">Metadati del file PowerPoint sorgente.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperPowerPointPdfDirect.AddMetadataAttribute(ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon,ITSB2B.Mixer.Entities.JsonData.JsonFileItem,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Aggiunge un attributo metadato solo se il valore passato è valorizzato.
+            </summary>
+            <param name="common">Helper comune dei parser diretti.</param>
+            <param name="primary">File primario sul quale aggiungere l'attributo.</param>
+            <param name="fieldName">Nome tecnico dell'attributo.</param>
+            <param name="description">Descrizione leggibile dell'attributo.</param>
+            <param name="value">Valore del metadato.</param>
+            <param name="htmlOrder">Ordine dell'attributo.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperPowerPointPdfDirect.IsOpenXmlPowerPointExtension(System.String)">
+            <summary>
+            Verifica se l'estensione passata appartiene a un formato PowerPoint OOXML trattabile.
+            </summary>
+            <param name="extension">Estensione del file da verificare.</param>
+            <returns>True se l'estensione è supportata dal parser diretto PowerPoint PDF.</returns>
+        </member>
+        <member name="T:ITSB2B.Mixer.ParserHelpers.JsonParserHelperWordDirect">
+            <summary>
+            Parser diretto per file Word.
+            </summary>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperWordDirect.#ctor(System.String,ITSB2B.Base.Entities.Dp.DpBaseParameters,System.String,System.String)">
+            <summary>
+            Costruttore del parser diretto per file Word.
+            </summary>
+            <param name="outputRootFolder">Cartella radice di output di Argonaut.</param>
+            <param name="dpParams">Parametri di connessione al database.</param>
+            <param name="cssFolder">Cartella parametrica dei CSS configurata in Argonaut.</param>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperWordDirect.ProcessWordDocument(System.String,System.Boolean)">
+            <summary>
+            Processa un documento Word diretto generando html e nsarg.
+            </summary>
+            <param name="sourceFileName">Percorso completo del file Word da elaborare.</param>
+            <param name="keepOriginalFile">Flag che indica se mantenere anche il file originale come external attachment.</param>
+            <returns>Lista dei file generati durante il preprocessing.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.JsonParserHelperWordDirect.BuildFallbackExternalResult(ITSB2B.Base.Entities.Result{System.Collections.Generic.List{System.String}},ITSB2B.Mixer.ParserHelpers.JsonParserHelperDirectCommon,ITSB2B.Mixer.Entities.JsonData.JsonOutputMapperItem,System.IO.FileInfo,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Costruisce l'output fallback quando il documento Word non può essere convertito in html.
+            </summary>
+            <param name="ret">Risultato da valorizzare e ritornare al chiamante.</param>
+            <param name="common">Helper comune usato per le operazioni standard.</param>
+            <param name="mapper">Mapper base del documento.</param>
+            <param name="sourceInfo">Informazioni del file sorgente.</param>
+            <param name="sourceHash">Hash del file sorgente.</param>
+            <param name="outputFolder">Cartella di output del documento.</param>
+            <param name="bokID">BokID del documento preprocessato.</param>
+            <param name="description">Descrizione sintetica del fallback.</param>
+            <param name="detail">Dettaglio del motivo che ha portato al fallback.</param>
+            <returns>Risultato valorizzato con i file generati in fallback.</returns>
+        </member>
         <member name="T:ITSB2B.Mixer.ParserHelpers.LotusSupportHelper">
             <summary>
              Classe per leggere e rendere disponibili le descrizioni dei campi dei form Lotus al parser JSON
@@ -10141,7 +11626,7 @@
             Lista delle estensioni gestite dalla libreria di conversione syncfusion per Word
             </summary>
         </member>
-        <member name="M:ITSB2B.Mixer.ParserHelpers.MsgParserHelper.ParseMsgFileRecursive(System.Boolean,System.Int32,System.Int32@,ITSB2B.Mixer.Entities.MsgData.MsgDataItem,System.String,System.String)">
+        <member name="M:ITSB2B.Mixer.ParserHelpers.MsgParserHelper.ParseMsgFileRecursive(System.Boolean,System.Int32,System.Int32@,ITSB2B.Mixer.Entities.MsgData.MsgDataItem,System.String,System.String,System.String,System.String)">
             <summary>
             Parse ricorsivo per i MSG e eventuali loro allegati MSG
             </summary>
@@ -10151,10 +11636,11 @@
             <param name="msgData">Contenitore di tutti i dati elaborati</param>
             <param name="fileName">Nome del file da elaborare</param>
             <param name="parentBokFileID">ID Del file Parent</param>
+            <param name="cssFamilyId">Famiglia CSS da usare per gli html prodotti durante il parse.</param>
             <returns></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:ITSB2B.Mixer.ParserHelpers.MsgParserHelper.ParseMsgFile(System.Boolean,System.Int32,System.Int32@,ITSB2B.Mixer.Entities.MsgData.MsgDataItem,System.String,System.String)" -->
-        <member name="M:ITSB2B.Mixer.ParserHelpers.MsgParserHelper.ProcessMsgAttachedFile(System.String,ITSB2B.Mixer.Entities.JsonData.JsonFileItem,System.Int32@)">
+        <!-- Badly formed XML comment ignored for member "M:ITSB2B.Mixer.ParserHelpers.MsgParserHelper.ParseMsgFile(System.Boolean,System.Int32,System.Int32@,ITSB2B.Mixer.Entities.MsgData.MsgDataItem,System.String,System.String,System.String,System.String)" -->
+        <member name="M:ITSB2B.Mixer.ParserHelpers.MsgParserHelper.ProcessMsgAttachedFile(System.String,ITSB2B.Mixer.Entities.JsonData.JsonFileItem,System.Int32@,System.String,System.String)">
             <summary>
             Metodo che processa un file MSG allegato ad un documento JSON Può essere un OData che deriva
             da un documento del CRM microsoft oppure un file JSON esportato da Lotus notes (ad oggi 08/08/2025)
@@ -10167,6 +11653,7 @@
             <param name="jsonOutputFolder"> cartella di output dell'elaborazione JSON parent</param>
             <param name="jItem">JsonFileItem che identifica il file msg all'interno dell'elaborazione del JSON</param>
             <param name="fileIndex">indice progressivo dei file per i nomi univoci</param>
+            <param name="cssFamilyId">Famiglia CSS da usare per gli html prodotti durante il parse degli allegati.</param>
             <returns></returns>
         </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.MsgParserHelper.ProcessMsgFile(System.String,System.String)">
@@ -10176,6 +11663,23 @@
             <param name="caterpillarOutputFolder"></param>
             <param name="originFileName"></param>
             <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.MsgParserHelper.ProcessMsgFileToData(System.String,System.String,System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            Processa un file MSG diretto ritornando la struttura dati completa prodotta dal parser.
+            </summary>
+            <param name="outputFolder">Cartella dove scrivere tutti i file generati dal parser.</param>
+            <param name="originFileName">Percorso completo del file MSG da elaborare.</param>
+            <param name="bokID">BokID già calcolato dal chiamante.</param>
+            <param name="deleteReplacedFiles">Flag che indica se eliminare i file marcati come sostituiti dal parser.</param>
+            <param name="cssFamilyId">Famiglia CSS da usare per gli html prodotti dal parser.</param>
+            <returns>Struttura dati completa del messaggio elaborato.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.MsgParserHelper.DeleteReplacedFiles(ITSB2B.Mixer.Entities.MsgData.MsgDataItem)">
+            <summary>
+            Elimina i file marcati come sostituiti dal parser perché non devono essere importati.
+            </summary>
+            <param name="msgData">Dati del messaggio elaborato da cui ricavare i file da eliminare.</param>
         </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.MsgParserHelper.AppendNonEmbeddedImages(System.String,ITSB2B.Mixer.Entities.MsgData.MsgFileItem,ITSB2B.Mixer.Entities.MsgData.MsgDataItem)">
             <summary>
@@ -10194,6 +11698,23 @@
             </summary>
             <param name="emailInfo"></param>
             <returns></returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.MsgParserHelper.BuildEmailDocumentHtml(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Costruisce il documento html finale della mail con CSS embeddato.
+            </summary>
+            <param name="title">Titolo del documento html.</param>
+            <param name="metadataTable">Blocco html dei metadati della mail.</param>
+            <param name="cleanBody">Corpo html giÃ  sanificato della mail.</param>
+            <param name="cssFamilyId">Famiglia CSS da applicare al documento prodotto.</param>
+            <returns>Documento html completo della mail.</returns>
+        </member>
+        <member name="M:ITSB2B.Mixer.ParserHelpers.MsgParserHelper.GetEmbeddedCss(System.String,System.String)">
+            <summary>
+            Restituisce il CSS da embeddare nel documento html della mail.
+            </summary>
+            <param name="cssFamilyId">Famiglia CSS richiesta dal chiamante.</param>
+            <returns>Contenuto del CSS da iniettare nel tag style.</returns>
         </member>
         <member name="M:ITSB2B.Mixer.ParserHelpers.MsgParserHelper.IsPptDocument(System.String)">
             <summary>
@@ -10365,6 +11886,16 @@
         <member name="P:ITSB2B.Mixer.Resources.NsDbSettingsManagerRx.txtBokPreprocessorsFolder">
             <summary>
               Looks up a localized string similar to Folder base to momorize the output files produced by the preprocessor services as Caterpillar the files then must be further processed to become Bok documents..
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Resources.NsDbSettingsManagerRx.txtBulkImportExternalExtensionsIncluded">
+            <summary>
+              Looks up a localized string similar to Estensioni incluse per l&apos;import Bulk di file External - lista separata da virgole Es. .xls,.xlsx,.mp4,.wav,.zip.
+            </summary>
+        </member>
+        <member name="P:ITSB2B.Mixer.Resources.NsDbSettingsManagerRx.txtBulkImportRootFolder">
+            <summary>
+              Looks up a localized string similar to Bulk Import Root Folder (excluded by branch creation).
             </summary>
         </member>
         <member name="P:ITSB2B.Mixer.Resources.NsDbSettingsManagerRx.txtCatApi">
